@@ -27,18 +27,16 @@
 | 听力文稿 PDF | 先下载。听力页的原文和解析按这份文稿来写。 |
 | 听力录音 | 没有也没关系，先不要下载。听力页照样写，播放器放一段标明「占位音频，没有考试内容」的静音。老师以后找到 mp3 或 m4a，再让助手放进这份已经写好的听力 HTML，题目和解析不动。 |
 
-词汇等级查这张表，脚本里已经写好路径：
+词汇等级查本技能文件夹里的 `HSK-2012官方原表.xlsx`。查词脚本会自己找到这张表。
 
-`/Users/yinshijin/Desktop/HSK2.0词汇-三级至六级/HSK-2012官方原表.xlsx`
-
-网页的外观沿用已经做好的三一练习页，那些页面在 `/Users/yinshijin/Desktop/HSK2.0词汇-三级至六级/`。荣星的页面不要改。六级还没有现成网页外壳，要等一套六级卷子在手，再从五级同一部分的页面改题库和题号。
+网页的外观沿用本技能 `shells/` 里的三一练习页。荣星的页面不要改。四级阅读和六级还没有现成网页外壳。六级要等一套六级卷子在手，再从 `shells/` 里五级同一部分的页面改题库和题号。
 
 ## 怎么让助手做
 
 把试卷路径和输出目录一起说清楚，例如：
 
 ```text
-用 /Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN
+用 /Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013
 试卷：/路径/H41006.pdf
 输出到：/路径/测试输出结果
 ```
@@ -78,9 +76,11 @@
 ## 这个文件夹里有什么
 
 ```text
-HSK-HTML-MAIN/
+HSK-HTML-MAIN-20261013/
 ├── README.md                 给老师看的说明（本文件）
 ├── SKILL.md                  给助手看的操作顺序
+├── HSK-2012官方原表.xlsx      查词用的 2012 词汇表
+├── shells/                   三一练习页外壳，做新网页时整页复制
 ├── references/
 │   ├── paper-map.md          三到六级阅读的题号和分组
 │   ├── unit.md               阅读讲义每一单元要写哪些内容
@@ -99,14 +99,14 @@ HSK-HTML-MAIN/
 查词：
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" 空调 例如
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" --segment "这段原文"
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/hsk_vocab.py" 空调 例如
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/hsk_vocab.py" --segment "这段原文"
 ```
 
 生成 Word：
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/build_notes.py" \
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/build_notes.py" \
   /tmp/H41006-notes.json \
   -o "/输出目录/H41006/H41006-阅读解析.docx"
 ```

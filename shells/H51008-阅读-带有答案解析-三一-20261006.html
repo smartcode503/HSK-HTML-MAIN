@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="zh-CN" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HSK（五级）H51008 · 阅读练习 · 三一</title>
+  <style>
+    :root{--base-size:18px;--paper:#fbfaf5;--cream:#f4efe3;--sage:#78917a;--sage-dark:#415e46;--coffee:#6f5947;--ink:#252723;--muted:#6c7068;--line:#ddd7c8;--yellow:rgba(255,215,80,.38);--mist:#fff3da;--white:#fff;--shadow:0 12px 36px rgba(66,62,48,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--fixed-header-height,104px) + 14px)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:SimSun,"Songti SC",serif;font-size:var(--base-size);line-height:1.78}
+    button,input,textarea{font:inherit}
+    body:not(.in-exam) #examRoot{display:none}
+    .utility-bar{position:fixed;left:0;right:0;top:0;z-index:100;background:rgba(251,250,245,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);font-size:14px!important;line-height:1.4!important}
+    .utility-bar *{font-size:inherit!important}
+    .utility-inner{max-width:1380px;margin:auto;padding:.55rem 1.4rem;display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+    .tool-btn,.primary-btn,.speed-group button{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:999px;padding:.45rem .85rem;cursor:pointer;transition:.18s ease}
+    .tool-btn:hover,.speed-group button:hover{border-color:var(--sage);color:var(--sage-dark);transform:translateY(-1px)}
+    .primary-btn{background:var(--sage-dark);color:#fff;border-color:var(--sage-dark)}
+    .primary-btn:hover{background:#304a35}
+    .who{color:var(--coffee);font-weight:bold}
+    .save-status{font-size:.78em;color:var(--muted)}
+    .font-label{margin-left:auto;color:var(--muted)}
+    .font-range{accent-color:var(--sage-dark);width:140px}
+    .masthead{max-width:1380px;margin:0 auto;padding:1.4rem 1.4rem .4rem}
+    .eyebrow{color:var(--sage-dark);letter-spacing:.14em;font-weight:bold;font-size:.78em}
+    .masthead h1{font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.14;margin:.35rem 0 .45rem;color:#2c4130}
+    .masthead p{max-width:900px;color:var(--muted);margin:0}
+    .top-nav{position:fixed;left:0;right:0;top:var(--utility-height,52px);z-index:90;height:7vh;min-height:42px;display:flex;align-items:center;background:rgba(244,239,227,.96);border-block:1px solid var(--line);overflow-x:auto;font-size:15px!important}
+    .top-nav *{font-size:inherit!important}
+    .nav-inner{max-width:1380px;margin:auto;display:flex;gap:.35rem;padding:.55rem 1.4rem;white-space:nowrap}
+    .top-nav a{color:var(--coffee);text-decoration:none;padding:.18rem .7rem;border-radius:999px;font-size:15px!important}
+    .top-nav a:hover,.top-nav a.active{background:var(--sage-dark);color:#fff}
+    .top-nav .nav-disabled{color:#b7b1a4;padding:.18rem .7rem;border-radius:999px;cursor:not-allowed;user-select:none}
+    .top-nav .nav-disabled:hover{background:transparent;color:#b7b1a4}
+    body{padding-top:var(--fixed-header-height,104px)}
+    [id]{scroll-margin-top:calc(var(--fixed-header-height,104px) + 14px)}
+    .layout{max-width:1380px;margin:0 auto;padding:0 1.4rem 5rem}
+    .review-section{margin:1.6rem 0 1rem}
+    .section-title{font-size:1.5rem;color:#2c4130;margin:.2rem 0 .1rem;border-left:.35rem solid var(--sage-dark);padding-left:.7rem}
+    .section-sub{color:var(--muted);margin:.1rem 0 1.1rem;padding-left:1.05rem;font-size:.92em}
+    .exam-brief{background:linear-gradient(135deg,#f3efe3,#eef2e9);border:1px solid var(--line);border-left:6px solid var(--sage);border-radius:18px;padding:1.1rem 1.2rem;margin:1rem 0 1.35rem;box-shadow:var(--shadow)}
+    .exam-brief h3{margin:0 0 .75rem;color:var(--sage-dark)}
+    .brief-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+    .brief-item{background:rgba(255,255,255,.72);border-radius:12px;padding:.65rem .75rem}
+    .brief-item span{display:block;color:var(--muted);font-size:.76em}
+    .brief-item strong{display:block;font-weight:600}
+    .passage-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.35rem;box-shadow:var(--shadow);margin:.65rem 0}
+    .passage-card h4{color:var(--sage-dark);font-size:1.13em;font-weight:bold;margin:.1rem 0 .7rem}
+    .passage-para{display:block;margin:0 0 .95em;line-height:1.95;text-indent:2em}
+    .passage-para:last-child{margin-bottom:0}
+    .lesson-workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(430px,.85fr);gap:1.25rem;align-items:start;margin:1.2rem 0 2rem}
+    .source-pane{position:sticky;top:calc(var(--fixed-header-height,104px) + 10px);max-height:calc(100vh - var(--fixed-header-height,104px) - 24px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:0 .28rem .25rem 0}
+    .teaching-pane{min-width:0}
+    .question-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;box-shadow:var(--shadow);margin-bottom:1.1rem}
+    .question-card:target,.question-card.locate-flash{animation:locateFlash 1.7s ease;border-color:#e0a800}
+    @keyframes locateFlash{0%{box-shadow:0 0 0 0 rgba(255,193,7,0);background:#fffbe6}20%{box-shadow:0 0 0 5px rgba(255,193,7,.5);background:#fff3cd}100%{box-shadow:var(--shadow);background:#fff}}
+    .q-stem{display:flex;gap:.6rem;align-items:flex-start;font-weight:bold;margin-bottom:.55rem;line-height:1.5}
+    .q-no{flex:0 0 auto;min-width:1.9rem;height:1.9rem;line-height:1.9rem;text-align:center;background:var(--sage-dark);color:#fff;border-radius:8px;font-size:.85em}
+    .q-text{flex:1}
+    .options{display:grid;gap:.4rem;margin:.2rem 0 .2rem}
+    .option{display:flex;gap:.55rem;align-items:flex-start;width:100%;text-align:left;padding:.5rem .7rem;border:1px solid var(--line);border-radius:10px;background:#fffdf8;cursor:pointer;color:inherit;transition:.15s}
+    .option:hover{border-color:var(--sage)}
+    .opt-key{flex:0 0 auto;width:1.5rem;height:1.5rem;line-height:1.5rem;text-align:center;background:var(--cream);border-radius:50%;font-size:.8em;color:var(--coffee)}
+    .option.chosen{border-color:var(--sage-dark);background:#eef3ea}
+    .option.chosen .opt-key{background:var(--sage-dark);color:#fff}
+    .option.mark-correct{border-color:var(--sage-dark);background:#eef3ea}
+    .option.mark-correct .opt-key{background:var(--sage-dark);color:#fff}
+    .option.mark-wrong{border-color:#b96732;background:var(--mist)}
+    .option.mark-wrong .opt-key{background:#b96732;color:#fff}
+    .listening-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem}
+    .listening-grid .question-card{margin-bottom:0}
+    .audio-panel{display:grid;grid-template-columns:minmax(190px,.72fr) minmax(280px,1.28fr);align-items:start;gap:1rem;background:#f5f1e7;border:1px solid var(--line);border-radius:16px;padding:.9rem 1rem;margin:.8rem 0 1.4rem}
+    .audio-panel small{display:block;color:var(--muted)}
+    .audio-control-stack{display:grid;gap:.55rem;min-width:0}
+    .audio-control-stack audio{width:100%;height:42px}
+    .speed-group{display:flex;gap:.3rem;flex-wrap:wrap}
+    .speed-group button{padding:.3rem .55rem;font-size:.78em}
+    .speed-group button.active{background:var(--sage-dark);color:#fff}
+    .blank-mark{background:rgba(185,103,50,.16);border-bottom:2px dotted #b96732;border-radius:.2em;padding:0 .28em;font-weight:bold;color:#8a4a1e;cursor:pointer}
+    .match-text{margin:.15rem 0 .7rem;line-height:1.9}
+    .word-row{display:flex;flex-wrap:wrap;gap:.45rem;margin:.35rem 0 .7rem}
+    .word-chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;color:var(--coffee)}
+    .write-box{width:100%;min-height:4.6rem;border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;background:#fffdf8;color:var(--ink);line-height:1.7;resize:vertical}
+    .write-box.essay{min-height:11rem}
+    .write-meta{color:var(--muted);font-size:.86em;margin:.35rem 0 0}
+    .ref-line{display:none;margin:.55rem 0 0;padding:.45rem .7rem;background:#edf3e9;border-radius:10px;color:var(--sage-dark)}
+    .question-card.graded .ref-line{display:block}
+    .example-line{background:#fff6cf;border:1px solid #e6d9b0;border-radius:12px;padding:.8rem .9rem;margin:.4rem 0 1rem;line-height:1.7}
+    .score-banner h2{margin:.2rem 0;font-size:clamp(2rem,5vw,3.4rem);color:var(--sage-dark);font-family:Arial,sans-serif}
+    .score-banner p{margin:.25rem 0}
+    #submitStatus.ok{color:#304a35;font-weight:bold}
+    #submitStatus.bad{color:#8a4a1e;font-weight:bold}
+    .footer{border-top:1px solid var(--line);padding:2rem 1.4rem;text-align:center;color:var(--muted)}
+    .no-copy .q-text,.no-copy .match-text,.no-copy .passage-para,.no-copy .opt-text{user-select:none;-webkit-user-select:none}
+    textarea,input{user-select:text;-webkit-user-select:text}
+
+    .analysis-actions{display:none;margin-top:.8rem}
+    .question-card.graded .analysis-actions{display:flex;flex-wrap:wrap;gap:.55rem}
+    .question-card.needs-review{border-color:#b96732;box-shadow:0 0 0 3px rgba(185,103,50,.18)}
+    .analysis-panel{margin-top:.85rem;padding-top:.8rem;border-top:1px dashed var(--line)}
+    .analysis-panel[hidden]{display:none !important}
+    .ans-line{margin:.15rem 0 .55rem;font-size:1.05em}
+    .analysis-body p{margin:.4rem 0;line-height:1.75;white-space:pre-wrap}
+    .analysis-body .tag{display:inline-block;min-width:4.2rem;margin-right:.45rem;padding:.05rem .5rem;border-radius:999px;background:#eef2e9;color:#49654d;font-size:.74em;line-height:1.6;vertical-align:.1em}
+    #loginPage{position:fixed;inset:0;z-index:500;background:#f0f2f5;display:flex;align-items:flex-start;justify-content:center;padding:28px 16px;overflow:auto;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif,"Microsoft YaHei","SimSun"}
+    #loginPage.is-hidden{display:none}
+    .login-wrap{width:100%;max-width:500px;min-width:0}
+    .school-card{background:#b71c1c;color:#fff;padding:20px;border-radius:16px;display:flex;align-items:center;gap:16px;margin-bottom:6px;box-shadow:0 4px 25px rgba(0,0,0,.1);min-width:0}
+    .school-logo{width:80px;height:80px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .school-logo img{max-width:60%;height:auto}
+    .school-names{flex:1;min-width:0;text-align:right;overflow:hidden}
+    .school-name-id{font-weight:800;line-height:1.15;white-space:nowrap;display:block;font-size:clamp(13px,4.6vw,26px);overflow:hidden}
+    .school-name-zh{margin-top:8px;letter-spacing:3px;line-height:1.2;font-size:clamp(12px,3.5vw,20px)}
+    .login-container{background:#fff;border-radius:16px;padding:40px 28px;text-align:center;box-shadow:0 4px 25px rgba(0,0,0,.1);min-height:460px;min-width:0}
+    .login-container h1{color:#00796b;margin:0 0 8px;font-size:clamp(18px,5vw,28px);overflow-wrap:anywhere}
+    .login-container .login-sub{color:#777;margin:0 0 28px}
+    .input-group{margin-bottom:20px;text-align:left}
+    .input-group label{display:block;margin-bottom:8px;font-weight:600;color:#555}
+    .login-input{width:100%;padding:12px 15px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+    .login-btn{width:100%;margin-top:12px;padding:15px 40px;background:#b71c1c;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:18px}
+    .login-btn:hover{background:#9a1515}
+    #warning-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);color:#fff;display:none;justify-content:center;align-items:center;text-align:center;z-index:800;padding:24px}
+    #warning-overlay h2{font-size:2em;color:#ffcc00;margin:0 0 .6rem}
+    #warning-overlay p{font-size:1.15em;max-width:640px;line-height:1.6}
+    @media(max-width:1080px){
+      .lesson-workspace{grid-template-columns:1fr}
+      .source-pane{position:relative;top:auto;max-height:none;overflow:visible}
+      .audio-panel{grid-template-columns:1fr}
+    }
+    @media(max-width:900px){
+      .brief-grid{grid-template-columns:1fr}
+      .listening-grid{grid-template-columns:1fr}
+      .font-label{margin-left:0}
+    }
+    @media(max-width:520px){
+      #loginPage{padding:16px 12px}
+      .school-card{padding:14px}
+      .school-logo{width:64px;height:64px}
+      .school-name-id{white-space:normal;font-size:15px;line-height:1.2}
+      .school-name-zh{letter-spacing:1px;font-size:14px}
+      .login-container{padding:28px 16px;min-height:0}
+      .login-container h1{font-size:22px}
+      .utility-inner,.masthead,.nav-inner,.layout{padding-inline:.85rem}
+    }
+  
+    .utility-inner{padding-right:6.8rem}
+    #export-pdf{position:absolute;top:.42rem;right:.85rem;z-index:2;min-width:4.8rem;background:var(--sage-dark);color:#fff;border-color:var(--sage-dark)}
+    #export-pdf:hover{background:#304a35;color:#fff}
+    #export-pdf:disabled{opacity:.65;cursor:progress;transform:none}
+    #export-pdf:disabled:hover{background:var(--sage-dark);color:#fff;transform:none}
+  </style>
+</head>
+<body>
+  <div id="loginPage">
+    <div class="login-wrap">
+      <div class="school-card">
+        <div class="school-logo">
+          <img src="https://res.cloudinary.com/doeko5u2f/image/upload/v1759133690/Logo_%E5%AD%A6%E6%A0%A1Trimulia_dmrr9o.png" alt="学校标志">
+        </div>
+        <div class="school-names">
+          <span id="schoolNameID" class="school-name-id">SEKOLAH KRISTEN TRIMULIA</span>
+          <span class="school-name-zh">印尼万隆基督教三一学校</span>
+        </div>
+      </div>
+      <div class="login-container">
+        <h1>HSK（五级）H51008 · 阅读</h1>
+        <p class="login-sub">本次只练习阅读。交卷后成绩会提交到表格。交卷后，右上角「输出」可下载 PDF。</p>
+        <div class="input-group">
+          <label for="studentName">学生姓名 (Student Name)</label>
+          <input type="text" id="studentName" class="login-input" placeholder="请输入您的姓名" autocomplete="name">
+        </div>
+        <div class="input-group">
+          <label for="studentClass">班级 (Class)</label>
+          <input type="text" id="studentClass" class="login-input" placeholder="请输入您的班级" autocomplete="organization">
+        </div>
+        <button type="button" class="login-btn" id="loginBtn">登 录</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="warning-overlay">
+    <div>
+      <h2>Warning: You have left the test page.</h2>
+      <p>Leaving the testing environment is not permitted. This action has been logged.<br><br>Please return to this tab to continue your test. Further violations will be recorded.</p>
+    </div>
+  </div>
+
+  <div id="examRoot" class="no-copy">
+    <div class="utility-bar"><div class="utility-inner">
+      <button type="button" class="primary-btn" id="submitBtn">交卷</button>
+      <button type="button" class="tool-btn" id="show-all" hidden>展开全部解析</button>
+      <button type="button" class="tool-btn" id="hide-all" hidden>收起全部解析</button>
+      <span class="who" id="whoName"></span>
+      <span class="save-status" id="progressText">阅读 0/45</span>
+      <span class="font-label">字号</span>
+      <button type="button" class="tool-btn" id="font-down" aria-label="减小字号">A−</button>
+      <input class="font-range" id="font-range" type="range" min="14" max="28" step="1" value="18" aria-label="调整全文字号">
+      <button type="button" class="tool-btn" id="font-up" aria-label="增大字号">A+</button>
+      <b id="font-value">18px</b>
+      <span class="save-status" id="save-status">答案保存在本机浏览器</span>
+      <button type="button" class="tool-btn" id="export-pdf" title="下载成绩单 PDF">输出</button>
+    </div></div>
+    <header class="masthead">
+      <div class="eyebrow">HSK 2.0 · Level 5 · H51008</div>
+      <h1>新汉语水平考试 HSK（五级）</h1>
+      <p>试卷 H51008。本次只练习阅读第46–90题。听力和书写暂不开放。</p>
+    </header>
+    <nav class="top-nav" aria-label="试卷部分">
+      <div class="nav-inner">
+        <span class="nav-disabled" aria-disabled="true">听力</span>
+        <a href="#reading-1">阅读一</a>
+        <a href="#reading-2">阅读二</a>
+        <a href="#reading-3">阅读三</a>
+        <span class="nav-disabled" aria-disabled="true">书写</span>
+      </div>
+    </nav>
+    <main class="layout">
+      <section class="review-section" id="reading-1">
+        <h2 class="section-title">二、阅读一</h2>
+        <p class="section-sub">第46–60题。选出正确答案，填入短文中的空。</p>
+        <div id="cloze-root"></div>
+      </section>
+
+      <section class="review-section" id="reading-2">
+        <h2 class="section-title">二、阅读二</h2>
+        <p class="section-sub">第61–70题。请选出与短文内容一致的一项。</p>
+        <div id="match-root"></div>
+      </section>
+
+      <section class="review-section" id="reading-3">
+        <h2 class="section-title">二、阅读三</h2>
+        <p class="section-sub">第71–90题。请选出正确答案。</p>
+        <div id="long-root"></div>
+      </section>
+
+      <section class="exam-brief score-banner" id="score-banner" hidden>
+        <h3>交卷结果</h3>
+        <h2 id="scoreLine"></h2>
+        <p id="switchLine"></p>
+        <p id="writeLine">本次只统计阅读第46–90题。</p>
+        <p id="submitStatus">正在提交成绩…</p>
+      </section>
+      <footer class="footer">HSK（五级）H51008 · 阅读练习 · 成绩提交到学校表格 · 交卷后可输出 PDF</footer>
+    </main>
+  </div>
+
+  <script id="exam-data" type="application/json">{"listening":[],"cloze":[{"label":"46–49","paras":["一只小猫问它的妈妈：“妈妈，幸福在哪里？”猫妈妈回答说：“幸福就在你的尾巴上。”于是小猫就每天{46}着它的尾巴跑，可是总也抓不着，它生气地跑去问妈妈：“为什么我总是抓不住幸福呢？”猫妈妈笑着回答：“只要你一直不停地往前走，{47}。”","每天一早醒来，感觉空气是清新的，太阳是明亮的，身体是舒服的。每天躺下的时候，感觉一天的生活总体是快乐的，希望明天早上{48}开眼睛的时候，还能继续保持这种愉快的{49}。难道不幸福吗？"],"qs":[[46,"A",["追","举","摸","牵"]],[47,"D",["才不会感到累","就会抓住很多鱼","就可以走得越来越远","幸福就会一直跟在你的后面"]],[48,"A",["睁","绕","退","逃"]],[49,"B",["情景","情绪","优势","事实"]]]},{"label":"50–52","paras":["工作在外地并且事业刚刚起步的年轻人不在少数，除了春节，他们很少有机会回到{50}与父母团聚。因此，{51}有越来越多的“都市外乡人”在条件允许的情况下，趁节假日把父母接到身边住些时间。儿女在外地学习、工作，退休后的老年人常常会感觉到孤单和{52}，过年过节时更是如此。他们表示，能经常和儿女见见面、聊聊天，是最大的心愿。"],"qs":[[50,"A",["家乡","集体","地区","位置"]],[51,"B",["最初","目前","曾经","未来"]],[52,"B",["幸运","寂寞","光荣","迫切"]]]},{"label":"53–56","paras":["梅兰芳先生初到上海的时候，虽然唱功绝顶，但想要一下子出名也很难。当时替梅兰芳组织演出的戏班子就想在报纸上打广告，{53}梅兰芳先生。但是怎么才能引起人们的注意呢？他们在报纸上印了三个字“梅兰芳”，然后什么都不说。第一天就开始有人议论：“{54}？”第二天，在报纸上还是不小的版面，三个大字——梅兰芳，这下子议论的人更多了。连登了几天之后，整个上海都在议论了：“您知道梅兰芳吗？”市民们出于{55}，都在相互打听，梅兰芳的名声越来越响。连登一周之后，报纸上登出一个新的广告：“梅兰芳——京剧名旦，今晚在上海某某戏院登台献艺。欢迎观看。”这个广告一出，票{56}就卖光了。大家都想去看看梅兰芳唱得究竟怎么样。梅先生一场走红，知名度一下子就打开了。"],"qs":[[53,"C",["抗议","强调","宣传","传播"]],[54,"B",["演出是在哪天啊","这梅兰芳是谁啊","梅兰芳真的在上海","为什么会选择梅兰芳"]],[55,"A",["好奇","想象","幻想","冒险"]],[56,"B",["随时","立即","逐步","悄悄"]]]},{"label":"57–60","paras":["“沉默是金”反映了一种为人处事的方式，说的是，做人做事要多听取别人的意见和建议，自己的言行要{57}，不要随便发表议论，以避免“祸从口出”。很多人都把“沉默是金”看做是{58}的表现，尊为处世哲学。但是，在现代社会，竞争激烈，面对机遇，我们要勇于表达自己的想法，去{59}机遇。而且面对确实存在的问题时，我们也不能一味地沉默，而是要指出问题所在，这才是解决问题的最佳方法。","所以我们要记住，{60}。"],"qs":[[57,"A",["谨慎","诚恳","乐观","出色"]],[58,"B",["荣誉","智慧","常识","道德"]],[59,"C",["保存","统治","把握","产生"]],[60,"D",["要少说多做","谦虚使人进步","奇迹是会发生的","沉默并不一定是金"]]]}],"match":[[61,"B","研究表明，我们大脑的左半球具有独立支配讲话、写字和数学运算的功能，在控制神经系统的活动方面，左半球起主要作用；而在认识空间、记忆乐调和理解形象信号等方面，右半球的能力明显优于左半球。这就是说，大脑两个半球的功能是很专门化的。",["听音乐可以开发左脑","左脑发达的人数学能力强","神经系统主要由右半球控制","大脑左半球认识空间能力强"]],[62,"C","在制定目标以后，管理者要给员工充分的权利，提供各种必要的资源。只有给予尽可能多的支持，员工才会更有信心。因为他会感觉身后有一个强大的力量，这可以让他放心大胆地朝着目标前进。",["联合起来力量大","制定目标要符合实际","管理者要信任并支持员工","管理者要虚心接受员工的批评"]],[63,"B","有些家庭主妇认为干家务活儿的运动量已足够，不必专门进行体育锻炼了。其实这种观点是错误的。因为，只有达到一定强度的运动才会有益于身体，而即使是运动量很大的家务劳动也难以达到运动的强度，并不会带来运动效果。",["夫妻双方要分担家务","家务活和运动是两回事","各种家务劳动的强度接近","家庭主妇每天的运动量很小"]],[64,"A","喝茶也是一门学问，不同的季节要喝不同的茶。中国有句话叫“因时择茶”，也就是说按照春夏秋冬的时间顺序，来选择茶的品种。简单来说，就是“春饮花茶，夏饮绿茶，秋饮青茶，冬饮红茶”。",["夏天要多喝绿茶","喝茶可以缓解压力","泡茶的水温度不能太高","不同季节茶的颜色不同"]],[65,"D","在汉语中，“宇”代表上下四方，即所有的空间，“宙”代表古往今来，即所有的时间，所以“宇宙”这个词有“所有的时间和空间”的意思。关于宇宙，人们现在还存在许多疑问。但随着科学的发展进步，人类对宇宙的认识也在逐步加深。",["宇宙是静止不动的","宇宙代表过去的时空","宇宙还在不断地扩大","宇宙还存在很多未解之谜"]],[66,"D","蚂蚁是一种十分古老的昆虫，大约出现于1亿年前，与远古的恐龙同处一个时代。蚂蚁不但常见而且种类繁多，世界上现在已知的蚂蚁约有9000种。蚂蚁在世界各地都能存活，因为它们生活在一个非常有组织的群体中，它们分工合作，建筑巢穴，以使其后代能够安全成长。",["蚂蚁比恐龙更古老","蚂蚁经常单独行动","蚂蚁喜欢湿热地区","蚂蚁的生存能力很强"]],[67,"B","“东道主”本来的意思是东方道路上的主人。中国古代，郑国在秦国的东边，经常接待秦国的大使，所以被称为“东道主”。后来，“东道主”指接待客人的主人，或指请客的人。现在，“东道主”也可以指举办某项活动的国家、城市或单位等。",["“东道主”多用于外交","“东道主”常用来指主人","客人也可以称为“东道主”","“东道主”现在指使馆工作人员"]],[68,"A","在困难面前，如果你能在众人都放弃时再多坚持一秒，那么最后的胜利一定属于你。坚定的信念是获取成功的动力。很多时候，成功都是在最后一刻才到来。因此，做任何事情，我们都不应该半途而废，哪怕前行的道路再苦再难，也要坚持下去，这样才不会在自己的人生里留下太多遗憾。",["坚持才能胜利","要三思而后行","做事前要明确目标","人生总会有很多遗憾"]],[69,"C","培养孩子的学习能力，一定要培养孩子对世界的好奇心，让他仔细观察生活，亲身研究和体验生活中的事情，对周围环境产生兴趣，让兴趣成为孩子的老师。这样，孩子才会具有创造能力，才能在未来的成长道路上，不断收获。",["对人要诚实","要让孩子学会独立","要保护孩子的好奇心","父母是孩子最好的老师"]],[70,"D","四合院是北京的传统民居形式，辽代时已初具规模，经过金、元至明、清，逐渐完善，最终成为北京最具特色的居住形式。所谓四合，“四”指东、西、南、北四面；“合”即四面房屋围在一起，形成一个“口”字形。经过数百年的经营和建造，北京四合院从平面布局到内部结构都形成了特有的京味风格。",["四合院有4个门","四合院建于清朝","“四”指经历了4个朝代","四合院反映了传统的建筑风格"]]],"long":[{"label":"71–74","paras":["那是一个星期五的下午，马上就要下班了，大家都显得很放松，计划着怎么安排周末的时间。这时，一个陌生人走进来问小王，哪儿能找到一位助手，来帮他整理一下资料，因为他手头有些工作必须当天完成。","小王问道：“请问您是？”陌生人回答说：“我们公司跟你们是一个楼层，我想找你们的一个速记员帮忙。”","小王告诉他，公司的速记员都去看比赛了。如果再晚来5分钟，自己也走了。但他愿意留下来帮忙，因为看比赛以后还有的是机会，但是工作必须在当天完成。","把工作做完时，已经很晚了。那个陌生人是位律师，他向小王表示了谢意，并问应该付他多少钱。小王开玩笑地回答：“1000块钱吧。”律师表示同意。小王连忙解释自己是开玩笑的，他并没想要收取任何费用。但出乎意料，那位律师竟然真的这样做了。而且3个月之后，在小王已将这件事忘到九霄云外时，律师又找到小王，邀请他到自己的公司工作，薪水会比现在高得多。","如果不是你的工作，而你做了，这就是机会。有人曾经研究为什么当机会来临时我们无法把握，答案是：因为机会总是装成“麻烦”的样子。"],"qs":[[71,"B","根据上文，可以知道小王：",["是律师","乐于助人","不喜欢开玩笑","想得到1000元"]],[72,"A","根据上文，下列哪项正确？",["律师很感谢小王","小王是公司经理","律师没给小王钱","那天的工作很快就做完了"]],[73,"D","三个月以后：",["小王辞职了","小王准备换工作","小王的工资减少了","律师请小王去自己的公司工作"]],[74,"C","上文主要想告诉我们什么？",["细节决定成败","不要过分看重金钱","机会偏爱不怕麻烦的人","当天的工作要当天完成"]]]},{"label":"75–78","paras":["人们参加体育锻炼或者运动训练，到一定程度时，就会产生体能暂时下降的现象，这种现象被称为“运动性疲劳”。对参加训练或比赛的运动员来说，这是常有的事。","“没有疲劳等于没有训练，疲劳是检查训练效果的一个标志。”所以，产生疲劳是训练的正常反应。疲劳的程度可以通过运动员的自我感觉和某些外部表现来判断。一般来说，轻度疲劳，身体会迅速恢复；中度疲劳需要较好地调整和休息；重度疲劳则很难恢复。","因此，作为一名教练，除了在思想上、生活上关心运动员之外，还应注意把训练和恢复结合起来。对运动员来讲，疲劳在很大程度上和心理因素有关。为此，要根据对象的具体情况，采用各种不同的恢复手段，以加速恢复过程。例如，让运动员训练后洗个温水澡，是最简单易行的消除轻度疲劳的方法。平时多吃一些蔬菜、水果，以补充营养。很多人认为，锻炼之后应该多吃点肉、蛋类食品，这其实是错误的。"],"qs":[[75,"B","运动性疲劳：",["难以恢复","会暂时降低体能","会影响运动员情绪","是由训练不当引起的"]],[76,"C","运动性疲劳的程度可以通过什么来判断？",["医生的诊断","锻炼持续的时间","运动员的自我感觉","运动员的心理状态"]],[77,"C","根据上文，下列哪项正确？",["训练后不宜洗澡","运动性疲劳可以避免","疲劳是正常的训练反应","多吃肉蛋食品可减轻疲劳"]],[78,"B","下列哪项最适合做上文的标题？",["饮食与健康","运动与疲劳","怎样避免产生疲劳","做一名优秀的教练"]]]},{"label":"79–82","paras":["一天，两个神仙来到一个富有的家庭借宿。这家人对他们并不友好，拒绝让他们在舒适的客厅过夜，而是在冰冷的地下室给他们找了一个地方。当他们准备睡觉时，年长的神仙发现墙上有一个洞，就顺手把它修补好了。年轻的神仙问为什么，老神仙答道：“有些事并不像它看上去那样。”","第二晚，两人来到一个非常贫穷的农家借宿。夫妇俩对他们非常热情，把仅有的一点点食物拿出来招待客人，然后又让出自己的床给两位客人。第二天一早，两个神仙发现农夫和他的妻子在哭泣，他们唯一的一头奶牛死了。年轻的神仙非常愤怒，他问老神仙：“为什么会这样？第一个家庭什么都有，你还帮助他们修补墙洞，第二个家庭尽管如此贫穷，仍然热情招待客人，而你却没有阻止奶牛的死。”","老神仙答道：“当我们在地下室过夜时，我从墙洞上看到墙里面堆满了金块。因为主人不愿意分享他的财富，所以我把墙洞填上了。昨天晚上，本来是农夫的妻子会死掉，但我让奶牛代替了她。所以说，有些事并不像它看上去那样。”"],"qs":[[79,"D","关于那家富人，可以知道：",["十分狡猾","生活很单调","很容易相处","对客人不友好"]],[80,"D","年长的神仙为什么要修墙？",["使房间保持温暖","想把金子给穷人","感谢富人的招待","不想让富人得到黄金"]],[81,"A","农夫为什么哭？",["奶牛死了","孩子丢了","食物被吃光了","知道他的妻子会死掉"]],[82,"C","上文主要想告诉我们什么？",["做事情要公平","不要看不起别人","眼见不一定是真的","通过表面现象可以看到本质"]]]},{"label":"83–86","paras":["新的一年开始了。有人说：“我们又少了一年。”有人说：“我们又多了一年。”","这就是生命的加减法。有人用的是减法思维，使人的一生充满压力，充满危机感：20岁的人，失去了童年；30岁的人，失去了浪漫；40岁的人，失去了青春；50岁的人，失去了幻想；60岁的人，失去了健康。","有人用加法思维，使人生充满生机，充满快乐：20岁的人，拥有了青春；30岁的人，拥有了才干；40岁的人，拥有了成熟；50岁的人，拥有了经验；60岁的人，拥有了轻松。","在生命的进程中，我们不能不用“减法”。人的生命只有一次，我们在岁末年初的时候，必须算一算自己失去、得到了什么，是“收获”大于“支出”，还是“支出”大于“收获”。在生命的进程中，我们也不能不用“加法”。因为人生不能假设，我们知道了儿时的天真，知道了年轻时的粗浅，积累了人生经验，知道了如何把握自己。","“减法”给我们带来压力，使我们明白人生苦短，岁月无情。“加法”给我们带来了希望，使我们增添了阅历，积累了财富。这种积累令我们更加聪明、自信和理智。"],"qs":[[83,"D","根据上文，30岁的人：",["失去了青春","还十分天真","变得轻松起来","还不十分成熟"]],[84,"C","上文中的“支出”指的是：",["年龄的增加","人生经验的积累","生命中失去的东西","生命中得到的东西"]],[85,"A","根据上文，“加法”会给我们带来：",["希望","无奈","压力","公平"]],[86,"B","上文主要谈的是：",["生命的意义","生命的加减法","如何减轻压力","人生不同阶段的特点"]]]},{"label":"87–90","paras":["有位建筑商，虽然很有商业头脑，但摸爬滚打许多年，不仅事业没有得到发展，最后反而以破产告终。在那段日子里，他不断地寻找失败的原因，但怎么也找不到答案。","无聊的时候，他来到街头闲转，路过一家书报亭，就买了份报纸随便翻翻。看着看着，他感觉自己眼前亮了起来。","后来，他以仅剩的一万元为本金，再战商场。这次，短短几年内，他的资产就突飞猛进到一亿元，创造了一个商业神话。","一次，他来到大学演讲。其间，不断有学生提问，问他从一万元变成一亿，到底有何秘诀。望着学生们期待的眼神，他终于说出了自己的秘密。","他说，当年我在街头看见一张采访李泽楷的报纸。记者问李泽楷：“你的父亲李嘉诚究竟教会了你怎样的赚钱秘诀？”李泽楷说：“我的父亲从没教我赚钱的方法，只教了我一些为人处世的道理，父亲常对我说：‘你和别人合作，假如你可以拿7分利润，或者拿8分也合理，那你只要拿6分就可以了。’”","他接着对学生们说，这段采访让他弄明白一个道理：做生意的最高境界其实就是让利于人。李嘉诚总是让别人多赚2分利润，所以每个人都知道和他合作会赚到便宜，所以有更多的人愿意和他合作。虽然他只拿6分，但生意却多了100个。自己以前总是千方百计地从对方身上多赚钱，以为这就是成功，结果是，多赚了眼前，输光了未来。"],"qs":[[87,"C","关于那位建筑商，可以知道什么？",["对父母孝顺","财务知识丰富","后来生意很成功","和李嘉诚是好朋友"]],[88,"C","关于李嘉诚，下列哪项正确？",["不会做生意","是著名的教育家","善于跟别人合作","开始时只有一万元资金"]],[89,"B","那位建筑商认为，做生意最重要的是：",["资金要充足","让别人多赚钱","要做好投资计划","寻找更多合作伙伴"]],[90,"D","最后一段中画线句子的意思是：",["要珍惜现在","要善于积累经验","要学会承担责任","做生意要看得长远些"]]]}],"sentences":[]}</script>
+<script id="exam-notes" type="application/json">{"46":{"answer":"A","gloss":"A  追  zhuī","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The mother has just said 幸福就在你的尾巴上, and the kitten's next move is tied to 着它的尾巴跑. 追 means to chase, so 每天追着它的尾巴跑 is running after that tail day after day. The result 可是总也抓不着 shows the chase failing, which is why the kitten later cries 为什么我总是抓不住幸福呢.","wrong":"B  举 — Collocation. 举着它的尾巴 would be holding the tail up. The kitten is running after it, and 抓不着 shows a chase.\nC  摸 — Wrong action. 摸 is a touch. He cannot be failing, day after day, to touch a tail he is running after.\nD  牵 — Collocation. 牵 is for leading an animal or a person. A kitten does not lead its own tail.","trap":"The closest trap is C  摸 (Wrong action). Touching is close to catching. The verbs around the blank are 跑 and, later, 抓不住."},"47":{"answer":"D","gloss":"D  幸福就会一直跟在你的后面","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The kitten has been chasing and still 抓不住幸福. The mother's condition is 只要你一直不停地往前走. 幸福就会一直跟在你的后面 means happiness will keep following behind you. That completes her first picture, 幸福就在你的尾巴上: stop turning back to grab it, and it stays behind you as you walk.","wrong":"A  才不会感到累 — Wrong result. The mother is not promising that walking will stop him feeling tired.\nB  就会抓住很多鱼 — Not in the text. There are no fish. The only thing he is trying to catch is happiness.\nC  就可以走得越来越远 — Wrong focus. Going farther is not what she promises. She promises where happiness will stay.","trap":"The closest trap is C  就可以走得越来越远 (Wrong focus). 往前走 makes distance look like the point. Her first picture was that happiness sits on the tail, behind him."},"48":{"answer":"A","gloss":"A  睁  zhēng","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The time is 明天早上, and the verb has to combine with 开眼睛. 睁 means to open the eyes, so 睁开眼睛 is the ordinary moment of waking. The hope is that tonight's pleasant feeling will 继续保持 at that waking, which needs the eyes to open, not to flee or step away.","wrong":"B  绕 — Collocation. 绕开眼睛 is not said of waking up.\nC  退 — Collocation. 退开眼睛 is not a phrase, and stepping back is not how the morning starts.\nD  逃 — Wrong action. 逃开眼睛 would be fleeing. The hope is to open the eyes and still feel pleasant.","trap":"The closest trap is D  逃 (Wrong action). 开眼睛 needs a verb of opening. 逃开 would move him away from the morning the sentence hopes for."},"49":{"answer":"B","gloss":"B  情绪  qíngxù","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The lines before the blank are feelings: 空气是清新的, 太阳是明亮的, 身体是舒服的, and 一天的生活总体是快乐的. 情绪 means mood, so 愉快的情绪 names that ongoing happy feeling. The closing question 难道不幸福吗 treats this mood itself as happiness, the thing one hopes to 继续保持.","wrong":"A  情景 — Wrong focus. 情景 is a scene. The lines before the blank are feelings: fresh air, a bright sun, a comfortable body, a happy day.\nC  优势 — Not in the text. No advantage is named.\nD  事实 — Wrong focus. 事实 is a fact. 愉快的 names a feeling, and the last question treats that feeling as happiness.","trap":"The closest trap is A  情景 (Wrong focus). A pleasant morning can look like a scene. The word that covers air, body and a happy day is 情绪."},"50":{"answer":"A","gloss":"A  家乡  jiāxiāng","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The young people 工作在外地, and what they rarely manage is to return and 与父母团聚. 家乡 means hometown, so 回到家乡与父母团聚 is the trip home to be with parents. 除了春节 names the one season when that return usually happens, which fixes the place as the family home.","wrong":"B  集体 — Wrong place. 集体 is a group or an organisation. The reunion is with parents, at home.\nC  地区 — Too vague. 地区 is a region. 与父母团聚 fixes the place as the family home.\nD  位置 — Wrong place. 位置 is a position or a seat, not the hometown.","trap":"The closest trap is C  地区 (Too vague). 外地 makes any region look possible. The trip they rarely manage is the one home."},"51":{"answer":"B","gloss":"B  目前  mùqián","type":"Gap fill · choose the word or sentence that fills the blank","explain":"因此 introduces a result that is already spreading: more 都市外乡人 bring parents over 在条件允许的情况下. 目前 means at present, so 目前有越来越多的 marks a habit happening now. The parents 表示 their wish as something they feel today, not as a memory or a forecast.","wrong":"A  最初 — Wrong time. 最初 is the beginning. The sentence describes a habit that is already spreading.\nC  曾经 — Wrong time. 曾经 is finished past. The parents state their wish as something they feel now.\nD  未来 — Wrong time. 未来 is still to come. 有越来越多 describes what is happening at present.","trap":"The closest trap is D  未来 (Wrong time). A growing habit can sound like a forecast. 目前 is the word for a change that is already under way."},"52":{"answer":"B","gloss":"B  寂寞  jìmò","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The pair is 孤单和 followed by the blank, and 过年过节时更是如此 makes the feeling worse when children are away. 寂寞 means loneliness, so 孤单和寂寞 names the emptiness of retired parents living apart from their children. Their 最大的心愿, only to see the children and chat, is the answer to that loneliness.","wrong":"A  幸运 — Opposite. Loneliness at festivals is not good luck.\nC  光荣 — Wrong tone. 光荣 is honour. The feeling paired with 孤单 is emptiness.\nD  迫切 — Wrong word class. 迫切 means urgent. It does not pair with 孤单 as the feeling of being left alone.","trap":"The closest trap is D  迫切 (Wrong word class). Their wish sounds urgent. The blank is the feeling itself, next to 孤单."},"53":{"answer":"C","gloss":"C  宣传  xuānchuán","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The troupe 想在报纸上打广告, and the person in view is 梅兰芳先生. 宣传 means to publicize, so 宣传梅兰芳先生 is what that advertisement is for: make his name known before the city has heard him. The later result, 名声越来越响 and 知名度一下子就打开了, is what a publicity campaign produces.","wrong":"A  抗议 — Opposite. An advertisement is not a protest against Mei Lanfang.\nB  强调 — Too narrow. 强调 is to stress a point already known. The city has not heard the name yet.\nD  传播 — Similar word. 传播 is to spread something. The purpose of this newspaper advertisement, with the man as its object, is 宣传.","trap":"The closest trap is D  传播 (Similar word). Both verbs can take a name. The troupe wants the advertisement to publicise him."},"54":{"answer":"B","gloss":"B  这梅兰芳是谁啊","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The first advertisement prints only 三个字“梅兰芳”, and then 什么都不说. 这梅兰芳是谁啊 means who on earth is this Mei Lanfang. That is the natural first-day question, because the paper has given a bare name. The later citywide line 您知道梅兰芳吗 repeats the same puzzle about identity.","wrong":"A  演出是在哪天啊 — Wrong time. The date appears only in the last advertisement, after a week of the bare name.\nC  梅兰芳真的在上海 — Not the first question. On day one the paper has given nothing but three characters, so the puzzle is who he is.\nD  为什么会选择梅兰芳 — Wrong focus. Readers cannot ask why he was chosen before they know the name.","trap":"The closest trap is C  梅兰芳真的在上海 (Not the first question). Shanghai is where he has arrived. The first-day question the passage describes is 这梅兰芳是谁啊."},"55":{"answer":"A","gloss":"A  好奇  hàoqí","type":"Gap fill · choose the word or sentence that fills the blank","explain":"After days of the bare name, 整个上海都在议论, and citizens 都在相互打听. 好奇 means curiosity, so 出于好奇 gives the motive for that asking around. They still do not know the man, and that curiosity is what makes 名声越来越响 before any ticket is sold.","wrong":"B  想象 — Similar word. 想象 is picturing something yourself. They ask one another because they do not know, which is curiosity.\nC  幻想 — Too far. 幻想 is an illusion. The name on the paper is real.\nD  冒险 — Not in the text. Asking around is not described as taking a risk.","trap":"The closest trap is B  想象 (Similar word). A bare name invites people to invent a story. The motive the passage names is 好奇."},"56":{"answer":"B","gloss":"B  立即  lìjí","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The pattern is 这个广告一出，票……就卖光了. 立即 means immediately, so 票立即就卖光了 says the tickets were gone at once. 大家都想去看看 explains the rush, and 一场走红 shows the success was sudden. The adverb has to answer the instant the new advertisement appeared.","wrong":"A  随时 — Wrong time. 随时 is 'at any moment,' not the instant result of 一出……就…….\nC  逐步 — Opposite speed. 逐步 is step by step. The tickets are gone at once, and he becomes famous in one performance.\nD  悄悄 — Opposite manner. 悄悄 is quietly. The whole city is talking, and everyone wants a ticket.","trap":"The closest trap is C  逐步 (Opposite speed). A week of advertisements can sound gradual. 这个广告一出，票就卖光了 is immediate."},"57":{"answer":"A","gloss":"A  谨慎  jǐnshèn","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The saying tells people to 多听取别人的意见和建议 and 不要随便发表议论, so as to avoid 祸从口出. 谨慎 means cautious, so 自己的言行要谨慎 is that restraint on one's own words and deeds. Care is what stops casual remarks. The sentence is limiting speech, not asking the speaker to be cheerful or brilliant.","wrong":"B  诚恳 — Similar virtue. 诚恳 is sincere. The saying limits casual remarks, which is caution, not sincerity.\nC  乐观 — Not in the text. Mood is not the point of 祸从口出.\nD  出色 — Not in the text. The saying does not ask you to be outstanding. It asks you to hold your words back.","trap":"The closest trap is B  诚恳 (Similar virtue). A rule for how to behave looks like a moral quality. The quality named for restraining speech is 谨慎."},"58":{"answer":"B","gloss":"B  智慧  zhìhuì","type":"Gap fill · choose the word or sentence that fills the blank","explain":"People 把“沉默是金”看做是 a kind of 表现, and they 尊为处世哲学. 智慧 means wisdom, so 智慧的表现 calls the saying a sign of wisdom. A rule honored as a whole philosophy of getting along in the world is being praised as wise, which is the high place the next sentences will argue with.","wrong":"A  荣誉 — Wrong focus. 荣誉 is an honour you are given. The saying is treated as a wise way of behaving.\nC  常识 — Too low. 常识 is ordinary knowledge. 尊为处世哲学 is a higher name than common sense.\nD  道德 — Too wide. 道德 is morality in general. The passage calls this particular saying a sign of wisdom, then argues with that praise.","trap":"The closest trap is D  道德 (Too wide). 处世哲学 sounds moral. The word joined to 表现 is 智慧."},"59":{"answer":"C","gloss":"C  把握  bǎwò","type":"Gap fill · choose the word or sentence that fills the blank","explain":"面对机遇，我们要勇于表达自己的想法，去把握机遇. 把握机遇 is the set phrase for taking a chance that is already in front of you. Speaking out is how that chance is seized. The answer key is C 把握.","wrong":"A  保存 — Collocation. 保存 is for keeping a thing you already hold, such as a file or food. A chance you are facing is seized, 把握, not put into storage.\nB  统治 — Not in the text. 统治 is to rule. Nobody rules an opportunity.\nD  产生 — Wrong direction. 产生机遇 would create the chance. The chance is already 面对 them. Speaking is how they take it.","trap":"The closest trap is A  保存 (Collocation). 保存 looks like 'keep the chance.' The verb that takes 机遇 here is 把握."},"60":{"answer":"D","gloss":"D  沉默并不一定是金","type":"Gap fill · choose the word or sentence that fills the blank","explain":"The last stretch rejects two uses of silence. In front of 机遇 one should speak, and in front of a real problem one should 指出问题所在 instead of 一味地沉默. 沉默并不一定是金 means silence is not necessarily golden. That revises the opening proverb. The 最佳方法 just named is pointing out the problem, so silence cannot always be the standard.","wrong":"A  要少说多做 — Opposite of the conclusion. The second half says that in front of a real problem you must not stay silent. Less talk is the old proverb, not the ending.\nB  谦虚使人进步 — Not in the text. Humility is not the lesson stated.\nC  奇迹是会发生的 — Not in the text. No miracle is mentioned.","trap":"The closest trap is A  要少说多做 (Opposite of the conclusion). The opening proverb sounds like this. The last sentence revises it: silence is not necessarily golden."},"61":{"answer":"B","gloss":"B  左脑发达的人数学能力强","type":"Short passage · choose the statement that agrees with the text","explain":"The study says the left hemisphere 具有独立支配讲话、写字和数学运算的功能. 左脑发达的人数学能力强 means a person with a well-developed left brain is strong at mathematics. Mathematical operations are listed as work the left side controls by itself. The close, 两个半球的功能是很专门化的, treats that calculation as a specialized left-side ability.","wrong":"A  听音乐可以开发左脑 — Opposite side. Remembering a tune, 记忆乐调, is given to the right hemisphere.\nC  神经系统主要由右半球控制 — Opposite. 在控制神经系统的活动方面，左半球起主要作用.\nD  大脑左半球认识空间能力强 — Opposite. 认识空间 is where the right side is clearly better.","trap":"The closest trap is D  大脑左半球认识空间能力强 (Opposite side). Space and the left brain are easy to swap. The text gives space to the right, and mathematics to the left."},"62":{"answer":"C","gloss":"C  管理者要信任并支持员工","type":"Short passage · choose the statement that agrees with the text","explain":"After 制定目标, the manager must 给员工充分的权利 and 提供各种必要的资源, and must 给予尽可能多的支持. 管理者要信任并支持员工 means a manager should trust and support employees. Full rights are the trust, and resources are the backing. The employee then feels 身后有一个强大的力量 and can 放心大胆地朝着目标前进.","wrong":"A  联合起来力量大 — Not in the text. The strong force is behind one employee, coming from the manager, not from people joining together.\nB  制定目标要符合实际 — Not in the text. The passage starts after the goal is set. It does not discuss whether the goal is realistic.\nD  管理者要虚心接受员工的批评 — Not in the text. No criticism appears. The manager gives rights, resources and support.","trap":"The closest trap is A  联合起来力量大 (Not in the text). 强大的力量 sounds like 'unity is strength.' The force is the support at the employee's back."},"63":{"answer":"B","gloss":"B  家务活和运动是两回事","type":"Short passage · choose the statement that agrees with the text","explain":"The housewives' view, 干家务活儿的运动量已足够，不必专门进行体育锻炼, is called 错误的. 家务活和运动是两回事 means housework and exercise are two different things. Only movement at a certain 强度 helps the body, while 即使是运动量很大的家务劳动也难以达到运动的强度，并不会带来运动效果. A large amount of housework still fails to count as exercise.","wrong":"A  夫妻双方要分担家务 — Not in the text. No husband is mentioned.\nC  各种家务劳动的强度接近 — Not in the text. Kinds of housework are not compared with each other.\nD  家庭主妇每天的运动量很小 — Opposite. The passage allows housework to be 运动量很大 and still says it fails the intensity of real exercise.","trap":"The closest trap is D  家庭主妇每天的运动量很小 (Opposite). 'Not real exercise' can sound like 'very little movement.' Even a large amount of housework is still not intense enough."},"64":{"answer":"A","gloss":"A  夏天要多喝绿茶","type":"Short passage · choose the statement that agrees with the text","explain":"The rule is given in one line: 春饮花茶，夏饮绿茶，秋饮青茶，冬饮红茶. 夏天要多喝绿茶 means in summer one should drink green tea more. That is the summer item, 夏饮绿茶, inside 不同的季节要喝不同的茶. Summer is tied to green tea by the saying 因时择茶, so the statement that summer calls for green tea follows the calendar.","wrong":"B  喝茶可以缓解压力 — Not in the text. Pressure and mood are never mentioned.\nC  泡茶的水温度不能太高 — Not in the text. Water temperature is never discussed.\nD  不同季节茶的颜色不同 — Keyword trap. 绿茶、青茶、红茶 are kinds of tea. The passage does not say the colour of tea changes with the season. It says which kind to drink.","trap":"The closest trap is D  不同季节茶的颜色不同 (Keyword trap). The names contain colours. The rule is 因时择茶, choose the kind by the season."},"65":{"answer":"D","gloss":"D  宇宙还存在很多未解之谜","type":"Short passage · choose the statement that agrees with the text","explain":"After defining the word, the passage says 关于宇宙，人们现在还存在许多疑问. 宇宙还存在很多未解之谜 means the universe still holds many unsolved mysteries. 许多疑问 is those unsolved questions. The next sentence, 人类对宇宙的认识也在逐步加深, says understanding is still growing, which is why the mysteries remain.","wrong":"A  宇宙是静止不动的 — Not in the text. Nothing says the universe does not move.\nB  宇宙代表过去的时空 — Too narrow. 古往今来 is all time, and 上下四方 is all space. Not only the past.\nC  宇宙还在不断地扩大 — Not in the text. 逐步加深 is human understanding. The passage does not say the universe itself is expanding.","trap":"The closest trap is C  宇宙还在不断地扩大 (Not in the text). 逐步加深 is easy to hear as the universe growing. What deepens is knowledge, and the mysteries remain."},"66":{"answer":"D","gloss":"D  蚂蚁的生存能力很强","type":"Short passage · choose the statement that agrees with the text","explain":"The survival claim is direct: 蚂蚁在世界各地都能存活. 蚂蚁的生存能力很强 means ants have a very strong ability to survive. Living in every part of the world is that strength. The cause follows: they live in 一个非常有组织的群体, 分工合作, and 建筑巢穴 so that 后代能够安全成长.","wrong":"A  蚂蚁比恐龙更古老 — Too absolute. They 同处一个时代, about a hundred million years ago. The passage does not say ants are older.\nB  蚂蚁经常单独行动 — Opposite. They live in 一个非常有组织的群体 and 分工合作.\nC  蚂蚁喜欢湿热地区 — Not in the text. No climate is preferred. They survive 世界各地.","trap":"The closest trap is A  蚂蚁比恐龙更古老 (Too absolute). Sharing an age with the dinosaurs is not the same as being older than them."},"67":{"answer":"B","gloss":"B  “东道主”常用来指主人","type":"Short passage · choose the statement that agrees with the text","explain":"The meaning the passage settles on is 后来，“东道主”指接待客人的主人，或指请客的人. “东道主”常用来指主人 means the phrase is commonly used for the host. 接待客人的主人 is the host who receives guests, and 请客的人 is the person who does the inviting. The modern extension, a country, city or unit that 举办某项活动, is still the hosting side.","wrong":"A  “东道主”多用于外交 — Too narrow. The ancient story has an envoy, but the settled meaning is any host, and today also a country, city or unit holding an event.\nC  客人也可以称为“东道主” — Opposite. The word is 接待客人的主人, the host, not the guest.\nD  “东道主”现在指使馆工作人员 — Not in the text. 大使 belongs only to the ancient story. Embassy staff are not the modern meaning.","trap":"The closest trap is A  “东道主”多用于外交 (Too narrow). 大使 makes the word look diplomatic. The meaning the passage settles on is the host."},"68":{"answer":"A","gloss":"A  坚持才能胜利","type":"Short passage · choose the statement that agrees with the text","explain":"The opening condition is 在众人都放弃时再多坚持一秒, and the result is 最后的胜利一定属于你. 坚持才能胜利 means only by persisting can one win. The same point returns as 都不应该半途而废 and 也要坚持下去. 坚定的信念是获取成功的动力 names that lasting belief as the power behind success, and 成功都是在最后一刻才到来 puts the win at the end of the persistence.","wrong":"B  要三思而后行 — Not in the text. The passage does not say to think three times. It says not to stop halfway.\nC  做事前要明确目标 — Not in the text. No step of setting a goal is given.\nD  人生总会有很多遗憾 — Opposite emphasis. Regret is what persistence avoids: 才不会留下太多遗憾. The passage does not say regret is inevitable.","trap":"The closest trap is D  人生总会有很多遗憾 (Opposite emphasis). 遗憾 is in the last sentence. It is the result of giving up, not a fact of every life."},"69":{"answer":"C","gloss":"C  要保护孩子的好奇心","type":"Short passage · choose the statement that agrees with the text","explain":"The opening command is 一定要培养孩子对世界的好奇心. 要保护孩子的好奇心 means one should protect the child's curiosity. Everything after that command depends on the curiosity staying alive: 仔细观察生活, 亲身研究和体验, and 对周围环境产生兴趣. The passage treats that curiosity as what must be kept if the child is to gain 创造能力.","wrong":"A  对人要诚实 — Not in the text. Honesty is not mentioned.\nB  要让孩子学会独立 — Not in the text. Observing and trying things is not a command to become independent.\nD  父母是孩子最好的老师 — Opposite. 让兴趣成为孩子的老师. The teacher named here is interest, not the parents.","trap":"The closest trap is D  父母是孩子最好的老师 (Opposite). 老师 is in the passage. The sentence gives that role to 兴趣."},"70":{"answer":"D","gloss":"D  四合院反映了传统的建筑风格","type":"Short passage · choose the statement that agrees with the text","explain":"The first sentence calls the 四合院 北京的传统民居形式, and the close says that from 平面布局 to 内部结构 it formed 特有的京味风格. 四合院反映了传统的建筑风格 means the courtyard house reflects a traditional architectural style. A traditional dwelling, completed as a Beijing style of plan and structure, is that reflection. The centuries from Liao to Qing are the long making of the form.","wrong":"A  四合院有4个门 — Keyword trap. 四 is the four directions, east, west, south and north, not four doors.\nB  四合院建于清朝 — Too narrow. It had already taken shape in the Liao, and was completed through Jin, Yuan, Ming and Qing. Qing is the last stage, not the whole origin.\nC  “四”指经历了4个朝代 — Wrong meaning. Those dynasties are the history. 四 in 四合 is defined as the four sides.","trap":"The closest trap is A  四合院有4个门 (Keyword trap). The number four is easy to turn into four doors. The passage defines it as four directions."},"71":{"answer":"B","gloss":"B  乐于助人","type":"Reading comprehension · choose the correct answer","explain":"Xiao Wang 愿意留下来帮忙 even though 公司的速记员都去看比赛了 and he himself would have left in five minutes. 乐于助人 means glad to help others. He also 并没想要收取任何费用, so the help is given freely. The stranger needed someone to 整理一下资料, and Xiao Wang is the one who stays to do that work.","wrong":"A  是律师 — Wrong person. The stranger is the lawyer. Xiao Wang works in the company and is about to leave for the weekend.\nC  不喜欢开玩笑 — Opposite. He 开玩笑地回答 that the fee is 1,000 yuan.\nD  想得到1000元 — Opposite. He immediately explains that he was joking and 并没想要收取任何费用.","trap":"The closest trap is D  想得到1000元 (Opposite). The number 1,000 is said. It is a joke, and he refuses the fee."},"72":{"answer":"A","gloss":"A  律师很感谢小王","type":"Reading comprehension · choose the correct answer","explain":"When the work is finished, 他向小王表示了谢意. 律师很感谢小王 means the lawyer is very grateful to Xiao Wang. The thanks come before he asks what he should pay, and the later invitation, 邀请他到自己的公司工作, continues that gratitude for help the lawyer had not been owed.","wrong":"B  小王是公司经理 — Not in the text. He can stay after the stenographers have gone. No title is given.\nC  律师没给小王钱 — Opposite. 那位律师竟然真的这样做了, and 'this' is paying the 1,000 yuan he had agreed to.\nD  那天的工作很快就做完了 — Opposite. 把工作做完时，已经很晚了.","trap":"The closest trap is C  律师没给小王钱 (Opposite). Xiao Wang refuses the money in words. The next sentence says the lawyer paid it anyway."},"73":{"answer":"D","gloss":"D  律师请小王去自己的公司工作","type":"Reading comprehension · choose the correct answer","explain":"The time is 3个月之后, and by then Xiao Wang has 忘到九霄云外. What happens is 律师又找到小王，邀请他到自己的公司工作. 律师请小王去自己的公司工作 means the lawyer asks Xiao Wang to come and work at his own company. 薪水会比现在高得多 is the term of that invitation, a higher salary, not a cut.","wrong":"A  小王辞职了 — Not in the text. He is invited. The passage does not say he has resigned.\nB  小王准备换工作 — Too early. The lawyer invites him. The passage does not say Xiao Wang has decided to move.\nC  小王的工资减少了 — Opposite. 薪水会比现在高得多.","trap":"The closest trap is B  小王准备换工作 (Too early). An invitation three months later is not yet his plan to change jobs."},"74":{"answer":"C","gloss":"C  机会偏爱不怕麻烦的人","type":"Reading comprehension · choose the correct answer","explain":"The last paragraph states the lesson in its own words: 如果不是你的工作，而你做了，这就是机会, and 机会总是装成“麻烦”的样子. 机会偏爱不怕麻烦的人 means opportunity favors the person who is not afraid of trouble. Xiao Wang takes on someone else's materials and stays late, treating the match as something that can wait. That trouble is the shape the later job had been wearing.","wrong":"A  细节决定成败 — Not in the text. No detail is named as the cause of success.\nB  不要过分看重金钱 — Half true. He does not want the fee, but the stated lesson is that opportunity comes dressed as trouble.\nD  当天的工作要当天完成 — Scope. That is why the stranger needs help today. The last paragraph states the lesson about opportunity.","trap":"The closest trap is B  不要过分看重金钱 (Half true). Refusing the fee is part of the story. The closing sentence is about a chance that looks like trouble."},"75":{"answer":"B","gloss":"B  会暂时降低体能","type":"Reading comprehension · choose the correct answer","explain":"The definition comes first: training produces 体能暂时下降的现象, and that phenomenon 被称为“运动性疲劳”. 会暂时降低体能 means it temporarily lowers physical capacity. 暂时下降 is that temporary drop. The passage calls this 常有的事 for athletes, a normal reaction, not an accident caused by bad training.","wrong":"A  难以恢复 — Too absolute. Only 重度疲劳 is hard to recover from. Mild fatigue recovers quickly. The definition is a temporary drop.\nC  会影响运动员情绪 — Not in the text. Mood is not listed as a result. Psychology is mentioned later as a factor in the fatigue, not as damage the fatigue causes.\nD  是由训练不当引起的 — Opposite. 产生疲劳是训练的正常反应. It is not blamed on bad training.","trap":"The closest trap is A  难以恢复 (Too absolute). 重度疲劳则很难恢复 describes one degree, not every case of this fatigue."},"76":{"answer":"C","gloss":"C  运动员的自我感觉","type":"Reading comprehension · choose the correct answer","explain":"The judging sentence is 疲劳的程度可以通过运动员的自我感觉和某些外部表现来判断. 运动员的自我感觉 means the athlete's own feeling. That is the first of the two signs the passage names for telling how heavy the fatigue is. Mild, moderate and severe are the degrees this feeling, together with outward signs, is used to sort.","wrong":"A  医生的诊断 — Not in the text. No doctor is mentioned.\nB  锻炼持续的时间 — Not in the text. How long the exercise lasts is not the measure given.\nD  运动员的心理状态 — Wrong focus. Psychology is related to the fatigue itself. The degree is judged by 自我感觉和某些外部表现.","trap":"The closest trap is D  运动员的心理状态 (Wrong focus). 心理因素 appears later, as something the coach should allow for, not as the way the degree is judged."},"77":{"answer":"C","gloss":"C  疲劳是正常的训练反应","type":"Reading comprehension · choose the correct answer","explain":"The passage draws the conclusion with 所以: 产生疲劳是训练的正常反应. 疲劳是正常的训练反应 means fatigue is a normal reaction to training. The quotation just before it, 疲劳是检查训练效果的一个标志, treats fatigue as a useful sign, and 常有的事 says athletes meet it regularly.","wrong":"A  训练后不宜洗澡 — Opposite. A warm bath after training is 最简单易行的消除轻度疲劳的方法.\nB  运动性疲劳可以避免 — Opposite. It is a normal reaction of training. The passage does not say it can be avoided.\nD  多吃肉蛋食品可减轻疲劳 — Opposite. That belief 其实是错误的. The suggestion is vegetables and fruit.","trap":"The closest trap is D  多吃肉蛋食品可减轻疲劳 (Opposite). Meat and eggs are the common guess the passage rejects."},"78":{"answer":"B","gloss":"B  运动与疲劳","type":"Reading comprehension · choose the correct answer","explain":"The article defines 运动性疲劳, explains it as a normal result of 体育锻炼或者运动训练, sorts mild, moderate and severe degrees, and then discusses recovery. 运动与疲劳 means exercise and fatigue. Those two words name the whole subject, from the first drop in 体能 to the coach's methods for recovering.","wrong":"A  饮食与健康 — Scope. Food is one recovery tip at the end. The subject from the first sentence is fatigue from exercise.\nC  怎样避免产生疲劳 — Opposite. 没有疲劳等于没有训练. The passage does not teach how to avoid fatigue.\nD  做一名优秀的教练 — Scope. The coach is one reader. The article defines the fatigue, its degrees and recovery.","trap":"The closest trap is C  怎样避免产生疲劳 (Opposite). A title about avoiding fatigue fights the sentence that calls fatigue a normal sign of training."},"79":{"answer":"D","gloss":"D  对客人不友好","type":"Reading comprehension · choose the correct answer","explain":"The rich family's first action is stated without softening: 这家人对他们并不友好. 对客人不友好 means unfriendly to the guests. The next detail shows what that unfriendliness does. They 拒绝让他们在舒适的客厅过夜 and put the immortals in 冰冷的地下室. The younger immortal later calls this the family that 什么都有, yet the treatment of the guests is cold.","wrong":"A  十分狡猾 — Not shown. Hidden gold can make them sound cunning. What the passage states is that they are not friendly.\nB  生活很单调 — Not in the text. Being rich is not described as a dull life.\nC  很容易相处 — Opposite. 并不友好, and they refuse the comfortable living room.","trap":"The closest trap is C  很容易相处 (Opposite). They do give the gods a place to sleep. It is a cold basement, and the passage calls them unfriendly."},"80":{"answer":"D","gloss":"D  不想让富人得到黄金","type":"Reading comprehension · choose the correct answer","explain":"The younger immortal thinks the repair helped the rich, 帮助他们修补墙洞. The elder's reason is different: through the hole he 看到墙里面堆满了金块, and 因为主人不愿意分享他的财富，所以我把墙洞填上了. 不想让富人得到黄金 means he did not want the rich man to obtain the gold. Sealing the hole, after seeing that gold, keeps it from an owner who will not share. The line 有些事并不像它看上去那样 warns that the repair is not a favor.","wrong":"A  使房间保持温暖 — Not the reason. The basement is cold, but he repairs the hole because he has seen gold inside the wall.\nB  想把金子给穷人 — Opposite direction. He seals the gold away from the rich owner. He does not take it to the poor family.\nC  感谢富人的招待 — Opposite. The rich family is not friendly, and he says the owner is unwilling to share.","trap":"The closest trap is B  想把金子给穷人 (Opposite direction). The poor family is in the story. He does not move the gold to them. He stops the rich man from finding it."},"81":{"answer":"A","gloss":"A  奶牛死了","type":"Reading comprehension · choose the correct answer","explain":"In the morning 农夫和他的妻子在哭泣, and the fact next to the tears is 他们唯一的一头奶牛死了. 奶牛死了 means the cow died. That is the loss they can see, and it is why they cry. They do not yet know the elder's substitution. The younger immortal also treats the cow's death as the event that needs explaining.","wrong":"B  孩子丢了 — Not in the text. No child is mentioned.\nC  食物被吃光了 — Not the reason for the tears. They had little food and still shared it. The next morning they cry because the cow is dead.\nD  知道他的妻子会死掉 — Wrong time. The wife was the one who would have died, and the god substituted the cow. They are crying about the cow. The passage does not say they know the exchange.","trap":"The closest trap is D  知道他的妻子会死掉 (Wrong time). The wife's death is the hidden story. What they see, and cry over, is the dead cow."},"82":{"answer":"C","gloss":"C  眼见不一定是真的","type":"Reading comprehension · choose the correct answer","explain":"The sentence 有些事并不像它看上去那样 is spoken twice, once after the wall is repaired and once after the cow's death is explained. 眼见不一定是真的 means what you see is not necessarily the truth. The repair looks like help to the rich, and the cow's death looks like harm to the poor, yet the gold was being kept back and the wife was being saved. Sight of those two events does not show what they are.","wrong":"A  做事情要公平 — Not in the text. The two families are treated differently, and fairness is not the lesson.\nB  不要看不起别人 — Not stated. The rich are unfriendly and the poor are kind, but the closing line is that things are not what they seem.\nD  通过表面现象可以看到本质 — Opposite. The young god misreads both nights. The point is that what you see is not the truth.","trap":"The closest trap is D  通过表面现象可以看到本质 (Opposite). 表面 is close to the idea. 并不像它看上去那样 says the surface does not show the truth."},"83":{"answer":"D","gloss":"D  还不十分成熟","type":"Reading comprehension · choose the correct answer","explain":"In the addition list, 30岁的人，拥有了才干, while 40岁的人，拥有了成熟. 还不十分成熟 means not yet fully mature. Maturity is placed at forty, so the thirty-year-old, credited with ability rather than with maturity, has not reached that age. The subtraction item for thirty is 失去了浪漫, and the loss of youth is saved for forty.","wrong":"A  失去了青春 — Wrong age. 失去了青春 is the subtraction item for forty. Thirty loses 浪漫.\nB  还十分天真 — Wrong age. 儿时的天真 belongs to childhood. Thirty is credited with 才干.\nC  变得轻松起来 — Wrong age. 拥有了轻松 is sixty.","trap":"The closest trap is A  失去了青春 (Wrong age). Youth and thirty sit near each other. The text places 青春 at twenty on the addition side, and its loss at forty."},"84":{"answer":"C","gloss":"C  生命中失去的东西","type":"Reading comprehension · choose the correct answer","explain":"The year-end count is 算一算自己失去、得到了什么, and the comparison is “收获”大于“支出”, or the reverse. 生命中失去的东西 means what has been lost in life. 支出 stands on the same side as 失去, the things subtracted, while 收获 stands with 得到. The subtraction examples, childhood, romance, youth, dreams and health, are losses of that kind.","wrong":"A  年龄的增加 — Wrong focus. Age is the frame of the lists. 支出 is set beside 失去, not beside growing older.\nB  人生经验的积累 — Opposite side. Experience is what addition brings, on the 收获 side.\nD  生命中得到的东西 — Opposite. 得到 pairs with 收获. 支出 pairs with 失去.","trap":"The closest trap is D  生命中得到的东西 (Opposite). The sentence names both 失去 and 得到. 支出 is the loss."},"85":{"answer":"A","gloss":"A  希望","type":"Reading comprehension · choose the correct answer","explain":"The closing contrast gives each operation its product. “减法”给我们带来压力, and “加法”给我们带来了希望. 希望 means hope. The same sentence continues that addition makes us 增添了阅历，积累了财富, and that this accumulation brings 聪明、自信和理智. Hope is the word the passage itself puts on the addition side.","wrong":"B  无奈 — Not in the text. Helplessness is not named as what addition brings.\nC  压力 — Wrong side. 压力 is what subtraction brings.\nD  公平 — Not in the text. Fairness is not discussed.","trap":"The closest trap is C  压力 (Wrong side). Pressure is the other product, and it is attached to 减法."},"86":{"answer":"B","gloss":"B  生命的加减法","type":"Reading comprehension · choose the correct answer","explain":"The passage names its subject in the third sentence: 这就是生命的加减法. 生命的加减法 means the addition and subtraction of life. Everything after that sorts thoughts into 减法思维 and 加法思维, then says we cannot do without either, and ends by pairing pressure with subtraction and hope with addition.","wrong":"A  生命的意义 — Too wide. The passage names its subject as 生命的加减法, not the meaning of life in general.\nC  如何减轻压力 — Scope. Pressure is the product of subtraction. The passage does not teach a method for reducing it, and it says we cannot do without subtraction.\nD  人生不同阶段的特点 — Scope. The ages are examples inside the two ways of thinking. The subject is the addition and the subtraction.","trap":"The closest trap is D  人生不同阶段的特点 (Scope). The age list is long. It serves the two kinds of thinking."},"87":{"answer":"C","gloss":"C  后来生意很成功","type":"Reading comprehension · choose the correct answer","explain":"The comeback is counted in the text. He starts 以仅剩的一万元为本金, and 短短几年内，他的资产就突飞猛进到一亿元, a rise that 创造了一个商业神话. 后来生意很成功 means later his business was very successful. This later success is set against the earlier ending, 以破产告终. The university talk about how ten thousand became one hundred million confirms that the success is the point of the story.","wrong":"A  对父母孝顺 — Not in the text. His parents are not in the story. Li Ka-shing is someone else's father.\nB  财务知识丰富 — Not shown. He failed for years and could not find the reason. The later success is one principle, not a claim that his financial knowledge is deep.\nD  和李嘉诚是好朋友 — Wrong person. He reads an interview with Li Zekai about Li Ka-shing. He never meets him.","trap":"The closest trap is D  和李嘉诚是好朋友 (Wrong person). The famous name is easy to turn into a friendship. The builder only reads about him."},"88":{"answer":"C","gloss":"C  善于跟别人合作","type":"Reading comprehension · choose the correct answer","explain":"Li Ka-shing's instruction, quoted by his son, is about 你和别人合作 and taking only six parts when seven or eight would still be reasonable. 善于跟别人合作 means good at cooperating with other people. The builder explains the result: because others 会赚到便宜, 有更多的人愿意和他合作. More people choosing to work with him is the sign of that skill.","wrong":"A  不会做生意 — Opposite. The story his son tells is about how he handles profit in a partnership, and more people want to work with him.\nB  是著名的教育家 — Not in the text. Teaching his son how to treat people does not make him a famous educator.\nD  开始时只有一万元资金 — Wrong person. 一万元 is the builder's remaining capital, not Li Ka-shing's.","trap":"The closest trap is D  开始时只有一万元资金 (Wrong person). The number 10,000 belongs to the builder."},"89":{"answer":"B","gloss":"B  让别人多赚钱","type":"Reading comprehension · choose the correct answer","explain":"Asked for the secret, he says the interview taught him one principle: 做生意的最高境界其实就是让利于人. 让别人多赚钱 means let other people earn more money. He restates it with Li Ka-shing's numbers: 总是让别人多赚2分利润, while he himself 只拿6分. Yielding that profit is what he calls the highest level, above squeezing the partner.","wrong":"A  资金要充足 — Opposite of the lesson he states. He restarted with only 10,000. The highest level he names is yielding profit.\nC  要做好投资计划 — Not in the text. No investment plan is mentioned.\nD  寻找更多合作伙伴 — Result, not the principle. More partners come because he lets them earn. The principle he names is 让利于人.","trap":"The closest trap is D  寻找更多合作伙伴 (Result, not the principle). 有更多的人愿意和他合作 is the result. The sentence he calls the highest level is letting the other person earn more."},"90":{"answer":"D","gloss":"D  做生意要看得长远些","type":"Reading comprehension · choose the correct answer","explain":"The underlined sentence is the builder's summary of his old mistake: 多赚了眼前，输光了未来. 做生意要看得长远些 means in business one has to look a bit further ahead. He used to 千方百计地从对方身上多赚钱 and thought that was success. The sentence sets today's extra profit against a lost future, so a deal has to be judged beyond the money in front of you. Li Ka-shing's six parts bring 生意却多了100个 later, which is that longer view.","wrong":"A  要珍惜现在 — Opposite. 多赚了眼前 is the mistake. The extra profit in front of him is what he used to chase.\nB  要善于积累经验 — Not the meaning of the underlined sentence. Experience is not what 输光了未来 names.\nC  要学会承担责任 — Not in the text. The contrast is today's profit against a lost future, not responsibility.","trap":"The closest trap is A  要珍惜现在 (Opposite). 眼前 makes 'cherish the present' look right. The sentence says grabbing what is in front of you cost him the future."}}</script>
+
+  <script>
+    const QUIZ_ID = "HSK5-H51008-Reading-TM-20261006";
+    const QUIZ_VERSION = "1.0";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUm1JYbtOns1Z5PaS3KO6D47rcyfc9eWCpXvBKEpM-qskJpCHXrFvqeIaWZscpxXzE/exec";
+    const KEYS = ["A", "B", "C", "D"];
+    const DATA = JSON.parse(document.getElementById("exam-data").textContent);
+    const ANSWER = {};
+    const answers = {};
+    let studentName = "";
+    let studentClass = "";
+    let quizInProgress = false;
+    let submitted = false;
+    let navigationAwayCount = 0;
+    let examStartedAt = 0;
+    let examSubmittedAt = 0;
+
+    DATA.listening.forEach(row => { ANSWER[row[0]] = row[1]; });
+    DATA.cloze.forEach(group => group.qs.forEach(row => { ANSWER[row[0]] = row[1]; }));
+    DATA.match.forEach(row => { ANSWER[row[0]] = row[1]; });
+    DATA.long.forEach(group => group.qs.forEach(row => { ANSWER[row[0]] = row[1]; }));
+
+    const NOTES = JSON.parse(document.getElementById("exam-notes").textContent);
+
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+    function makeOptions(n, options) {
+      const box = el("div", "options");
+      options.forEach((text, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option";
+        btn.dataset.q = String(n);
+        btn.dataset.choice = KEYS[i];
+        btn.append(el("span", "opt-key", KEYS[i]), el("span", "opt-text", text));
+        box.append(btn);
+      });
+      return box;
+    }
+    function questionCard(n, stem) {
+      const card = el("article", "question-card");
+      card.id = "q" + n;
+      card.dataset.question = String(n);
+      const stemRow = el("div", "q-stem");
+      stemRow.append(el("span", "q-no", String(n)));
+      if (stem) stemRow.append(el("div", "q-text", stem));
+      card.append(stemRow);
+      return card;
+    }
+    function fillBlanks(text) {
+      const frag = document.createDocumentFragment();
+      const re = /\{(\d+)\}/g;
+      let last = 0;
+      let match;
+      while ((match = re.exec(text))) {
+        frag.append(document.createTextNode(text.slice(last, match.index)));
+        const mark = el("span", "blank-mark", match[1]);
+        mark.dataset.evidence = "q" + match[1];
+        frag.append(mark);
+        last = match.index + match[0].length;
+      }
+      frag.append(document.createTextNode(text.slice(last)));
+      return frag;
+    }
+    function renderListening(rows, host) {
+      rows.forEach(row => {
+        const card = questionCard(row[0], "");
+        card.append(makeOptions(row[0], row[2]));
+        host.append(card);
+      });
+    }
+
+    function attachAnalysis(card, n) {
+      const note = NOTES[String(n)];
+      if (!note) return;
+      const actions = el("div", "analysis-actions");
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "primary-btn";
+      toggle.dataset.action = "answer";
+      toggle.textContent = "显示答案与解析";
+      toggle.setAttribute("aria-expanded", "false");
+      actions.append(toggle);
+      const panel = el("div", "analysis-panel");
+      panel.hidden = true;
+      const ans = el("p", "ans-line");
+      ans.append(el("b", "", "Answer: "), document.createTextNode(note.gloss || note.answer));
+      const body = el("div", "analysis-body");
+      [["Type", note.type], ["Explanation", note.explain], ["Other choices", note.wrong], ["Easy mistake", note.trap]].forEach(pair => {
+        const p = el("p");
+        p.append(el("span", "tag", pair[0]));
+        p.append(document.createTextNode(pair[1]));
+        body.append(p);
+      });
+      panel.append(ans, body);
+      card.append(actions, panel);
+    }
+    function renderCloze() {
+      const root = document.getElementById("cloze-root");
+      DATA.cloze.forEach(group => {
+        const workspace = el("div", "lesson-workspace");
+        const source = el("div", "source-pane");
+        const passage = el("div", "passage-card");
+        passage.append(el("h4", "", "第" + group.label + "题"));
+        group.paras.forEach(text => {
+          const p = el("p", "passage-para");
+          p.append(fillBlanks(text));
+          passage.append(p);
+        });
+        source.append(passage);
+        const teach = el("div", "teaching-pane");
+        group.qs.forEach(row => {
+          const card = questionCard(row[0], "选择最合适的一项。");
+          card.append(makeOptions(row[0], row[2]));
+          attachAnalysis(card, row[0]);
+          teach.append(card);
+        });
+        workspace.append(source, teach);
+        root.append(workspace);
+      });
+    }
+    function renderMatch() {
+      const root = document.getElementById("match-root");
+      DATA.match.forEach(row => {
+        const card = questionCard(row[0], "");
+        card.append(el("p", "match-text", row[2]));
+        card.append(makeOptions(row[0], row[3]));
+        attachAnalysis(card, row[0]);
+        root.append(card);
+      });
+    }
+    function renderLong() {
+      const root = document.getElementById("long-root");
+      DATA.long.forEach(group => {
+        const workspace = el("div", "lesson-workspace");
+        const source = el("div", "source-pane");
+        const passage = el("div", "passage-card");
+        passage.append(el("h4", "", "第" + group.label + "题"));
+        group.paras.forEach(text => passage.append(el("p", "passage-para", text)));
+        source.append(passage);
+        const teach = el("div", "teaching-pane");
+        group.qs.forEach(row => {
+          const card = questionCard(row[0], row[2]);
+          card.append(makeOptions(row[0], row[3]));
+          attachAnalysis(card, row[0]);
+          teach.append(card);
+        });
+        workspace.append(source, teach);
+        root.append(workspace);
+      });
+    }
+    function renderSentences() {
+      const root = document.getElementById("sentence-root");
+      DATA.sentences.forEach(row => {
+        const card = questionCard(row[0], "用所给词语完成句子。");
+        const chips = el("div", "word-row");
+        row[1].forEach(word => chips.append(el("span", "word-chip", word)));
+        const area = document.createElement("textarea");
+        area.className = "write-box";
+        area.dataset.q = String(row[0]);
+        area.setAttribute("aria-label", "第" + row[0] + "题");
+        const ref = el("p", "ref-line", "参考答案：" + row[2]);
+        card.append(chips, area, ref);
+        root.append(card);
+      });
+    }
+
+    renderCloze();
+    renderMatch();
+    renderLong();
+
+    const loginPage = document.getElementById("loginPage");
+    const nameInput = document.getElementById("studentName");
+    const classInput = document.getElementById("studentClass");
+    const warningOverlay = document.getElementById("warning-overlay");
+    const storageKey = "hskQuizProgress_" + QUIZ_ID;
+
+    function objectiveDone() {
+      let n = 0;
+      for (let i = 46; i <= 90; i++) if (answers[i]) n++;
+      return n;
+    }
+    function updateProgress() {
+      document.getElementById("progressText").textContent = "阅读 " + objectiveDone() + "/45";
+    }
+    function saveProgress() {
+      if (!quizInProgress) return;
+      localStorage.setItem(storageKey, JSON.stringify({
+        studentName, studentClass, quizId: QUIZ_ID, quizVersion: QUIZ_VERSION,
+        questionCount: 45, answers, navigationAwayCount, examStartedAt, timestamp: Date.now()
+      }));
+      document.getElementById("save-status").textContent = "已保存 " + new Date().toLocaleTimeString();
+    }
+    function applyAnswers() {
+      document.querySelectorAll(".option").forEach(btn => {
+        const chosen = answers[btn.dataset.q] === btn.dataset.choice;
+        btn.classList.toggle("chosen", chosen);
+        btn.setAttribute("aria-pressed", chosen ? "true" : "false");
+      });
+      document.querySelectorAll("textarea[data-q]").forEach(area => {
+        area.value = answers[area.dataset.q] || "";
+        refreshCount(area);
+      });
+      updateProgress();
+    }
+    function loadProgress() {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return false;
+      try {
+        const data = JSON.parse(raw);
+        if (data.studentName !== nameInput.value.trim() || data.studentClass !== classInput.value.trim()) return false;
+        if (data.quizId !== QUIZ_ID || data.quizVersion !== QUIZ_VERSION || data.questionCount !== 45) {
+          localStorage.removeItem(storageKey);
+          return false;
+        }
+        Object.assign(answers, data.answers || {});
+        navigationAwayCount = data.navigationAwayCount || 0;
+        examStartedAt = data.examStartedAt || data.timestamp || 0;
+        applyAnswers();
+        return true;
+      } catch (error) {
+        localStorage.removeItem(storageKey);
+        return false;
+      }
+    }
+    function refreshCount(area) {
+      const n = area.dataset.q;
+      if (n !== "99" && n !== "100") return;
+      const han = (area.value.match(/[\u4e00-\u9fff]/g) || []).length;
+      document.getElementById("count-" + n).textContent = "汉字 " + han;
+    }
+    function measureHeader() {
+      const bar = document.querySelector(".utility-bar");
+      const nav = document.querySelector(".top-nav");
+      if (!bar || !nav || !document.body.classList.contains("in-exam")) return;
+      const u = bar.offsetHeight;
+      document.documentElement.style.setProperty("--utility-height", u + "px");
+      document.documentElement.style.setProperty("--fixed-header-height", (u + nav.offsetHeight) + "px");
+    }
+    function setFont(px) {
+      const size = Math.max(14, Math.min(28, px));
+      document.documentElement.style.setProperty("--base-size", size + "px");
+      document.getElementById("font-value").textContent = size + "px";
+      document.getElementById("font-range").value = String(size);
+    }
+    function firstMissing() {
+      for (let i = 46; i <= 90; i++) if (!answers[i]) return String(i);
+      return "";
+    }
+    function hanCount(text) {
+      return (String(text || "").match(/[\u4e00-\u9fff]/g) || []).length;
+    }
+
+    function setAnalysis(card, show) {
+      const panel = card.querySelector(".analysis-panel");
+      const button = card.querySelector("button[data-action='answer']");
+      if (!panel || !button) return;
+      panel.hidden = !show;
+      button.textContent = show ? "收起答案与解析" : "显示答案与解析";
+      button.setAttribute("aria-expanded", show ? "true" : "false");
+    }
+    function toggleAnswer(card, button) {
+      const panel = card.querySelector(".analysis-panel");
+      if (!panel) return;
+      setAnalysis(card, panel.hidden);
+    }
+    function showAllAnalysis(show) {
+      if (!submitted) return;
+      document.querySelectorAll(".question-card").forEach(card => setAnalysis(card, show));
+    }
+    document.getElementById("show-all").addEventListener("click", () => showAllAnalysis(true));
+    document.getElementById("hide-all").addEventListener("click", () => showAllAnalysis(false));
+
+    document.getElementById("examRoot").addEventListener("click", event => {
+      const answerBtn = event.target.closest("button[data-action='answer']");
+      if (answerBtn) {
+        if (!submitted) return;
+        toggleAnswer(answerBtn.closest(".question-card"), answerBtn);
+        return;
+      }
+      const blank = event.target.closest(".blank-mark");
+      if (blank) {
+        const card = document.getElementById(blank.dataset.evidence);
+        if (!card) return;
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        card.classList.remove("locate-flash");
+        void card.offsetWidth;
+        card.classList.add("locate-flash");
+        return;
+      }
+      const btn = event.target.closest(".option");
+      if (!btn || submitted) return;
+      const card = btn.closest(".question-card");
+      card.querySelectorAll(".option").forEach(item => {
+        item.classList.remove("chosen");
+        item.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("chosen");
+      btn.setAttribute("aria-pressed", "true");
+      answers[btn.dataset.q] = btn.dataset.choice;
+      updateProgress();
+      saveProgress();
+    });
+    document.getElementById("examRoot").addEventListener("input", event => {
+      const area = event.target.closest("textarea[data-q]");
+      if (!area || submitted) return;
+      answers[area.dataset.q] = area.value;
+      refreshCount(area);
+      updateProgress();
+      saveProgress();
+    });
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const name = nameInput.value.trim();
+      const klass = classInput.value.trim();
+      if (!name || !klass) {
+        alert("请填写姓名和班级。\nPlease enter your name and class.");
+        return;
+      }
+      studentName = name;
+      studentClass = klass;
+      const restored = loadProgress();
+      if (!examStartedAt) examStartedAt = Date.now();
+      quizInProgress = true;
+      document.body.classList.add("in-exam");
+      loginPage.classList.add("is-hidden");
+      document.getElementById("whoName").textContent = name + " · " + klass;
+      measureHeader();
+      if (restored) document.getElementById("save-status").textContent = "已恢复上次作答";
+    });
+    nameInput.addEventListener("keydown", event => { if (event.key === "Enter") classInput.focus(); });
+    classInput.addEventListener("keydown", event => { if (event.key === "Enter") document.getElementById("loginBtn").click(); });
+
+    document.getElementById("font-range").addEventListener("input", event => setFont(Number(event.target.value)));
+    document.getElementById("font-down").addEventListener("click", () => setFont(Number(document.getElementById("font-range").value) - 1));
+    document.getElementById("font-up").addEventListener("click", () => setFont(Number(document.getElementById("font-range").value) + 1));
+
+    const navLinks = Array.from(document.querySelectorAll(".top-nav a"));
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute("href")));
+    function markNav() {
+      const line = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fixed-header-height")) || 104) + 24;
+      let current = sections[0];
+      sections.forEach(section => { if (section.getBoundingClientRect().top <= line) current = section; });
+      navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + current.id));
+    }
+    document.addEventListener("scroll", markNav, { passive: true });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && quizInProgress) {
+        navigationAwayCount++;
+        warningOverlay.style.display = "flex";
+        saveProgress();
+      }
+      if (!document.hidden) warningOverlay.style.display = "none";
+    });
+    window.addEventListener("beforeunload", event => {
+      if (!quizInProgress) return;
+      event.preventDefault();
+      event.returnValue = "";
+    });
+    window.addEventListener("resize", measureHeader);
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      if (submitted) return;
+      const missing = firstMissing();
+      if (missing) {
+        alert("请完成所有题目后再交卷。\nPlease complete every question before submitting.");
+        const card = document.getElementById("q" + missing);
+        if (card) {
+          card.classList.add("locate-flash");
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+      if (!confirm("确定交卷吗？提交后不能再修改。\nAre you sure you want to submit?")) return;
+      gradeAndSend();
+    });
+
+    function gradeAndSend() {
+      quizInProgress = false;
+      submitted = true;
+      let score = 0;
+      for (let i = 46; i <= 90; i++) if (answers[i] === ANSWER[i]) score++;
+      document.querySelectorAll(".option").forEach(btn => {
+        btn.disabled = true;
+        const correct = ANSWER[btn.dataset.q];
+        if (btn.dataset.choice === correct) btn.classList.add("mark-correct");
+        else if (btn.classList.contains("chosen")) btn.classList.add("mark-wrong");
+      });
+      document.querySelectorAll("textarea[data-q]").forEach(area => { area.readOnly = true; });
+      let wrongCount = 0;
+      let firstWrong = null;
+      document.querySelectorAll(".question-card").forEach(card => {
+        card.classList.add("graded");
+        const n = card.dataset.question;
+        if (answers[n] === ANSWER[n]) return;
+        wrongCount++;
+        card.classList.add("needs-review");
+        setAnalysis(card, true);
+        if (!firstWrong) firstWrong = card;
+      });
+      document.getElementById("show-all").hidden = false;
+      document.getElementById("hide-all").hidden = false;
+      const banner = document.getElementById("score-banner");
+      banner.hidden = false;
+      document.getElementById("scoreLine").textContent = score + " / 45";
+      document.getElementById("switchLine").textContent = "切换页面次数 (Page switch count): " + navigationAwayCount;
+      document.getElementById("writeLine").textContent = wrongCount
+        ? "做错 " + wrongCount + " 题，解析已经展开。做对的题可以点「显示答案与解析」。右上角「输出」可下载 PDF。"
+        : "全部正确。每题仍可点「显示答案与解析」查看。右上角「输出」可下载 PDF。";
+      examSubmittedAt = Date.now();
+      document.getElementById("progressText").textContent = "得分 " + score + "/45";
+      (firstWrong || banner).scrollIntoView({ behavior: "smooth", block: "center" });
+      localStorage.removeItem(storageKey);
+      sendScore(score);
+    }
+    function sendScore(score) {
+      const status = document.getElementById("submitStatus");
+      const formData = new FormData();
+      formData.append("studentName", studentName);
+      formData.append("studentClass", studentClass);
+      formData.append("score", String(score));
+      formData.append("total", "45");
+      formData.append("switchCount", String(navigationAwayCount));
+      fetch(SCRIPT_URL, { method: "POST", body: formData })
+        .then(response => {
+          if (!response.ok) throw new Error(response.statusText);
+          return response.json();
+        })
+        .then(data => {
+          if (data.result === "success") {
+            status.textContent = "成绩提交成功！";
+            status.className = "ok";
+          } else throw new Error(data.message || "Backend error");
+        })
+        .catch(() => {
+          status.textContent = "成绩提交失败，请联系老师。";
+          status.className = "bad";
+        });
+    }
+
+    const Q_FROM = 46;
+    const Q_TO = 90;
+    const Q_COUNT = 45;
+
+    function currentScore() {
+      let score = 0;
+      for (let i = Q_FROM; i <= Q_TO; i++) if (answers[i] === ANSWER[i]) score++;
+      return score;
+    }
+    function formatDuration(ms) {
+      const total = Math.max(0, Math.round(ms / 1000));
+      const hours = Math.floor(total / 3600);
+      const minutes = Math.floor((total % 3600) / 60);
+      const seconds = total % 60;
+      if (hours) return hours + "小时" + minutes + "分";
+      if (minutes) return minutes + "分" + seconds + "秒";
+      return seconds + "秒";
+    }
+    function examTimeBits() {
+      const end = new Date(examSubmittedAt || Date.now());
+      const week = "日一二三四五六"[end.getDay()];
+      const pad = n => String(n).padStart(2, "0");
+      const dateLine = end.getFullYear() + "年" + (end.getMonth() + 1) + "月" + end.getDate() + "日  星期" + week;
+      const endClock = pad(end.getHours()) + ":" + pad(end.getMinutes());
+      let clock = endClock;
+      if (examStartedAt) {
+        const start = new Date(examStartedAt);
+        const startClock = pad(start.getHours()) + ":" + pad(start.getMinutes());
+        if (start.toDateString() === end.toDateString()) clock = startClock === endClock ? endClock : startClock + " – " + endClock;
+        else clock = (start.getMonth() + 1) + "月" + start.getDate() + "日 " + startClock + " – " + (end.getMonth() + 1) + "月" + end.getDate() + "日 " + endClock;
+      }
+      return { dateLine: dateLine, clock: clock };
+    }
+    function readingItem(n) {
+      let group;
+      let row;
+      let i;
+      let j;
+      for (i = 0; i < DATA.cloze.length; i++) {
+        group = DATA.cloze[i];
+        for (j = 0; j < group.qs.length; j++) {
+          if (group.qs[j][0] !== n) continue;
+          row = group.qs[j];
+          const source = group.paras.map(text => text.replace(/\{(\d+)\}/g, (all, num) => (
+            num === String(n) ? "（" + num + "）" : "（ ）"
+          )));
+          let prompt = "选择最合适的一项。";
+          group.paras.forEach(text => {
+            if (text.indexOf("{" + n + "}") === -1) return;
+            prompt = text.replace(/\{(\d+)\}/g, (all, num) => (
+              num === String(n) ? "（" + num + "）" : "（ ）"
+            ));
+          });
+          return {
+            section: "阅读一  ·  选词填空",
+            prompt: prompt,
+            options: row[2].map((text, index) => "ABCD"[index] + "    " + text),
+            source: source.join("\n\n")
+          };
+        }
+      }
+      for (i = 0; i < DATA.match.length; i++) {
+        row = DATA.match[i];
+        if (row[0] !== n) continue;
+        return {
+          section: "阅读二  ·  内容一致",
+          prompt: row[2],
+          options: row[3].map((text, index) => "ABCD"[index] + "    " + text),
+          source: row[2]
+        };
+      }
+      for (i = 0; i < DATA.long.length; i++) {
+        group = DATA.long[i];
+        for (j = 0; j < group.qs.length; j++) {
+          if (group.qs[j][0] !== n) continue;
+          row = group.qs[j];
+          return {
+            section: "阅读三  ·  长文",
+            prompt: row[2],
+            options: row[3].map((text, index) => "ABCD"[index] + "    " + text),
+            source: group.paras.join("\n\n")
+          };
+        }
+      }
+      return { section: "阅读", prompt: "", options: [], source: "" };
+    }
+
+    function choiceText(n, key) {
+      if (!key) return "（未作答）";
+      const options = readingItem(n).options;
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].indexOf(key + "    ") === 0) return options[i];
+      }
+      return key;
+    }
+    function pdfFilename(score) {
+      const when = new Date(examSubmittedAt || Date.now());
+      const pad = n => String(n).padStart(2, "0");
+      const stamp = when.getFullYear() + pad(when.getMonth() + 1) + pad(when.getDate()) + "-" + pad(when.getHours()) + pad(when.getMinutes());
+      const who = String(studentName || "学生").replace(/[\\/:*?"<>|\u0000-\u001f]/g, "").trim() || "学生";
+      return who + "-" + stamp + "-H51008阅读-" + score + "分.pdf";
+    }
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+    }
+    function buildPdf(images, pixelW, pixelH) {
+      const encoder = new TextEncoder();
+      const parts = [];
+      const offsets = [0];
+      let pos = 0;
+      function add(data) {
+        const bytes = typeof data === "string" ? encoder.encode(data) : data;
+        parts.push(bytes);
+        pos += bytes.length;
+      }
+      function concat(list) {
+        let total = 0;
+        list.forEach(item => { total += item.length; });
+        const out = new Uint8Array(total);
+        let offset = 0;
+        list.forEach(item => {
+          out.set(item, offset);
+          offset += item.length;
+        });
+        return out;
+      }
+      function addObj(id, body) {
+        offsets[id] = pos;
+        add(id + " 0 obj\n");
+        add(body);
+        add("\nendobj\n");
+      }
+      add("%PDF-1.4\n");
+      const pageCount = images.length;
+      const pagePtW = 595.28;
+      const pagePtH = 841.89;
+      const kids = [];
+      for (let i = 0; i < pageCount; i++) kids.push((3 + i * 3) + " 0 R");
+      addObj(1, encoder.encode("<< /Type /Catalog /Pages 2 0 R >>"));
+      addObj(2, encoder.encode("<< /Type /Pages /Count " + pageCount + " /Kids [" + kids.join(" ") + "] >>"));
+      images.forEach((img, index) => {
+        const pageId = 3 + index * 3;
+        const contentId = pageId + 1;
+        const imageId = pageId + 2;
+        const content = encoder.encode("q " + pagePtW + " 0 0 " + pagePtH + " 0 0 cm /Im0 Do Q\n");
+        addObj(pageId, encoder.encode("<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + pagePtW + " " + pagePtH + "] /Contents " + contentId + " 0 R /Resources << /XObject << /Im0 " + imageId + " 0 R >> >> >>"));
+        addObj(contentId, concat([
+          encoder.encode("<< /Length " + content.length + " >>\nstream\n"),
+          content,
+          encoder.encode("endstream")
+        ]));
+        addObj(imageId, concat([
+          encoder.encode("<< /Type /XObject /Subtype /Image /Width " + pixelW + " /Height " + pixelH + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Interpolate true /Filter /DCTDecode /Length " + img.length + " >>\nstream\n"),
+          img,
+          encoder.encode("\nendstream")
+        ]));
+      });
+      const xrefAt = pos;
+      let xref = "xref\n0 " + offsets.length + "\n0000000000 65535 f \n";
+      for (let i = 1; i < offsets.length; i++) xref += String(offsets[i]).padStart(10, "0") + " 00000 n \n";
+      xref += "trailer\n<< /Size " + offsets.length + " /Root 1 0 R >>\nstartxref\n" + xrefAt + "\n%%EOF";
+      add(xref);
+      return new Blob(parts, { type: "application/pdf" });
+    }
+    async function buildScorePdf() {
+      await document.fonts.ready;
+      const score = currentScore();
+      const UI = '"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif';
+      const BODY = 'SimSun,"Songti SC","Noto Serif SC",serif';
+      const pageW = 794;
+      const pageH = 1123;
+      const scale = 2;
+      const padX = 52;
+      const padBottom = 50;
+      const maxW = pageW - padX * 2;
+      const imgW = Math.round(pageW * scale);
+      const imgH = Math.round(pageH * scale);
+      const jpegTasks = [];
+      let canvas = null;
+      let ctx = null;
+      let y = 0;
+      let pageNo = 0;
+
+      function startPage() {
+        if (canvas) jpegTasks.push(sealPage(canvas, ctx, pageNo));
+        pageNo += 1;
+        canvas = document.createElement("canvas");
+        canvas.width = imgW;
+        canvas.height = imgH;
+        ctx = canvas.getContext("2d");
+        ctx.setTransform(scale, 0, 0, scale, 0, 0);
+        ctx.fillStyle = "#fbfaf5";
+        ctx.fillRect(0, 0, pageW, pageH);
+        ctx.fillStyle = "#415e46";
+        ctx.fillRect(0, 0, pageW, 8);
+        y = 24;
+        if (pageNo > 1) {
+          ctx.fillStyle = "#6c7068";
+          ctx.font = "12px " + UI;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          ctx.fillText("HSK（五级）H51008  ·  阅读成绩单  ·  " + (studentName || ""), padX, 16);
+          y = 42;
+        }
+      }
+      function sealPage(pageCanvas, pageCtx, num) {
+        drawFooter(pageCtx, num);
+        return new Promise((resolve, reject) => {
+          pageCanvas.toBlob(blob => {
+            if (!blob) {
+              reject(new Error("页面导出失败"));
+              return;
+            }
+            blob.arrayBuffer().then(buffer => {
+              pageCanvas.width = 1;
+              pageCanvas.height = 1;
+              resolve(new Uint8Array(buffer));
+            }, reject);
+          }, "image/jpeg", 0.92);
+        });
+      }
+      function drawFooter(pageCtx, num) {
+        pageCtx.save();
+        pageCtx.setTransform(scale, 0, 0, scale, 0, 0);
+        pageCtx.fillStyle = "#fbfaf5";
+        pageCtx.fillRect(0, pageH - 36, pageW, 36);
+        pageCtx.fillStyle = "#ddd7c8";
+        pageCtx.fillRect(padX, pageH - 36, maxW, 1);
+        pageCtx.fillStyle = "#6c7068";
+        pageCtx.font = "11px " + UI;
+        pageCtx.textAlign = "left";
+        pageCtx.textBaseline = "middle";
+        const label = "第 " + num + " 页";
+        const labelW = pageCtx.measureText(label).width;
+        let leftText = "H51008  ·  阅读  ·  " + (studentName || "") + "  ·  " + (studentClass || "");
+        const limit = maxW - labelW - 16;
+        if (pageCtx.measureText(leftText).width > limit) {
+          while (leftText.length > 8 && pageCtx.measureText(leftText + "…").width > limit) leftText = leftText.slice(0, -1);
+          leftText += "…";
+        }
+        pageCtx.fillText(leftText, padX, pageH - 18);
+        pageCtx.fillText(label, pageW - padX - labelW, pageH - 18);
+        pageCtx.restore();
+      }
+      function fillRoundRect(x, top, w, h, r, fill, stroke) {
+        const radius = Math.max(0, Math.min(r, w / 2, h / 2));
+        ctx.beginPath();
+        ctx.moveTo(x + radius, top);
+        ctx.arcTo(x + w, top, x + w, top + h, radius);
+        ctx.arcTo(x + w, top + h, x, top + h, radius);
+        ctx.arcTo(x, top + h, x, top, radius);
+        ctx.arcTo(x, top, x + w, top, radius);
+        ctx.closePath();
+        if (fill) {
+          ctx.fillStyle = fill;
+          ctx.fill();
+        }
+        if (stroke) {
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = stroke;
+          ctx.stroke();
+        }
+      }
+      function clipRound(x, top, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, top);
+        ctx.arcTo(x + w, top, x + w, top + h, r);
+        ctx.arcTo(x + w, top + h, x, top + h, r);
+        ctx.arcTo(x, top + h, x, top, r);
+        ctx.arcTo(x, top, x + w, top, r);
+        ctx.closePath();
+        ctx.clip();
+      }
+      function lastSoftBreak(line) {
+        const at = Math.max(line.lastIndexOf(" "), line.lastIndexOf("　"));
+        if (at > 0 && at >= line.length - 24) return at;
+        return -1;
+      }
+      function hardWrap(text, maxWidth) {
+        const parts = [];
+        let line = "";
+        Array.from(text).forEach(ch => {
+          if (!line && (ch === " " || ch === "　")) return;
+          if (ctx.measureText(line + ch).width <= maxWidth) line += ch;
+          else {
+            if (line) parts.push(line);
+            line = (ch === " " || ch === "　") ? "" : ch;
+          }
+        });
+        if (line) parts.push(line);
+        return parts.length ? parts : [""];
+      }
+      function wrapLines(text, maxWidth) {
+        const out = [];
+        String(text).replace(/\r\n/g, "\n").split("\n").forEach(para => {
+          if (para === "") {
+            out.push("");
+            return;
+          }
+          const paraStart = out.length;
+          let line = "";
+          Array.from(para).forEach(ch => {
+            if (ctx.measureText(line + ch).width <= maxWidth) {
+              line += ch;
+              return;
+            }
+            if (!line) {
+              out.push(ch);
+              return;
+            }
+            const breakAt = lastSoftBreak(line);
+            if (breakAt > 0) {
+              out.push(line.slice(0, breakAt).trimEnd());
+              line = (line.slice(breakAt + 1) + ch).replace(/^\s+/, "");
+              if (ctx.measureText(line).width > maxWidth) {
+                const parts = hardWrap(line, maxWidth);
+                for (let i = 0; i < parts.length - 1; i++) out.push(parts[i]);
+                line = parts[parts.length - 1] || "";
+              }
+              return;
+            }
+            out.push(line.trimEnd());
+            line = (ch === " " || ch === "　") ? "" : ch;
+          });
+          if (line.trim()) out.push(line.trimEnd());
+          const noLead = "，。、；：！？）」』】》.,!?;:";
+          for (let i = out.length - 1; i > paraStart; i--) {
+            if (!out[i] || noLead.indexOf(out[i][0]) === -1 || !out[i - 1]) continue;
+            const moved = out[i - 1] + out[i][0];
+            if (ctx.measureText(moved).width <= maxWidth + 12) {
+              out[i - 1] = moved;
+              out[i] = out[i].slice(1).replace(/^\s+/, "");
+              if (!out[i]) out.splice(i, 1);
+            }
+          }
+        });
+        return out;
+      }
+      function gap(n) { y += n; }
+      function drawWrapped(text, opt) {
+        opt = opt || {};
+        if (text == null || text === "") return;
+        const size = opt.size || 15;
+        const weight = opt.weight || 400;
+        const color = opt.color || "#252723";
+        const family = opt.family || BODY;
+        const lh = opt.lh || Math.round(size * 1.75);
+        const indent = opt.indent || 0;
+        const width = (opt.width || maxW) - indent;
+        ctx.font = weight + " " + size + "px " + family;
+        const lines = wrapLines(String(text), width);
+        lines.forEach(line => {
+          if (y + lh > pageH - padBottom) startPage();
+          ctx.font = weight + " " + size + "px " + family;
+          ctx.fillStyle = color;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          if (line) ctx.fillText(line, padX + indent, y + Math.round((lh - size) / 2));
+          y += lh;
+        });
+      }
+      function drawHeader() {
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#6f5947";
+        ctx.font = "700 12px " + UI;
+        ctx.fillText("印尼万隆基督教三一学校", padX, y);
+        y += 20;
+        ctx.fillStyle = "#415e46";
+        ctx.font = "700 12px " + UI;
+        ctx.fillText("HSK 2.0    ·    五级    ·    试卷 H51008", padX, y);
+        y += 22;
+        ctx.fillStyle = "#2c4130";
+        ctx.font = "700 28px " + UI;
+        ctx.fillText("阅读成绩单", padX, y);
+        y += 36;
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "13px " + UI;
+        ctx.fillText("新汉语水平考试 HSK（五级）  ·  阅读第 46–90 题", padX, y);
+        y += 24;
+        const timeBits = examTimeBits();
+        const bits = [];
+        if (studentName) bits.push(studentName);
+        if (studentClass) bits.push(studentClass);
+        if (examStartedAt && examSubmittedAt > examStartedAt) bits.push("用时 " + formatDuration(examSubmittedAt - examStartedAt));
+        bits.push("切屏 " + navigationAwayCount + " 次");
+        ctx.font = "14px " + BODY;
+        const metaLines = wrapLines(bits.join("    ·    "), maxW - 52);
+        const boxH = 112 + metaLines.length * 22;
+        if (y + boxH > pageH - padBottom) startPage();
+        const top = y;
+        fillRoundRect(padX, top, maxW, boxH, 12, "#f4efe3", "#ddd7c8");
+        ctx.save();
+        clipRound(padX, top, maxW, boxH, 12);
+        ctx.fillStyle = "#78917a";
+        ctx.fillRect(padX, top, 6, boxH);
+        ctx.restore();
+        const left = padX + 22;
+        const rightCol = padX + Math.round(maxW * 0.62);
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText("考试时间", left, top + 14);
+        ctx.fillText("成绩", rightCol, top + 14);
+        let dateSize = 16;
+        ctx.font = "700 " + dateSize + "px " + BODY;
+        while (dateSize > 12 && ctx.measureText(timeBits.dateLine).width > rightCol - left - 16) {
+          dateSize -= 1;
+          ctx.font = "700 " + dateSize + "px " + BODY;
+        }
+        ctx.fillStyle = "#252723";
+        ctx.fillText(timeBits.dateLine, left, top + 34);
+        ctx.font = "15px " + BODY;
+        ctx.fillText(timeBits.clock, left, top + 58);
+        ctx.fillStyle = "#415e46";
+        ctx.font = "700 28px " + UI;
+        ctx.fillText(score + " / " + Q_COUNT, rightCol, top + 32);
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText("正确率 " + Math.round(score / Q_COUNT * 100) + "%", rightCol, top + 66);
+        ctx.strokeStyle = "#ddd7c8";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(left, top + 90.5);
+        ctx.lineTo(padX + maxW - 18, top + 90.5);
+        ctx.stroke();
+        ctx.fillStyle = "#6f5947";
+        ctx.font = "14px " + BODY;
+        metaLines.forEach((line, index) => ctx.fillText(line, left, top + 102 + index * 22));
+        y = top + boxH + 16;
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText("下面按题号排列。每题依次是：题目、解析、阅读原文。", padX, y);
+        y += 22;
+      }
+      function drawKeyline() {
+        if (y + 18 > pageH - padBottom) {
+          startPage();
+          return;
+        }
+        y += 4;
+        ctx.strokeStyle = "#e3dccb";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padX, y + 0.5);
+        ctx.lineTo(padX + maxW, y + 0.5);
+        ctx.stroke();
+        y += 12;
+      }
+      function drawLabel(text) {
+        const need = text === "阅读原文" ? 88 : 64;
+        if (y + need > pageH - padBottom) startPage();
+        ctx.font = "700 13px " + UI;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        const textW = ctx.measureText(text).width;
+        fillRoundRect(padX, y, Math.ceil(textW + 18), 22, 8, "#eef2e9", null);
+        ctx.fillStyle = "#415e46";
+        ctx.font = "700 13px " + UI;
+        ctx.fillText(text, padX + 9, y + 3);
+        y += 28;
+      }
+      function drawMini(text) {
+        if (y + 42 > pageH - padBottom) startPage();
+        y += 4;
+        ctx.fillStyle = "#6f5947";
+        ctx.font = "700 12px " + UI;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText(text, padX, y);
+        y += 18;
+      }
+      function drawResultLine(label, value, color) {
+        const lh = 24;
+        if (y + lh > pageH - padBottom) startPage();
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.font = "700 13px " + UI;
+        ctx.fillStyle = "#6c7068";
+        ctx.fillText(label, padX, y + 2);
+        ctx.font = "700 14px " + BODY;
+        const lines = wrapLines(value, maxW - 96);
+        lines.forEach((line, index) => {
+          if (index > 0 && y + lh > pageH - padBottom) startPage();
+          ctx.font = "700 14px " + BODY;
+          ctx.fillStyle = color;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          ctx.fillText(line, padX + 88, y + 2);
+          y += lh;
+        });
+        if (!lines.length) y += lh;
+      }
+      function drawQuestionTitle(n, correct, section) {
+        if (y + 32 > pageH - padBottom) startPage();
+        const badge = 24;
+        fillRoundRect(padX, y, badge, badge, 7, correct ? "#415e46" : "#b96732", null);
+        ctx.save();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "700 12px " + UI;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(String(n), padX + badge / 2, y + badge / 2 + 0.5);
+        ctx.restore();
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#252723";
+        ctx.font = "700 16px " + UI;
+        const title = "第 " + n + " 题";
+        ctx.fillText(title, padX + 32, y + 3);
+        const titleW = ctx.measureText(title).width;
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText(section, padX + 44 + titleW, y + 6);
+        const result = correct ? "正确" : "错误";
+        ctx.font = "700 13px " + UI;
+        ctx.fillStyle = correct ? "#415e46" : "#b96732";
+        const resultW = ctx.measureText(result).width;
+        ctx.fillText(result, padX + maxW - resultW, y + 4);
+        y += 32;
+      }
+      function drawSource(text) {
+        const body = text || "（没有阅读原文）";
+        const lh = 26;
+        ctx.font = "400 14px " + BODY;
+        const lines = wrapLines(body, maxW - 24);
+        lines.forEach(line => {
+          if (y + lh > pageH - padBottom) startPage();
+          ctx.fillStyle = "#f4efe3";
+          ctx.fillRect(padX, y, maxW, lh + 1);
+          ctx.fillStyle = "#78917a";
+          ctx.fillRect(padX, y, 3, lh + 1);
+          if (line) {
+            ctx.fillStyle = "#252723";
+            ctx.font = "400 14px " + BODY;
+            ctx.textAlign = "left";
+            ctx.textBaseline = "top";
+            ctx.fillText(line, padX + 12, y + 5);
+          }
+          y += lh;
+        });
+      }
+      function drawQuestion(n) {
+        const note = NOTES[String(n)] || {};
+        const item = readingItem(n);
+        const correct = answers[n] === ANSWER[n];
+        if (y + 280 > pageH - padBottom) startPage();
+        drawKeyline();
+        drawQuestionTitle(n, correct, item.section);
+        drawLabel("题目");
+        drawWrapped(item.prompt, { size: 16, weight: 700, lh: 28 });
+        gap(3);
+        item.options.forEach(line => drawWrapped(line, { size: 15, lh: 26 }));
+        gap(4);
+        drawResultLine("我的选择", choiceText(n, answers[n]), correct ? "#415e46" : "#b96732");
+        drawResultLine("正确答案", choiceText(n, ANSWER[n]), "#415e46");
+        gap(6);
+        drawLabel("解析");
+        if (note.gloss) {
+          drawMini("答案");
+          drawWrapped(note.gloss, { size: 15, lh: 26 });
+        }
+        if (note.type) {
+          drawMini("题型");
+          drawWrapped(note.type, { size: 15, lh: 26, color: "#6c7068" });
+        }
+        if (note.explain) {
+          drawMini("讲解");
+          drawWrapped(note.explain, { size: 15, lh: 26 });
+        }
+        if (note.wrong) {
+          drawMini("其他选项");
+          drawWrapped(note.wrong, { size: 15, lh: 26 });
+        }
+        if (note.trap) {
+          drawMini("易错点");
+          drawWrapped(note.trap, { size: 15, lh: 26 });
+        }
+        gap(6);
+        drawLabel("阅读原文");
+        drawSource(item.source);
+        gap(8);
+      }
+
+      startPage();
+      drawHeader();
+      for (let n = Q_FROM; n <= Q_TO; n++) drawQuestion(n);
+      if (canvas) jpegTasks.push(sealPage(canvas, ctx, pageNo));
+      canvas = null;
+      ctx = null;
+      const images = await Promise.all(jpegTasks);
+      return buildPdf(images, imgW, imgH);
+    }
+    document.getElementById("export-pdf").addEventListener("click", async () => {
+      const button = document.getElementById("export-pdf");
+      if (button.disabled) return;
+      if (!submitted) {
+        alert("请先交卷。交卷后才能输出题目、解析和阅读原文。");
+        return;
+      }
+      button.disabled = true;
+      button.textContent = "生成中";
+      try {
+        const score = currentScore();
+        const blob = await buildScorePdf();
+        const filename = pdfFilename(score);
+        const touch = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+        const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || touch;
+        if (ios && navigator.canShare) {
+          try {
+            const file = new File([blob], filename, { type: "application/pdf" });
+            if (navigator.canShare({ files: [file] })) {
+              await navigator.share({ files: [file], title: filename });
+              return;
+            }
+          } catch (error) {
+            if (error && error.name === "AbortError") return;
+          }
+        }
+        downloadBlob(blob, filename);
+      } catch (error) {
+        console.error(error);
+        alert("PDF 生成失败，请再试一次。");
+      } finally {
+        button.disabled = false;
+        button.textContent = "输出";
+      }
+    });
+
+    function fitOneLine(node, max, min) {
+      if (!node) return;
+      node.style.fontSize = max + "px";
+      let size = max;
+      while (node.scrollWidth > node.clientWidth && size > min) {
+        size -= 0.5;
+        node.style.fontSize = size + "px";
+      }
+    }
+    window.addEventListener("load", () => {
+      const school = document.getElementById("schoolNameID");
+      fitOneLine(school, window.matchMedia("(max-width: 600px)").matches ? 24 : 28, 12);
+      markNav();
+    });
+  </script>
+</body>
+</html>

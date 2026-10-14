@@ -5,7 +5,7 @@ A word's level is the lowest sheet that lists it. The sheets are cumulative,
 so 爱 is level 1 even though it also appears on the level 6 sheet.
 
 Default workbook:
-  /Users/yinshijin/Desktop/HSK2.0词汇-三级至六级/HSK-2012官方原表.xlsx
+  HSK-2012官方原表.xlsx in this skill's folder, beside SKILL.md.
 
 Usage:
   python3 hsk_vocab.py 爱 空调 放弃
@@ -18,10 +18,11 @@ import argparse
 import json
 import sys
 import zipfile
+from pathlib import Path
 from xml.etree import ElementTree as ET
 
-DEFAULT_WORKBOOK = (
-    "/Users/yinshijin/Desktop/HSK2.0词汇-三级至六级/HSK-2012官方原表.xlsx"
+DEFAULT_WORKBOOK = str(
+    Path(__file__).resolve().parent.parent / "HSK-2012官方原表.xlsx"
 )
 
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}

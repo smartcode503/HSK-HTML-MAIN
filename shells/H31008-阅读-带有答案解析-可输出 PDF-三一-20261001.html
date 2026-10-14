@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="zh-CN" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HSK（三级）H31008 · 阅读练习 · 三一</title>
+  <style>
+    :root{--base-size:18px;--paper:#fbfaf5;--cream:#f4efe3;--sage:#78917a;--sage-dark:#415e46;--coffee:#6f5947;--ink:#252723;--muted:#6c7068;--line:#ddd7c8;--yellow:rgba(255,215,80,.38);--mist:#fff3da;--white:#fff;--shadow:0 12px 36px rgba(66,62,48,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--fixed-header-height,104px) + 14px)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:SimSun,"Songti SC",serif;font-size:var(--base-size);line-height:1.78}
+    button,input,textarea{font:inherit}
+    body:not(.in-exam) #examRoot{display:none}
+    .utility-bar{position:fixed;left:0;right:0;top:0;z-index:100;background:rgba(251,250,245,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);font-size:14px!important;line-height:1.4!important}
+    .utility-bar *{font-size:inherit!important}
+    .utility-inner{max-width:1380px;margin:auto;padding:.55rem 1.4rem;display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+    .tool-btn,.primary-btn,.speed-group button{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:999px;padding:.45rem .85rem;cursor:pointer;transition:.18s ease}
+    .tool-btn:hover,.speed-group button:hover{border-color:var(--sage);color:var(--sage-dark);transform:translateY(-1px)}
+    .primary-btn{background:var(--sage-dark);color:#fff;border-color:var(--sage-dark)}
+    .primary-btn:hover{background:#304a35}
+    .who{color:var(--coffee);font-weight:bold}
+    .save-status{font-size:.78em;color:var(--muted)}
+    .font-label{margin-left:auto;color:var(--muted)}
+    .font-range{accent-color:var(--sage-dark);width:140px}
+    .masthead{max-width:1380px;margin:0 auto;padding:1.4rem 1.4rem .4rem}
+    .eyebrow{color:var(--sage-dark);letter-spacing:.14em;font-weight:bold;font-size:.78em}
+    .masthead h1{font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.14;margin:.35rem 0 .45rem;color:#2c4130}
+    .masthead p{max-width:900px;color:var(--muted);margin:0}
+    .top-nav{position:fixed;left:0;right:0;top:var(--utility-height,52px);z-index:90;height:7vh;min-height:42px;display:flex;align-items:center;background:rgba(244,239,227,.96);border-block:1px solid var(--line);overflow-x:auto;font-size:15px!important}
+    .top-nav *{font-size:inherit!important}
+    .nav-inner{max-width:1380px;margin:auto;display:flex;gap:.35rem;padding:.55rem 1.4rem;white-space:nowrap}
+    .top-nav a{color:var(--coffee);text-decoration:none;padding:.18rem .7rem;border-radius:999px;font-size:15px!important}
+    .top-nav a:hover,.top-nav a.active{background:var(--sage-dark);color:#fff}
+    .top-nav .nav-disabled{color:#b7b1a4;padding:.18rem .7rem;border-radius:999px;cursor:not-allowed;user-select:none}
+    .top-nav .nav-disabled:hover{background:transparent;color:#b7b1a4}
+    body{padding-top:var(--fixed-header-height,104px)}
+    [id]{scroll-margin-top:calc(var(--fixed-header-height,104px) + 14px)}
+    .layout{max-width:1380px;margin:0 auto;padding:0 1.4rem 5rem}
+    .review-section{margin:1.6rem 0 1rem}
+    .section-title{font-size:1.5rem;color:#2c4130;margin:.2rem 0 .1rem;border-left:.35rem solid var(--sage-dark);padding-left:.7rem}
+    .section-sub{color:var(--muted);margin:.1rem 0 1.1rem;padding-left:1.05rem;font-size:.92em}
+    .exam-brief{background:linear-gradient(135deg,#f3efe3,#eef2e9);border:1px solid var(--line);border-left:6px solid var(--sage);border-radius:18px;padding:1.1rem 1.2rem;margin:1rem 0 1.35rem;box-shadow:var(--shadow)}
+    .exam-brief h3{margin:0 0 .75rem;color:var(--sage-dark)}
+    .brief-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+    .brief-item{background:rgba(255,255,255,.72);border-radius:12px;padding:.65rem .75rem}
+    .brief-item span{display:block;color:var(--muted);font-size:.76em}
+    .brief-item strong{display:block;font-weight:600}
+    .passage-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.35rem;box-shadow:var(--shadow);margin:.65rem 0}
+    .passage-card h4{color:var(--sage-dark);font-size:1.13em;font-weight:bold;margin:.1rem 0 .7rem}
+    .passage-para{display:block;margin:0 0 .95em;line-height:1.95;text-indent:2em}
+    .passage-para:last-child{margin-bottom:0}
+    .lesson-workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(430px,.85fr);gap:1.25rem;align-items:start;margin:1.2rem 0 2rem}
+    .source-pane{position:sticky;top:calc(var(--fixed-header-height,104px) + 10px);max-height:calc(100vh - var(--fixed-header-height,104px) - 24px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:0 .28rem .25rem 0}
+    .teaching-pane{min-width:0}
+    .question-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;box-shadow:var(--shadow);margin-bottom:1.1rem}
+    .question-card:target,.question-card.locate-flash{animation:locateFlash 1.7s ease;border-color:#e0a800}
+    @keyframes locateFlash{0%{box-shadow:0 0 0 0 rgba(255,193,7,0);background:#fffbe6}20%{box-shadow:0 0 0 5px rgba(255,193,7,.5);background:#fff3cd}100%{box-shadow:var(--shadow);background:#fff}}
+    .q-stem{display:flex;gap:.6rem;align-items:flex-start;font-weight:bold;margin-bottom:.55rem;line-height:1.5}
+    .q-no{flex:0 0 auto;min-width:1.9rem;height:1.9rem;line-height:1.9rem;text-align:center;background:var(--sage-dark);color:#fff;border-radius:8px;font-size:.85em}
+    .q-text{flex:1}
+    .options{display:grid;gap:.4rem;margin:.2rem 0 .2rem}
+    .option{display:flex;gap:.55rem;align-items:flex-start;width:100%;text-align:left;padding:.5rem .7rem;border:1px solid var(--line);border-radius:10px;background:#fffdf8;cursor:pointer;color:inherit;transition:.15s}
+    .option:hover{border-color:var(--sage)}
+    .opt-key{flex:0 0 auto;width:1.5rem;height:1.5rem;line-height:1.5rem;text-align:center;background:var(--cream);border-radius:50%;font-size:.8em;color:var(--coffee)}
+    .opt-text{flex:1;min-width:0;line-height:1.55}
+    .option.chosen{border-color:var(--sage-dark);background:#eef3ea}
+    .option.chosen .opt-key{background:var(--sage-dark);color:#fff}
+    .option.mark-correct{border-color:var(--sage-dark);background:#eef3ea}
+    .option.mark-correct .opt-key{background:var(--sage-dark);color:#fff}
+    .option.mark-wrong{border-color:#b96732;background:var(--mist)}
+    .option.mark-wrong .opt-key{background:#b96732;color:#fff}
+    .listening-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1rem}
+    .listening-grid .question-card{margin-bottom:0}
+    .audio-panel{display:grid;grid-template-columns:minmax(190px,.72fr) minmax(280px,1.28fr);align-items:start;gap:1rem;background:#f5f1e7;border:1px solid var(--line);border-radius:16px;padding:.9rem 1rem;margin:.8rem 0 1.4rem}
+    .audio-panel small{display:block;color:var(--muted)}
+    .audio-control-stack{display:grid;gap:.55rem;min-width:0}
+    .audio-control-stack audio{width:100%;height:42px}
+    .speed-group{display:flex;gap:.3rem;flex-wrap:wrap}
+    .speed-group button{padding:.3rem .55rem;font-size:.78em}
+    .speed-group button.active{background:var(--sage-dark);color:#fff}
+    .blank-mark{background:rgba(185,103,50,.16);border-bottom:2px dotted #b96732;border-radius:.2em;padding:0 .28em;font-weight:bold;color:#8a4a1e;cursor:pointer}
+    .match-text{margin:.15rem 0 .7rem;line-height:1.9}
+    .word-row{display:flex;flex-wrap:wrap;gap:.45rem;margin:.35rem 0 .7rem}
+    .word-chip{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;color:var(--coffee)}
+    .write-box{width:100%;min-height:4.6rem;border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;background:#fffdf8;color:var(--ink);line-height:1.7;resize:vertical}
+    .write-box.essay{min-height:11rem}
+    .write-meta{color:var(--muted);font-size:.86em;margin:.35rem 0 0}
+    .ref-line{display:none;margin:.55rem 0 0;padding:.45rem .7rem;background:#edf3e9;border-radius:10px;color:var(--sage-dark)}
+    .question-card.graded .ref-line{display:block}
+    .example-line{background:#fff6cf;border:1px solid #e6d9b0;border-radius:12px;padding:.8rem .9rem;margin:.4rem 0 1rem;line-height:1.7}
+    .score-banner h2{margin:.2rem 0;font-size:clamp(2rem,5vw,3.4rem);color:var(--sage-dark);font-family:Arial,sans-serif}
+    .score-banner p{margin:.25rem 0}
+    #submitStatus.ok{color:#304a35;font-weight:bold}
+    #submitStatus.bad{color:#8a4a1e;font-weight:bold}
+    .footer{border-top:1px solid var(--line);padding:2rem 1.4rem;text-align:center;color:var(--muted)}
+    .utility-inner{padding-right:7.6rem}
+    #export-pdf{position:absolute;top:.42rem;right:.85rem;z-index:2;min-width:5.6rem;background:var(--sage-dark);color:#fff;border-color:var(--sage-dark)}
+    #export-pdf:hover{background:#304a35;color:#fff}
+    #export-pdf:disabled{opacity:.65;cursor:progress;transform:none}
+    #export-pdf:disabled:hover{background:var(--sage-dark);color:#fff;transform:none}
+    .no-copy .q-text,.no-copy .match-text,.no-copy .passage-para,.no-copy .opt-text{user-select:none;-webkit-user-select:none}
+    .passage-para.flat{text-indent:0}
+    .opt-key.wide{width:auto;min-width:3.6rem;padding:0 .45rem;border-radius:999px}
+    .options.orders{grid-template-columns:repeat(auto-fill,minmax(148px,1fr))}
+    textarea,input{user-select:text;-webkit-user-select:text}
+
+    .analysis-actions{display:none;margin-top:.8rem}
+    .question-card.graded .analysis-actions{display:flex;flex-wrap:wrap;gap:.55rem}
+    .question-card.needs-review{border-color:#b96732;box-shadow:0 0 0 3px rgba(185,103,50,.18)}
+    .analysis-panel{margin-top:.85rem;padding-top:.8rem;border-top:1px dashed var(--line)}
+    .analysis-panel[hidden]{display:none !important}
+    .ans-line{margin:.15rem 0 .55rem;font-size:1.05em}
+    .analysis-body p{margin:.4rem 0;line-height:1.75;white-space:pre-wrap}
+    .analysis-body .tag{display:inline-block;min-width:4.2rem;margin-right:.45rem;padding:.05rem .5rem;border-radius:999px;background:#eef2e9;color:#49654d;font-size:.74em;line-height:1.6;vertical-align:.1em}
+    #loginPage{position:fixed;inset:0;z-index:500;background:#f0f2f5;display:flex;align-items:flex-start;justify-content:center;padding:28px 16px;overflow:auto;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif,"Microsoft YaHei","SimSun"}
+    #loginPage.is-hidden{display:none}
+    .login-wrap{width:100%;max-width:500px;min-width:0}
+    .school-card{background:#b71c1c;color:#fff;padding:20px;border-radius:16px;display:flex;align-items:center;gap:16px;margin-bottom:6px;box-shadow:0 4px 25px rgba(0,0,0,.1);min-width:0}
+    .school-logo{width:80px;height:80px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .school-logo img{max-width:60%;height:auto}
+    .school-names{flex:1;min-width:0;text-align:right;overflow:hidden}
+    .school-name-id{font-weight:800;line-height:1.15;white-space:nowrap;display:block;font-size:clamp(13px,4.6vw,26px);overflow:hidden}
+    .school-name-zh{margin-top:8px;letter-spacing:3px;line-height:1.2;font-size:clamp(12px,3.5vw,20px)}
+    .login-container{background:#fff;border-radius:16px;padding:40px 28px;text-align:center;box-shadow:0 4px 25px rgba(0,0,0,.1);min-height:460px;min-width:0}
+    .login-container h1{color:#00796b;margin:0 0 8px;font-size:clamp(18px,5vw,28px);overflow-wrap:anywhere}
+    .login-container .login-sub{color:#777;margin:0 0 28px}
+    .input-group{margin-bottom:20px;text-align:left}
+    .input-group label{display:block;margin-bottom:8px;font-weight:600;color:#555}
+    .login-input{width:100%;padding:12px 15px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+    .login-btn{width:100%;margin-top:12px;padding:15px 40px;background:#b71c1c;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:18px}
+    .login-btn:hover{background:#9a1515}
+    #warning-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);color:#fff;display:none;justify-content:center;align-items:center;text-align:center;z-index:800;padding:24px}
+    #warning-overlay h2{font-size:2em;color:#ffcc00;margin:0 0 .6rem}
+    #warning-overlay p{font-size:1.15em;max-width:640px;line-height:1.6}
+    @media(max-width:1080px){
+      .lesson-workspace{grid-template-columns:1fr}
+      .source-pane{position:relative;top:auto;max-height:none;overflow:visible}
+      .audio-panel{grid-template-columns:1fr}
+    }
+    @media(max-width:900px){
+      .brief-grid{grid-template-columns:1fr}
+      .listening-grid{grid-template-columns:1fr}
+      .font-label{margin-left:0}
+    }
+    @media(max-width:520px){
+      #loginPage{padding:16px 12px}
+      .school-card{padding:14px}
+      .school-logo{width:64px;height:64px}
+      .school-name-id{white-space:normal;font-size:15px;line-height:1.2}
+      .school-name-zh{letter-spacing:1px;font-size:14px}
+      .login-container{padding:28px 16px;min-height:0}
+      .login-container h1{font-size:22px}
+      .utility-inner,.masthead,.nav-inner,.layout{padding-inline:.85rem}
+      .utility-inner{padding-right:7.2rem}
+    }
+  </style>
+</head>
+<body>
+  <div id="loginPage">
+    <div class="login-wrap">
+      <div class="school-card">
+        <div class="school-logo">
+          <img src="https://res.cloudinary.com/doeko5u2f/image/upload/v1759133690/Logo_%E5%AD%A6%E6%A0%A1Trimulia_dmrr9o.png" alt="学校标志">
+        </div>
+        <div class="school-names">
+          <span id="schoolNameID" class="school-name-id">SEKOLAH KRISTEN TRIMULIA</span>
+          <span class="school-name-zh">印尼万隆基督教三一学校</span>
+        </div>
+      </div>
+      <div class="login-container">
+        <h1>HSK（三级）H31008 · 阅读</h1>
+        <p class="login-sub">本次只练习阅读。交卷后成绩会提交到表格。交卷后，右上角 Export 可下载 PDF。</p>
+        <div class="input-group">
+          <label for="studentName">学生姓名 (Student Name)</label>
+          <input type="text" id="studentName" class="login-input" placeholder="请输入您的姓名" autocomplete="name">
+        </div>
+        <div class="input-group">
+          <label for="studentClass">班级 (Class)</label>
+          <input type="text" id="studentClass" class="login-input" placeholder="请输入您的班级" autocomplete="organization">
+        </div>
+        <button type="button" class="login-btn" id="loginBtn">登 录</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="warning-overlay">
+    <div>
+      <h2>Warning: You have left the test page.</h2>
+      <p>Leaving the testing environment is not permitted. This action has been logged.<br><br>Please return to this tab to continue your test. Further violations will be recorded.</p>
+    </div>
+  </div>
+
+  <div id="examRoot" class="no-copy">
+    <div class="utility-bar"><div class="utility-inner">
+      <button type="button" class="primary-btn" id="submitBtn">交卷</button>
+      <button type="button" class="tool-btn" id="show-all" hidden>展开全部解析</button>
+      <button type="button" class="tool-btn" id="hide-all" hidden>收起全部解析</button>
+      <span class="who" id="whoName"></span>
+      <span class="save-status" id="progressText">阅读 0/30</span>
+      <span class="font-label">字号</span>
+      <button type="button" class="tool-btn" id="font-down" aria-label="减小字号">A−</button>
+      <input class="font-range" id="font-range" type="range" min="14" max="28" step="1" value="18" aria-label="调整全文字号">
+      <button type="button" class="tool-btn" id="font-up" aria-label="增大字号">A+</button>
+      <b id="font-value">18px</b>
+      <span class="save-status" id="save-status">答案保存在本机浏览器</span>
+      <button type="button" class="tool-btn" id="export-pdf" title="Download the score PDF">Export</button>
+    </div></div>
+    <header class="masthead">
+      <div class="eyebrow">HSK 2.0 · Level 3 · H31008</div>
+      <h1>新汉语水平考试 HSK（三级）</h1>
+      <p>试卷 H31008。本次只练习阅读第41–70题。听力和书写暂不开放。</p>
+    </header>
+    <nav class="top-nav" aria-label="试卷部分">
+      <div class="nav-inner">
+        <span class="nav-disabled" aria-disabled="true">听力</span>
+        <a href="#reading-1">阅读一</a>
+        <a href="#reading-2">阅读二</a>
+        <a href="#reading-3">阅读三</a>
+        <span class="nav-disabled" aria-disabled="true">书写</span>
+      </div>
+    </nav>
+    <main class="layout">
+      <section class="review-section" id="reading-1">
+        <h2 class="section-title">二、阅读一</h2>
+        <p class="section-sub">第41–50题。选出与每句话对应的一项。第41–45题的例如已经用过其中一句。</p>
+        <div id="match-root"></div>
+      </section>
+
+      <section class="review-section" id="reading-2">
+        <h2 class="section-title">二、阅读二</h2>
+        <p class="section-sub">第51–60题。选词填空。每组六个词，例如已经用过其中一个。</p>
+        <div id="bank-root"></div>
+      </section>
+
+      <section class="review-section" id="reading-3">
+        <h2 class="section-title">二、阅读三</h2>
+        <p class="section-sub">第61–70题。请选出正确答案。</p>
+        <div id="short-root"></div>
+      </section>
+
+      <section class="exam-brief score-banner" id="score-banner" hidden>
+        <h3>交卷结果</h3>
+        <h2 id="scoreLine"></h2>
+        <p id="switchLine"></p>
+        <p id="writeLine">本次只统计阅读第41–70题。</p>
+        <p id="submitStatus">正在提交成绩…</p>
+      </section>
+      <footer class="footer">HSK（三级）H31008 · 阅读练习 · 成绩提交到学校表格 · 交卷后可 Export PDF</footer>
+    </main>
+  </div>
+
+  <script id="exam-data" type="application/json">{"matches":[{"label":"41–45","example":"你知道怎么去那儿吗？（ E ）\n当然。我们先坐公共汽车，然后换地铁。","choices":[["A","真冷啊，把空调打开吧。"],["B","我等个朋友，先给我来一杯咖啡吧，谢谢。"],["C","如果不下雪，我要和同学们去爬山。"],["D","报纸上有什么新闻吗？"],["E","当然。我们先坐公共汽车，然后换地铁。"],["F","没问题，那些题都非常简单。"]],"qs":[[41,"F","上午的数学考试怎么样？（ ）"],[42,"B","先生，请问您喝点儿什么？（ ）"],[43,"C","这个周末你打算做什么？（ ）"],[44,"D","还没看呢，我洗完澡再看。（ ）"],[45,"A","你衣服穿得太少了，是不是感冒了？（ ）"]]},{"label":"46–50","example":"","choices":[["A","我记得你弟弟以前特别胖。"],["B","祝您生日快乐！这是我送您的礼物。"],["C","今天我来洗碗，你累一天了，去看电视吧。"],["D","你不舒服吗？需不需要去房间休息一下？"],["E","明天就要出国了？在外面注意身体，照顾好自己。"]],"qs":[[46,"D","没关系，我吃过药了。（ ）"],[47,"A","他从去年秋天开始锻炼，现在不到70公斤。（ ）"],[48,"E","好，我会给你打电话或者写电子邮件的。（ ）"],[49,"C","不用，你把筷子和杯子拿过来就可以了。（ ）"],[50,"B","大家来吃蛋糕吧，这块儿大的给你。（ ）"]]}],"banks":[{"label":"51–55","example":"她说话的（E 声音）多好听啊！","words":[["A","聪明"],["B","几乎"],["C","解决"],["D","历史"],["E","声音"],["F","关系"]],"lines":["这个城市有几百年的（{51}）了。","儿子长大了，都快一米八了，（{52}）和他爸爸一样高了。","小黄是我的好朋友，她和我的（{53}）一直很好。","多吃鱼会使人变得更（{54}）。","我们已经找到（{55}）问题的办法了。"],"qs":[[51,"D"],[52,"B"],[53,"F"],[54,"A"],[55,"C"]]},{"label":"56–60","example":"A：你有什么（D 爱好）？\nB：我喜欢体育。","words":[["A","画"],["B","简单"],["C","选择"],["D","爱好"],["E","结婚"],["F","马上"]],"lines":["A：你（{56}）的这是猫？","B：大熊猫！它在爬树。这也看不懂？","A：你低着头想什么呢？","B：是工作还是读书，我不知道应该怎么（{57}）才好。","A：你渴不？我想去买点儿水。","B：那你快一点儿，表演（{58}）就要开始了。","A：相信我，这件事对公司不会有影响的。","B：夏经理，你把事情想得太（{59}）了。","A：好久没看见白老师了，他不在这儿住了？","B：是，他（{60}）以后就和妻子搬到学校去住了。"],"qs":[[56,"A"],[57,"C"],[58,"F"],[59,"B"],[60,"E"]]}],"short":[{"n":61,"answer":"A","passage":"最近几年，这里的变化很大，车辆更多了，街道更干净了，天更蓝了，树更绿了。","stem":"这里最近几年怎么样？","options":[["A","环境变好了"],["B","和过去相同"],["C","变得更差了"]]},{"n":62,"answer":"C","passage":"人们根据季节的变化来决定喝什么茶。老人们经常说：“春天最好喝花茶，冬天最好喝红茶。”","stem":"这段话告诉我们：","options":[["A","茶有什么作用"],["B","老人爱喝红茶"],["C","不同季节喝不同的茶"]]},{"n":63,"answer":"C","passage":"汉字有多少个？这个问题谁也回答不清楚，《汉语大字典》里有五六万字，普通的小字典，一本也有八九千字。但人们常用的也就两千多个，认识这两千多个字，读书看报就没什么问题了。","stem":"这段话的主要意思是：","options":[["A","汉字很难写"],["B","要学会查字典"],["C","常用汉字不多"]]},{"n":64,"answer":"B","passage":"为什么很多人愿意在网上买东西呢？因为非常方便，而且还便宜，如果对买到的东西有不满意的地方，也可以要求换新的。","stem":"在网上买东西：","options":[["A","比较贵"],["B","花钱少"],["C","花的时间多"]]},{"n":65,"answer":"A","passage":"儿子的作业总是做错，但昨天的一个也没错。老师问：“有人帮你写作业了？”“没有，我爸爸昨天没时间，我想我应该自己完成了。”","stem":"儿子昨天的作业为什么没错？","options":[["A","自己做的"],["B","爸爸帮忙了"],["C","认真复习了"]]},{"n":66,"answer":"C","passage":"晚上睡觉前喝一杯热牛奶，能帮助人们睡得更好。你有这个习惯吗？","stem":"“这个习惯”说的是：","options":[["A","帮助别人"],["B","睡前刷牙"],["C","睡前喝牛奶"]]},{"n":67,"answer":"A","passage":"新年前一天，每个班都举行了新年晚会。学生们在晚会上唱歌、跳舞、做游戏，玩得高兴极了。","stem":"新年晚会：","options":[["A","已经结束了"],["B","参加的人不多"],["C","在1月1日举行"]]},{"n":68,"answer":"B","passage":"我从小就喜欢旅游，但爸妈不让我一个人出去玩儿。我16岁生日那天，他们终于同意了。为了这次旅游，我买了一个小行李箱，还有地图。","stem":"爸妈同意什么了？","options":[["A","教我游泳"],["B","我一个人去旅游"],["C","跟我一起去旅游"]]},{"n":69,"answer":"C","passage":"喂，你帮我看看，我的眼镜是不是在桌子上？什么？在椅子上？好，我知道了。","stem":"我在找什么东西？","options":[["A","椅子"],["B","衬衫"],["C","眼镜"]]},{"n":70,"answer":"B","passage":"你想了解历史吗？这本书是一个很好的选择。书里讲了世界上很多国家的历史故事，相信爱好历史的人一定会对它有兴趣。","stem":"这本书主要介绍：","options":[["A","中国文化"],["B","历史故事"],["C","兴趣爱好"]]}]}</script>
+<script id="exam-notes" type="application/json">{"41":{"answer":"F","gloss":"F  没问题，那些题都非常简单。","type":"Sentence match · choose the sentence that matches","explain":"Line 41 asks “上午的数学考试怎么样？” F answers with “那些题都非常简单”, so the math questions were easy. “没问题” is the judgment of how the exam went, and “那些题” points back to that test.","wrong":"A 真冷啊，把空调打开吧。 — Wrong focus. “真冷啊，把空调打开吧” answers line 45, “你衣服穿得太少了，是不是感冒了？” It is about the cold, not the math exam.\nB 我等个朋友，先给我来一杯咖啡吧，谢谢。 — Nearby-sentence trap. “先给我来一杯咖啡吧” answers line 42, “请问您喝点儿什么？” A drink order does not say how the exam went.\nC 如果不下雪，我要和同学们去爬山。 — Wrong focus. “我要和同学们去爬山” answers line 43, “这个周末你打算做什么？” It is a weekend plan, not a report on “数学考试”.\nD 报纸上有什么新闻吗？ — Wrong focus. “报纸上有什么新闻吗” is the question answered by line 44, “还没看呢，我洗完澡再看”. It does not describe the exam.\nE 当然。我们先坐公共汽车，然后换地铁。 — Does not answer. “我们先坐公共汽车，然后换地铁” is already the example answer to “你知道怎么去那儿吗？” It tells a route, not how the exam was.","trap":"The closest trap is B 我等个朋友，先给我来一杯咖啡吧，谢谢 (Nearby-sentence trap). “先给我来一杯咖啡吧” answers line 42, “请问您喝点儿什么？” A drink order does not say how the exam went."},"42":{"answer":"B","gloss":"B  我等个朋友，先给我来一杯咖啡吧，谢谢。","type":"Sentence match · choose the sentence that matches","explain":"Line 42 is the waiter’s question, “请问您喝点儿什么？” B names the drink, “一杯咖啡”, and adds “我等个朋友” and “谢谢”. That is an order, so it matches the question about what to drink.","wrong":"A 真冷啊，把空调打开吧。 — Wrong focus. “把空调打开吧” belongs with line 45 and “感冒”. It never names a drink.\nC 如果不下雪，我要和同学们去爬山。 — Wrong focus. “去爬山” answers “这个周末你打算做什么？” on line 43. It is not a reply to “喝点儿什么”.\nD 报纸上有什么新闻吗？ — Wrong focus. “报纸上有什么新闻吗” is answered by “还没看呢” on line 44. A newspaper question is not a drink order.\nE 当然。我们先坐公共汽车，然后换地铁。 — Does not answer. “先坐公共汽车，然后换地铁” is already used for “你知道怎么去那儿吗？” It does not order anything.\nF 没问题，那些题都非常简单。 — Nearby-sentence trap. “那些题都非常简单” answers line 41, “上午的数学考试怎么样？” “题” are exam questions, not a drink.","trap":"The closest trap is F 没问题，那些题都非常简单 (Nearby-sentence trap). “那些题都非常简单” answers line 41, “上午的数学考试怎么样？” “题” are exam questions, not a drink."},"43":{"answer":"C","gloss":"C  如果不下雪，我要和同学们去爬山。","type":"Sentence match · choose the sentence that matches","explain":"Line 43 asks “这个周末你打算做什么？” C gives the plan: “如果不下雪，我要和同学们去爬山”. “去爬山” is the weekend activity, and “如果不下雪” only adds the condition.","wrong":"A 真冷啊，把空调打开吧。 — Wrong focus. “真冷啊，把空调打开吧” answers the cold-and-“感冒” worry on line 45, not a question about weekend plans.\nB 我等个朋友，先给我来一杯咖啡吧，谢谢。 — Nearby-sentence trap. “一杯咖啡” answers “请问您喝点儿什么？” on line 42. Waiting for a friend is not the weekend plan asked here.\nD 报纸上有什么新闻吗？ — Wrong focus. “报纸上有什么新闻吗” pairs with “还没看呢，我洗完澡再看” on line 44. It does not say what someone will do “这个周末”.\nE 当然。我们先坐公共汽车，然后换地铁。 — Does not answer. “先坐公共汽车，然后换地铁” is the example reply to “你知道怎么去那儿吗？” A route is not this weekend plan.\nF 没问题，那些题都非常简单。 — Wrong focus. “那些题都非常简单” answers “上午的数学考试怎么样？” on line 41. It says nothing about “打算做什么”.","trap":"The closest trap is B 我等个朋友，先给我来一杯咖啡吧，谢谢 (Nearby-sentence trap). “一杯咖啡” answers “请问您喝点儿什么？” on line 42. Waiting for a friend is not the weekend plan asked here."},"44":{"answer":"D","gloss":"D  报纸上有什么新闻吗？","type":"Sentence match · choose the sentence that matches","explain":"Line 44 says “还没看呢，我洗完澡再看”. The verb “看” needs something to read. D asks “报纸上有什么新闻吗？” so the speaker has not read the paper yet and will look after “洗完澡”.","wrong":"A 真冷啊，把空调打开吧。 — Wrong focus. “把空调打开吧” answers line 45, “是不是感冒了？” Cold air is not what the speaker has not “看” yet.\nB 我等个朋友，先给我来一杯咖啡吧，谢谢。 — Wrong focus. “一杯咖啡” answers “喝点儿什么” on line 42. Nothing in that order is left unread.\nC 如果不下雪，我要和同学们去爬山。 — Nearby-sentence trap. “去爬山” answers “这个周末你打算做什么？” on line 43. A climb is not something you “看” after a shower.\nE 当然。我们先坐公共汽车，然后换地铁。 — Does not answer. “先坐公共汽车，然后换地铁” already answers “你知道怎么去那儿吗？” It is a route, not a newspaper.\nF 没问题，那些题都非常简单。 — Wrong focus. “那些题都非常简单” answers “数学考试怎么样” on line 41. “题” are not the thing “还没看”.","trap":"The closest trap is C 如果不下雪，我要和同学们去爬山 (Nearby-sentence trap). “去爬山” answers “这个周末你打算做什么？” on line 43. A climb is not something you “看” after a shower."},"45":{"answer":"A","gloss":"A  真冷啊，把空调打开吧。","type":"Sentence match · choose the sentence that matches","explain":"Line 45 says “你衣服穿得太少了，是不是感冒了？” A agrees that the room is cold: “真冷啊，把空调打开吧”. The thin clothes and the possible “感冒” are both explained by that cold.","wrong":"B 我等个朋友，先给我来一杯咖啡吧，谢谢。 — Wrong focus. “一杯咖啡” answers “请问您喝点儿什么？” on line 42. It does not answer “是不是感冒了”.\nC 如果不下雪，我要和同学们去爬山。 — Wrong focus. “去爬山” answers “这个周末你打算做什么？” on line 43. Snow there is a plan, not a reply about clothes worn now.\nD 报纸上有什么新闻吗？ — Nearby-sentence trap. “报纸上有什么新闻吗” is what line 44 answers with “还没看呢”. A newspaper is not the cold.\nE 当然。我们先坐公共汽车，然后换地铁。 — Does not answer. “先坐公共汽车，然后换地铁” is already used for “你知道怎么去那儿吗？” It does not talk about “衣服” or “感冒”.\nF 没问题，那些题都非常简单。 — Wrong focus. “那些题都非常简单” answers “上午的数学考试怎么样？” on line 41. Easy questions do not answer the worry about a cold.","trap":"The closest trap is D 报纸上有什么新闻吗？ (Nearby-sentence trap). “报纸上有什么新闻吗” is what line 44 answers with “还没看呢”. A newspaper is not the cold."},"46":{"answer":"D","gloss":"D  你不舒服吗？需不需要去房间休息一下？","type":"Sentence match · choose the sentence that matches","explain":"Line 46 says “没关系，我吃过药了”. “吃过药” only answers someone who thinks the speaker is ill. D asks “你不舒服吗” and offers “去房间休息一下”, so the medicine is the reassurance.","wrong":"A 我记得你弟弟以前特别胖。 — Wrong focus. “以前特别胖” is answered by line 47, “开始锻炼，现在不到 70 公斤”. Weight is not why someone has “吃过药”.\nB 祝您生日快乐！这是我送您的礼物。 — Wrong focus. “生日快乐” and “礼物” belong with line 50, “大家来吃蛋糕吧”. A birthday wish is not a question about feeling ill.\nC 今天我来洗碗，你累一天了，去看电视吧。 — Wrong focus. “今天我来洗碗” is refused by line 49, “不用，你把筷子和杯子拿过来就可以了”. Tiredness is not “不舒服”.\nE 明天就要出国了？在外面注意身体，照顾好自己。 — Nearby-sentence trap. “明天就要出国了” is answered by line 48, “打电话或者写电子邮件”. Leaving the country is not the illness in “吃过药了”.","trap":"The closest trap is E 明天就要出国了？在外面注意身体，照顾好自己 (Nearby-sentence trap). “明天就要出国了” is answered by line 48, “打电话或者写电子邮件”. Leaving the country is not the illness in “吃过药了”."},"47":{"answer":"A","gloss":"A  我记得你弟弟以前特别胖。","type":"Sentence match · choose the sentence that matches","explain":"Line 47 says he “从去年秋天开始锻炼” and is now “不到 70 公斤”. A remembers “你弟弟以前特别胖”. The exercise and the lower weight explain that change, so A is the remark being answered.","wrong":"B 祝您生日快乐！这是我送您的礼物。 — Wrong focus. “生日快乐” pairs with “吃蛋糕” on line 50. A gift is not a comment on “特别胖” or “公斤”.\nC 今天我来洗碗，你累一天了，去看电视吧。 — Wrong focus. “洗碗” is the offer refused on line 49. It has nothing to do with “锻炼” or weight.\nD 你不舒服吗？需不需要去房间休息一下？ — Nearby-sentence trap. “你不舒服吗” is answered by “我吃过药了” on line 46. Feeling ill is not the same as having been “特别胖”.\nE 明天就要出国了？在外面注意身体，照顾好自己。 — Wrong focus. “出国” is answered by the promise to “打电话或者写电子邮件” on line 48. “注意身体” is travel advice, not a memory that the brother was fat.","trap":"The closest trap is D 你不舒服吗？需不需要去房间休息一下？ (Nearby-sentence trap). “你不舒服吗” is answered by “我吃过药了” on line 46. Feeling ill is not the same as having been “特别胖”."},"48":{"answer":"E","gloss":"E  明天就要出国了？在外面注意身体，照顾好自己。","type":"Sentence match · choose the sentence that matches","explain":"Line 48 says “好，我会给你打电话或者写电子邮件的”. E asks “明天就要出国了” and tells him to “照顾好自己”. The call or the email is how he will keep in touch once he is “在外面”.","wrong":"A 我记得你弟弟以前特别胖。 — Wrong focus. “以前特别胖” is answered by “不到 70 公斤” on line 47. It does not ask anyone to call or write.\nB 祝您生日快乐！这是我送您的礼物。 — Wrong focus. “礼物” belongs with “这块儿大的给你” on line 50. A birthday present is not a trip abroad.\nC 今天我来洗碗，你累一天了，去看电视吧。 — Wrong focus. “去看电视吧” is answered by “不用” and the request for “筷子和杯子” on line 49. Staying home to rest is the opposite of “出国”.\nD 你不舒服吗？需不需要去房间休息一下？ — Wrong focus. “去房间休息一下” is answered by “我吃过药了” on line 46. Resting in a room does not need an “电子邮件”.","trap":"The closest trap is A 我记得你弟弟以前特别胖 (Wrong focus). “以前特别胖” is answered by “不到 70 公斤” on line 47. It does not ask anyone to call or write."},"49":{"answer":"C","gloss":"C  今天我来洗碗，你累一天了，去看电视吧。","type":"Sentence match · choose the sentence that matches","explain":"Line 49 begins with “不用” and only asks for “筷子和杯子”. C offers “今天我来洗碗” and says “去看电视吧”. “不用” turns down that bigger help and keeps the job to bringing the chopsticks and the cup.","wrong":"A 我记得你弟弟以前特别胖。 — Wrong focus. “特别胖” is answered by the exercise and “不到 70 公斤” on line 47. It is not an offer someone can refuse with “不用”.\nB 祝您生日快乐！这是我送您的礼物。 — Nearby-sentence trap. “生日快乐” is answered by sharing “蛋糕” on line 50. A gift is not the dishwashing offer.\nD 你不舒服吗？需不需要去房间休息一下？ — Wrong focus. “你不舒服吗” gets “我吃过药了” on line 46. Medicine is not a reply about “筷子和杯子”.\nE 明天就要出国了？在外面注意身体，照顾好自己。 — Wrong focus. “明天就要出国了” gets the promise to “打电话或者写电子邮件” on line 48. Going abroad does not ask anyone to bring a cup.","trap":"The closest trap is B 祝您生日快乐！这是我送您的礼物 (Nearby-sentence trap). “生日快乐” is answered by sharing “蛋糕” on line 50. A gift is not the dishwashing offer."},"50":{"answer":"B","gloss":"B  祝您生日快乐！这是我送您的礼物。","type":"Sentence match · choose the sentence that matches","explain":"Line 50 says “大家来吃蛋糕吧，这块儿大的给你”. B says “祝您生日快乐” and “这是我送您的礼物”. The cake, and giving away “这块儿大的”, answers the birthday wish and the gift.","wrong":"A 我记得你弟弟以前特别胖。 — Wrong focus. “以前特别胖” is answered by “开始锻炼” and “不到 70 公斤” on line 47. Cake here is a birthday share, not a comment on weight.\nC 今天我来洗碗，你累一天了，去看电视吧。 — Nearby-sentence trap. “今天我来洗碗” is what line 49 refuses with “不用”. Washing dishes is not “生日快乐”.\nD 你不舒服吗？需不需要去房间休息一下？ — Wrong focus. “你不舒服吗” is answered by “我吃过药了” on line 46. Feeling ill does not lead to “吃蛋糕”.\nE 明天就要出国了？在外面注意身体，照顾好自己。 — Wrong focus. “出国了” is answered by “打电话或者写电子邮件” on line 48. Leaving the country is not the reason for the cake.","trap":"The closest trap is C 今天我来洗碗，你累一天了，去看电视吧 (Nearby-sentence trap). “今天我来洗碗” is what line 49 refuses with “不用”. Washing dishes is not “生日快乐”."},"51":{"answer":"D","gloss":"D  历史  lìshǐ","type":"Gap fill · choose the word that fills the blank","explain":"Blank 51 is in “这个城市有几百年的（ ）了”. “几百年” needs a noun for what those years add up to. “历史” means history, so the city has several hundred years of history.","wrong":"A 聪明 — Collocation. “聪明” fills blank 54, after “变得更”. A city does not have “几百年的” cleverness.\nB 几乎 — Collocation. “几乎” fills blank 52, before “和他爸爸一样高了”. “几乎” means almost, and it cannot be the noun after “几百年的”.\nC 解决 — Collocation. “解决” fills blank 55, before “问题的办法”. Solving is not something a city has “几百年” of.\nE 声音 — Does not answer. “声音” is already used in the example, “她说话的（E）多好听啊”. A voice is not a city’s “几百年”.\nF 关系 — Collocation. “关系” fills blank 53, “她和我的（ ）一直很好”. A relationship is between people, not the history of “这个城市”.","trap":"The closest trap is F 关系 (Collocation). “关系” fills blank 53, “她和我的（ ）一直很好”. A relationship is between people, not the history of “这个城市”."},"52":{"answer":"B","gloss":"B  几乎  jīhū","type":"Gap fill · choose the word that fills the blank","explain":"Blank 52 comes after “都快一米八了” and before “和他爸爸一样高了”. “几乎” means almost. The son is almost as tall as his father, which matches “快一米八”.","wrong":"A 聪明 — Collocation. “聪明” belongs in blank 54, “多吃鱼会使人变得更”. It is an adjective, not the adverb before “和他爸爸一样高了”.\nC 解决 — Collocation. “解决” belongs before “问题的办法” in blank 55. Height is not a problem being solved here.\nD 历史 — Collocation. “历史” fills “有几百年的” in blank 51. A son’s height is not history.\nE 声音 — Does not answer. “声音” is the example word in “她说话的（E）多好听啊”. It does not describe being “一样高”.\nF 关系 — Collocation. “关系” fills “她和我的（ ）一直很好” in blank 53. “一样高” compares height, not a relationship.","trap":"The closest trap is A 聪明 (Collocation). “聪明” belongs in blank 54, “多吃鱼会使人变得更”. It is an adjective, not the adverb before “和他爸爸一样高了”."},"53":{"answer":"F","gloss":"F  关系  guānxi","type":"Gap fill · choose the word that fills the blank","explain":"Blank 53 is in “她和我的（ ）一直很好”. “小黄是我的好朋友” already says they are close. “关系” means relationship, and “一直很好” says that relationship has stayed good.","wrong":"A 聪明 — Collocation. “聪明” fills blank 54, after “变得更”, in the sentence about “多吃鱼”. It does not name what “她和我的” friend has that is “一直很好”.\nB 几乎 — Collocation. “几乎” means almost and fills blank 52, next to “一米八” and “一样高”. It cannot be “一直很好”.\nC 解决 — Collocation. “解决” goes in blank 55 with “问题的办法”. Friends are not a problem solved here.\nD 历史 — Collocation. “历史” completes “几百年的” in blank 51. “小黄” and “好朋友” are about people, not a city’s history.\nE 声音 — Does not answer. “声音” is already used for “她说话的（E）多好听啊”. A pleasant voice is not “一直很好” between two friends.","trap":"The closest trap is D 历史 (Collocation). “历史” completes “几百年的” in blank 51. “小黄” and “好朋友” are about people, not a city’s history."},"54":{"answer":"A","gloss":"A  聪明  cōngming","type":"Gap fill · choose the word that fills the blank","explain":"Blank 54 follows “变得更”. The sentence is “多吃鱼会使人变得更（ ）”. “聪明” means smart, so eating more fish is said to make a person smarter. The slot after “更” needs that adjective.","wrong":"B 几乎 — Collocation. “几乎” is the adverb in blank 52, “和他爸爸一样高了”. It is not the result after “变得更”.\nC 解决 — Collocation. “解决” belongs in blank 55, before “问题的办法”. It is a verb, so it cannot follow “变得更”.\nD 历史 — Collocation. “历史” fills “几百年的” in blank 51. Eating fish does not make someone into history.\nE 声音 — Does not answer. “声音” is already the example in “多好听啊”. It cannot follow “变得更”.\nF 关系 — Collocation. “关系” fills “她和我的（ ）一直很好” in blank 53. The fish sentence is about a person becoming something, not about a relationship.","trap":"The closest trap is B 几乎 (Collocation). “几乎” is the adverb in blank 52, “和他爸爸一样高了”. It is not the result after “变得更”."},"55":{"answer":"C","gloss":"C  解决  jiějué","type":"Gap fill · choose the word that fills the blank","explain":"Blank 55 sits in “我们已经找到（ ）问题的办法了”. What was found is “办法”, a way, and it stands next to “问题”. “解决” means to solve, so the way is a way to solve the problem.","wrong":"A 聪明 — Collocation. “聪明” completes “变得更” in blank 54. It is not the verb in front of “问题的办法”.\nB 几乎 — Collocation. “几乎” belongs with “一样高” in blank 52. Almost is not a way to handle “问题”.\nD 历史 — Collocation. “历史” is the noun in “几百年的” on line 51. The blank here is a verb before “问题”.\nE 声音 — Does not answer. “声音” is already used in “她说话的（E）多好听啊”. A voice is not “问题的办法”.\nF 关系 — Collocation. “关系” fills “她和我的（ ）一直很好” in blank 53. Finding a method is not the same as a friendship.","trap":"The closest trap is F 关系 (Collocation). “关系” fills “她和我的（ ）一直很好” in blank 53. Finding a method is not the same as a friendship."},"56":{"answer":"A","gloss":"A  画  huà","type":"Gap fill · choose the word that fills the blank","explain":"Blank 56 is in “你（ ）的这是猫？” B answers “大熊猫！它在爬树” and adds “这也看不懂？” The thing being looked at was drawn. “画” means to draw, so A is asking whether the drawing is a cat.","wrong":"B 简单 — Collocation. “简单” fills blank 59, “想得太（ ）了”. It does not say what was drawn in “这是猫”.\nC 选择 — Collocation. “选择” fills blank 57, “是工作还是读书”. Choosing is not how the panda picture was made.\nD 爱好 — Does not answer. “爱好” is already the example, answered by “我喜欢体育”. A hobby does not fit “你（ ）的这是猫”.\nE 结婚 — Collocation. “结婚” fills blank 60, before “以后就和妻子”. Marriage has nothing to do with “大熊猫” or “爬树”.\nF 马上 — Collocation. “马上” fills blank 58, “表演（ ）就要开始了”. Immediately does not describe what was drawn.","trap":"The closest trap is C 选择 (Collocation). “选择” fills blank 57, “是工作还是读书”. Choosing is not how the panda picture was made."},"57":{"answer":"C","gloss":"C  选择  xuǎnzé","type":"Gap fill · choose the word that fills the blank","explain":"Blank 57 is in “我不知道应该怎么（ ）才好”, after “是工作还是读书”. Those are two options. “选择” means to choose, so B does not know which one to pick.","wrong":"A 画 — Collocation. “画” fills blank 56, “你（ ）的这是猫”, next to “大熊猫”. Drawing is not the choice between “工作” and “读书”.\nB 简单 — Collocation. “简单” belongs in blank 59, “想得太（ ）了”. This blank is the verb after “应该怎么”, between “工作” and “读书”.\nD 爱好 — Does not answer. “爱好” is already used in “你有什么（D）”, answered by “我喜欢体育”. The blank here is a verb after “怎么”.\nE 结婚 — Collocation. “结婚” goes with “妻子” in blank 60. This speaker is deciding between work and study, not getting married.\nF 马上 — Collocation. “马上” goes with “就要开始了” in blank 58. It does not choose between “工作” and “读书”.","trap":"The closest trap is A 画 (Collocation). “画” fills blank 56, “你（ ）的这是猫”, next to “大熊猫”. Drawing is not the choice between “工作” and “读书”."},"58":{"answer":"F","gloss":"F  马上  mǎshàng","type":"Gap fill · choose the word that fills the blank","explain":"Blank 58 is in “表演（ ）就要开始了”. A wants to “买点儿水” and is told “快一点儿”. “马上” means immediately, so the performance is about to start at once and there is no time to delay.","wrong":"A 画 — Collocation. “画” belongs in blank 56 with “这是猫” and “大熊猫”. A performance starting is not a drawing.\nB 简单 — Collocation. “简单” fills “想得太” in blank 59. It does not tell A to “快一点儿” before the “表演”.\nC 选择 — Collocation. “选择” fills “怎么（ ）才好” in blank 57, between “工作” and “读书”. The show is not a choice.\nD 爱好 — Does not answer. “爱好” is the example word, paired with “我喜欢体育”. It is not a time word before “就要开始了”.\nE 结婚 — Collocation. “结婚” belongs before “以后就和妻子” in blank 60. The hurry here is about “表演”, not a wedding.","trap":"The closest trap is B 简单 (Collocation). “简单” fills “想得太” in blank 59. It does not tell A to “快一点儿” before the “表演”."},"59":{"answer":"B","gloss":"B  简单  jiǎndān","type":"Gap fill · choose the word that fills the blank","explain":"Blank 59 is in “你把事情想得太（ ）了”. A says “这件事对公司不会有影响的”. B, speaking to “夏经理”, answers that this way of thinking is too simple. “简单” means simple.","wrong":"A 画 — Collocation. “画” is the verb in blank 56, next to “这是猫”. It does not describe how “夏经理” thinks about the company.\nC 选择 — Collocation. “选择” fills the “工作还是读书” blank on line 57. Manager Xia is not being told to choose; he is being told his view is too simple.\nD 爱好 — Does not answer. “爱好” is already used for “我喜欢体育”. It does not answer “不会有影响”.\nE 结婚 — Collocation. “结婚” goes with “妻子” on line 60. Nothing here is about moving after a marriage.\nF 马上 — Collocation. “马上” fills “就要开始了” on line 58. The pushback to “夏经理” is about how he thinks, not about starting at once.","trap":"The closest trap is F 马上 (Collocation). “马上” fills “就要开始了” on line 58. The pushback to “夏经理” is about how he thinks, not about starting at once."},"60":{"answer":"E","gloss":"E  结婚  jiéhūn","type":"Gap fill · choose the word that fills the blank","explain":"Blank 60 is in “他（ ）以后就和妻子搬到学校去住了”. “妻子” marks a marriage, and “以后” puts the move after that event. “结婚” means to get married, so he moved after the wedding. That also answers why “白老师” no longer “在这儿住”.","wrong":"A 画 — Collocation. “画” belongs with “大熊猫” and “这是猫” in blank 56. Drawing does not explain moving “和妻子”.\nB 简单 — Collocation. “简单” fills “想得太” in blank 59. It does not explain the move with “妻子”.\nC 选择 — Collocation. “选择” fills “工作还是读书” in blank 57. The move is tied to “妻子”, not to choosing work or study.\nD 爱好 — Does not answer. “爱好” is already the example, with “我喜欢体育”. A hobby does not come before “以后就和妻子”.\nF 马上 — Collocation. “马上” belongs with “表演” and “就要开始了” in blank 58. This sentence already has “以后”, and the missing word has to sit next to “妻子”.","trap":"The closest trap is F 马上 (Collocation). “马上” belongs with “表演” and “就要开始了” in blank 58. This sentence already has “以后”, and the missing word has to sit next to “妻子”."},"61":{"answer":"A","gloss":"A  环境变好了","type":"Reading comprehension · choose the correct answer","explain":"The question asks “这里最近几年怎么样？” The passage says “变化很大”, then “街道更干净了，天更蓝了，树更绿了”. Cleaner streets, a bluer sky, and greener trees mean the surroundings improved, which is “环境变好了”.","wrong":"B 和过去相同 — Opposite. “和过去相同” contradicts “变化很大”. The passage lists several changes, so the place is not the same as before.\nC 变得更差了 — Opposite. “变得更差了” goes against “更干净了”, “天更蓝了”, and “树更绿了”. More “车辆” is one change, but the rest of the line is improvement, not a worse place.","trap":"The closest trap is B 和过去相同 (Opposite). “和过去相同” contradicts “变化很大”. The passage lists several changes, so the place is not the same as before."},"62":{"answer":"C","gloss":"C  不同季节喝不同的茶","type":"Reading comprehension · choose the correct answer","explain":"The question asks what “这段话告诉我们”. The first sentence says people “根据季节的变化来决定喝什么茶”. Spring gets “花茶” and winter gets “红茶”, so “不同季节喝不同的茶” restates that rule.","wrong":"A 茶有什么作用 — Does not answer. “茶有什么作用” is never said. The passage only names which tea fits “春天” and “冬天”, not what tea does.\nB 老人爱喝红茶 — Wrong focus. “老人爱喝红茶” keeps only “冬天最好喝红茶” and the word “老人们”. It drops “春天最好喝花茶” and the rule about “季节”.","trap":"The closest trap is B 老人爱喝红茶 (Wrong focus). “老人爱喝红茶” keeps only “冬天最好喝红茶” and the word “老人们”. It drops “春天最好喝花茶” and the rule about “季节”."},"63":{"answer":"C","gloss":"C  常用汉字不多","type":"Reading comprehension · choose the correct answer","explain":"The question asks for “主要意思”. After the dictionary totals, the passage says “人们常用的也就两千多个”, and that knowing “这两千多个字” is enough for “读书看报”. The point of that contrast is “常用汉字不多”.","wrong":"A 汉字很难写 — Does not answer. “汉字很难写” is not in the passage. The text is about how many characters there are and how many are “常用”, not about writing being hard.\nB 要学会查字典 — Wrong focus. “要学会查字典” turns 《汉语大字典》 and “小字典” into study advice. The dictionaries are only there to show the large totals, “五六万字” and “八九千字”.","trap":"The closest trap is B 要学会查字典 (Wrong focus). “要学会查字典” turns 《汉语大字典》 and “小字典” into study advice. The dictionaries are only there to show the large totals, “五六万字” and “八九千字”."},"64":{"answer":"B","gloss":"B  花钱少","type":"Reading comprehension · choose the correct answer","explain":"The question is about “在网上买东西”. The reason people are willing is “非常方便，而且还便宜”. “便宜” means the price is low, so “花钱少” matches. Being able to “换新的” is an extra convenience, not a higher cost.","wrong":"A 比较贵 — Opposite. “比较贵” is the opposite of “便宜”. The passage says online buying is cheap, not more expensive.\nC 花的时间多 — Opposite. “花的时间多” goes against “非常方便”. Convenient buying is not described as taking more time.","trap":"The closest trap is A 比较贵 (Opposite). “比较贵” is the opposite of “便宜”. The passage says online buying is cheap, not more expensive."},"65":{"answer":"A","gloss":"A  自己做的","type":"Reading comprehension · choose the correct answer","explain":"The question asks why “昨天的” homework “没错”. The son answers “没有” to “有人帮你写作业了”, then says “我爸爸昨天没时间，我想我应该自己完成了”. He did it himself, so “自己做的” is what the text gives.","wrong":"B 爸爸帮忙了 — Opposite. “爸爸帮忙了” contradicts “没有” and “我爸爸昨天没时间”. The father did not help.\nC 认真复习了 — Does not answer. “认真复习了” is not in the passage. The only reason given is “自己完成了”, not review.","trap":"The closest trap is B 爸爸帮忙了 (Opposite). “爸爸帮忙了” contradicts “没有” and “我爸爸昨天没时间”. The father did not help."},"66":{"answer":"C","gloss":"C  睡前喝牛奶","type":"Reading comprehension · choose the correct answer","explain":"The question asks what “这个习惯” refers to. The only habit in the passage is “晚上睡觉前喝一杯热牛奶”. That is “睡前喝牛奶”, and it “能帮助人们睡得更好”.","wrong":"A 帮助别人 — Wrong focus. “帮助别人” misreads “能帮助人们睡得更好”. Here “帮助” is the milk helping sleep, not a habit of helping other people.\nB 睡前刷牙 — Does not answer. “睡前刷牙” does not appear. The action before “睡觉” is “喝一杯热牛奶”, not brushing teeth.","trap":"The closest trap is A 帮助别人 (Wrong focus). “帮助别人” misreads “能帮助人们睡得更好”. Here “帮助” is the milk helping sleep, not a habit of helping other people."},"67":{"answer":"A","gloss":"A  已经结束了","type":"Reading comprehension · choose the correct answer","explain":"The question is about “新年晚会”. The passage says every class “举行了” one, and the students “玩得高兴极了”. “举行了” is past, so the party “已经结束了”.","wrong":"B 参加的人不多 — Opposite. “参加的人不多” fights “每个班都举行了” and the students “唱歌、跳舞、做游戏”. The text does not say few people came.\nC 在1月1日举行 — Time mismatch. “在1月1日举行” is the wrong day. The text says “新年前一天”, the day before New Year, not January 1.","trap":"The closest trap is B 参加的人不多 (Opposite). “参加的人不多” fights “每个班都举行了” and the students “唱歌、跳舞、做游戏”. The text does not say few people came."},"68":{"answer":"B","gloss":"B  我一个人去旅游","type":"Reading comprehension · choose the correct answer","explain":"The question asks “爸妈同意什么了？” Before, they “不让我一个人出去玩儿”. On “我16岁生日那天” they “终于同意了”, and the speaker bought “一个小行李箱” and “地图” for “这次旅游”. What they agreed to is “我一个人去旅游”.","wrong":"A 教我游泳 — Does not answer. “教我游泳” never appears. The agreement is about “旅游”, and the things bought are “行李箱” and “地图”.\nC 跟我一起去旅游 — Opposite. “跟我一起去旅游” contradicts “一个人”. The parents had refused letting the speaker “一个人出去”, and that is what they finally allowed.","trap":"The closest trap is C 跟我一起去旅游 (Opposite). “跟我一起去旅游” contradicts “一个人”. The parents had refused letting the speaker “一个人出去”, and that is what they finally allowed."},"69":{"answer":"C","gloss":"C  眼镜","type":"Reading comprehension · choose the correct answer","explain":"The question asks “我在找什么东西？” The speaker asks whether “我的眼镜” is “在桌子上”, then hears “在椅子上”. The object of the search is “眼镜”. The table and the chair are only places.","wrong":"A 椅子 — Wrong focus. “椅子” is the place in “在椅子上”, not the thing being looked for. The speaker was asking about “眼镜”.\nB 衬衫 — Does not answer. “衬衫” is not in the passage. Nothing in the phone call names a shirt.","trap":"The closest trap is A 椅子 (Wrong focus). “椅子” is the place in “在椅子上”, not the thing being looked for. The speaker was asking about “眼镜”."},"70":{"answer":"B","gloss":"B  历史故事","type":"Reading comprehension · choose the correct answer","explain":"The question asks what “这本书主要介绍”. The book “讲了世界上很多国家的历史故事”, so the content is “历史故事”. “爱好历史” and “有兴趣” only say who would like it.","wrong":"A 中国文化 — Does not answer. “中国文化” is not mentioned. The stories are from “很多国家”, not a book about Chinese culture.\nC 兴趣爱好 — Wrong focus. “兴趣爱好” picks up “爱好历史” and “有兴趣”, which describe the reader. The book itself “讲了” “历史故事”.","trap":"The closest trap is C 兴趣爱好 (Wrong focus). “兴趣爱好” picks up “爱好历史” and “有兴趣”, which describe the reader. The book itself “讲了” “历史故事”."}}</script>
+
+  <script>
+    const QUIZ_ID = "HSK3-H31008-Reading-TM-20260930";
+    const QUIZ_VERSION = "1.0";
+    const Q_FROM = 41;
+    const Q_TO = 70;
+    const Q_COUNT = 30;
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUm1JYbtOns1Z5PaS3KO6D47rcyfc9eWCpXvBKEpM-qskJpCHXrFvqeIaWZscpxXzE/exec";
+    const KEYS = ["A", "B", "C", "D"];
+    const DATA = JSON.parse(document.getElementById("exam-data").textContent);
+    const ANSWER = {};
+    const answers = {};
+    let studentName = "";
+    let studentClass = "";
+    let quizInProgress = false;
+    let submitted = false;
+    let navigationAwayCount = 0;
+    let examStartedAt = 0;
+    let examSubmittedAt = 0;
+
+    DATA.matches.forEach(group => group.qs.forEach(row => { ANSWER[row[0]] = row[1]; }));
+    DATA.banks.forEach(group => group.qs.forEach(row => { ANSWER[row[0]] = row[1]; }));
+    DATA.short.forEach(row => { ANSWER[row.n] = row.answer; });
+
+    const NOTES = JSON.parse(document.getElementById("exam-notes").textContent);
+
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+    function makeOptions(n, options) {
+      const box = el("div", "options");
+      const wide = options.some(item => item[0].length > 1);
+      if (wide) box.classList.add("orders");
+      options.forEach(item => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "option";
+        btn.dataset.q = String(n);
+        btn.dataset.choice = item[0];
+        btn.append(el("span", wide ? "opt-key wide" : "opt-key", item[0]), el("span", "opt-text", item[1]));
+        box.append(btn);
+      });
+      return box;
+    }
+    function questionCard(n, stem) {
+      const card = el("article", "question-card");
+      card.id = "q" + n;
+      card.dataset.question = String(n);
+      const stemRow = el("div", "q-stem");
+      stemRow.append(el("span", "q-no", String(n)));
+      if (stem) stemRow.append(el("div", "q-text", stem));
+      card.append(stemRow);
+      return card;
+    }
+    function fillBlanks(text) {
+      const frag = document.createDocumentFragment();
+      const re = /\{(\d+)\}/g;
+      let last = 0;
+      let match;
+      while ((match = re.exec(text))) {
+        frag.append(document.createTextNode(text.slice(last, match.index)));
+        const mark = el("span", "blank-mark", match[1]);
+        mark.dataset.evidence = "q" + match[1];
+        frag.append(mark);
+        last = match.index + match[0].length;
+      }
+      frag.append(document.createTextNode(text.slice(last)));
+      return frag;
+    }
+
+    function attachAnalysis(card, n) {
+      const note = NOTES[String(n)];
+      if (!note) return;
+      const actions = el("div", "analysis-actions");
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "primary-btn";
+      toggle.dataset.action = "answer";
+      toggle.textContent = "显示答案与解析";
+      toggle.setAttribute("aria-expanded", "false");
+      actions.append(toggle);
+      const panel = el("div", "analysis-panel");
+      panel.hidden = true;
+      const ans = el("p", "ans-line");
+      ans.append(el("b", "", "Answer: "), document.createTextNode(note.gloss || note.answer));
+      const body = el("div", "analysis-body");
+      [["Type", note.type], ["Explanation", note.explain], ["Other choices", note.wrong], ["Easy mistake", note.trap]].forEach(pair => {
+        const p = el("p");
+        p.append(el("span", "tag", pair[0]));
+        p.append(document.createTextNode(pair[1] || ""));
+        body.append(p);
+      });
+      panel.append(ans, body);
+      card.append(actions, panel);
+    }
+    function renderMatches() {
+      const root = document.getElementById("match-root");
+      DATA.matches.forEach(group => {
+        const workspace = el("div", "lesson-workspace");
+        const source = el("div", "source-pane");
+        const passage = el("div", "passage-card");
+        passage.append(el("h4", "", "第" + group.label + "题"));
+        group.choices.forEach(choice => {
+          passage.append(el("p", "passage-para flat", choice[0] + "　" + choice[1]));
+        });
+        if (group.example) {
+          const example = el("div", "example-line");
+          const exampleLines = group.example.split("\n");
+          example.append(el("b", "", "例如："), document.createTextNode(exampleLines[0]));
+          exampleLines.slice(1).forEach(line => {
+            example.append(document.createElement("br"));
+            example.append(document.createTextNode(line));
+          });
+          passage.append(example);
+        }
+        source.append(passage);
+        const teach = el("div", "teaching-pane");
+        group.qs.forEach(row => {
+          const card = questionCard(row[0], row[2]);
+          card.append(makeOptions(row[0], group.choices));
+          attachAnalysis(card, row[0]);
+          teach.append(card);
+        });
+        workspace.append(source, teach);
+        root.append(workspace);
+      });
+    }
+    function renderBanks() {
+      const root = document.getElementById("bank-root");
+      DATA.banks.forEach(group => {
+        const workspace = el("div", "lesson-workspace");
+        const source = el("div", "source-pane");
+        const passage = el("div", "passage-card");
+        passage.append(el("h4", "", "第" + group.label + "题"));
+        const chips = el("div", "word-row");
+        group.words.forEach(word => chips.append(el("span", "word-chip", word[0] + "  " + word[1])));
+        passage.append(chips);
+        const example = el("div", "example-line");
+        const exampleLines = group.example.split("\n");
+        example.append(el("b", "", "例如："), document.createTextNode(exampleLines[0]));
+        exampleLines.slice(1).forEach(line => {
+          example.append(document.createElement("br"));
+          example.append(document.createTextNode(line));
+        });
+        passage.append(example);
+        group.lines.forEach(text => {
+          const p = el("p", "passage-para" + (/^[AB]：/.test(text) ? " flat" : ""));
+          p.append(fillBlanks(text));
+          passage.append(p);
+        });
+        source.append(passage);
+        const teach = el("div", "teaching-pane");
+        group.qs.forEach(row => {
+          const card = questionCard(row[0], "选择最合适的一项。");
+          card.append(makeOptions(row[0], group.words));
+          attachAnalysis(card, row[0]);
+          teach.append(card);
+        });
+        workspace.append(source, teach);
+        root.append(workspace);
+      });
+    }
+    function renderShort() {
+      const root = document.getElementById("short-root");
+      DATA.short.forEach(row => {
+        const card = questionCard(row.n, row.stem);
+        card.insertBefore(el("p", "match-text", row.passage), card.firstChild);
+        card.append(makeOptions(row.n, row.options));
+        attachAnalysis(card, row.n);
+        root.append(card);
+      });
+    }
+    renderMatches();
+    renderBanks();
+    renderShort();
+
+    const loginPage = document.getElementById("loginPage");
+    const nameInput = document.getElementById("studentName");
+    const classInput = document.getElementById("studentClass");
+    const warningOverlay = document.getElementById("warning-overlay");
+    const storageKey = "hskQuizProgress_" + QUIZ_ID;
+
+    function objectiveDone() {
+      let n = 0;
+      for (let i = Q_FROM; i <= Q_TO; i++) if (answers[i]) n++;
+      return n;
+    }
+    function updateProgress() {
+      document.getElementById("progressText").textContent = "阅读 " + objectiveDone() + "/" + Q_COUNT;
+    }
+    function saveProgress() {
+      if (!quizInProgress) return;
+      localStorage.setItem(storageKey, JSON.stringify({
+        studentName, studentClass, quizId: QUIZ_ID, quizVersion: QUIZ_VERSION,
+        questionCount: Q_COUNT, answers, navigationAwayCount, examStartedAt, timestamp: Date.now()
+      }));
+      document.getElementById("save-status").textContent = "已保存 " + new Date().toLocaleTimeString();
+    }
+    function applyAnswers() {
+      document.querySelectorAll(".option").forEach(btn => {
+        const chosen = answers[btn.dataset.q] === btn.dataset.choice;
+        btn.classList.toggle("chosen", chosen);
+        btn.setAttribute("aria-pressed", chosen ? "true" : "false");
+      });
+      document.querySelectorAll("textarea[data-q]").forEach(area => {
+        area.value = answers[area.dataset.q] || "";
+        refreshCount(area);
+      });
+      updateProgress();
+    }
+    function loadProgress() {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return false;
+      try {
+        const data = JSON.parse(raw);
+        if (data.studentName !== nameInput.value.trim() || data.studentClass !== classInput.value.trim()) return false;
+        if (data.quizId !== QUIZ_ID || data.quizVersion !== QUIZ_VERSION || data.questionCount !== Q_COUNT) {
+          localStorage.removeItem(storageKey);
+          return false;
+        }
+        Object.assign(answers, data.answers || {});
+        navigationAwayCount = data.navigationAwayCount || 0;
+        examStartedAt = data.examStartedAt || data.timestamp || 0;
+        applyAnswers();
+        return true;
+      } catch (error) {
+        localStorage.removeItem(storageKey);
+        return false;
+      }
+    }
+    function refreshCount(area) {
+      const n = area.dataset.q;
+      if (n !== "99" && n !== "100") return;
+      const han = (area.value.match(/[\u4e00-\u9fff]/g) || []).length;
+      document.getElementById("count-" + n).textContent = "汉字 " + han;
+    }
+    function measureHeader() {
+      const bar = document.querySelector(".utility-bar");
+      const nav = document.querySelector(".top-nav");
+      if (!bar || !nav || !document.body.classList.contains("in-exam")) return;
+      const u = bar.offsetHeight;
+      document.documentElement.style.setProperty("--utility-height", u + "px");
+      document.documentElement.style.setProperty("--fixed-header-height", (u + nav.offsetHeight) + "px");
+    }
+    function setFont(px) {
+      const size = Math.max(14, Math.min(28, px));
+      document.documentElement.style.setProperty("--base-size", size + "px");
+      document.getElementById("font-value").textContent = size + "px";
+      document.getElementById("font-range").value = String(size);
+    }
+    function firstMissing() {
+      for (let i = Q_FROM; i <= Q_TO; i++) if (!answers[i]) return String(i);
+      return "";
+    }
+    function hanCount(text) {
+      return (String(text || "").match(/[\u4e00-\u9fff]/g) || []).length;
+    }
+
+    function setAnalysis(card, show) {
+      const panel = card.querySelector(".analysis-panel");
+      const button = card.querySelector("button[data-action='answer']");
+      if (!panel || !button) return;
+      panel.hidden = !show;
+      button.textContent = show ? "收起答案与解析" : "显示答案与解析";
+      button.setAttribute("aria-expanded", show ? "true" : "false");
+    }
+    function toggleAnswer(card, button) {
+      const panel = card.querySelector(".analysis-panel");
+      if (!panel) return;
+      setAnalysis(card, panel.hidden);
+    }
+    function showAllAnalysis(show) {
+      if (!submitted) return;
+      document.querySelectorAll(".question-card").forEach(card => setAnalysis(card, show));
+    }
+    document.getElementById("show-all").addEventListener("click", () => showAllAnalysis(true));
+    document.getElementById("hide-all").addEventListener("click", () => showAllAnalysis(false));
+
+    document.getElementById("examRoot").addEventListener("click", event => {
+      const answerBtn = event.target.closest("button[data-action='answer']");
+      if (answerBtn) {
+        if (!submitted) return;
+        toggleAnswer(answerBtn.closest(".question-card"), answerBtn);
+        return;
+      }
+      const blank = event.target.closest(".blank-mark");
+      if (blank) {
+        const card = document.getElementById(blank.dataset.evidence);
+        if (!card) return;
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        card.classList.remove("locate-flash");
+        void card.offsetWidth;
+        card.classList.add("locate-flash");
+        return;
+      }
+      const btn = event.target.closest(".option");
+      if (!btn || submitted) return;
+      const card = btn.closest(".question-card");
+      card.querySelectorAll(".option").forEach(item => {
+        item.classList.remove("chosen");
+        item.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("chosen");
+      btn.setAttribute("aria-pressed", "true");
+      answers[btn.dataset.q] = btn.dataset.choice;
+      updateProgress();
+      saveProgress();
+    });
+    document.getElementById("examRoot").addEventListener("input", event => {
+      const area = event.target.closest("textarea[data-q]");
+      if (!area || submitted) return;
+      answers[area.dataset.q] = area.value;
+      refreshCount(area);
+      updateProgress();
+      saveProgress();
+    });
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const name = nameInput.value.trim();
+      const klass = classInput.value.trim();
+      if (!name || !klass) {
+        alert("请填写姓名和班级。\nPlease enter your name and class.");
+        return;
+      }
+      studentName = name;
+      studentClass = klass;
+      const restored = loadProgress();
+      if (!examStartedAt) examStartedAt = Date.now();
+      quizInProgress = true;
+      document.body.classList.add("in-exam");
+      loginPage.classList.add("is-hidden");
+      document.getElementById("whoName").textContent = name + " · " + klass;
+      measureHeader();
+      if (restored) document.getElementById("save-status").textContent = "已恢复上次作答";
+    });
+    nameInput.addEventListener("keydown", event => { if (event.key === "Enter") classInput.focus(); });
+    classInput.addEventListener("keydown", event => { if (event.key === "Enter") document.getElementById("loginBtn").click(); });
+
+    document.getElementById("font-range").addEventListener("input", event => setFont(Number(event.target.value)));
+    document.getElementById("font-down").addEventListener("click", () => setFont(Number(document.getElementById("font-range").value) - 1));
+    document.getElementById("font-up").addEventListener("click", () => setFont(Number(document.getElementById("font-range").value) + 1));
+
+    const navLinks = Array.from(document.querySelectorAll(".top-nav a"));
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute("href")));
+    function markNav() {
+      const line = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fixed-header-height")) || 104) + 24;
+      let current = sections[0];
+      sections.forEach(section => { if (section.getBoundingClientRect().top <= line) current = section; });
+      navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + current.id));
+    }
+    document.addEventListener("scroll", markNav, { passive: true });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && quizInProgress) {
+        navigationAwayCount++;
+        warningOverlay.style.display = "flex";
+        saveProgress();
+      }
+      if (!document.hidden) warningOverlay.style.display = "none";
+    });
+    window.addEventListener("beforeunload", event => {
+      if (!quizInProgress) return;
+      event.preventDefault();
+      event.returnValue = "";
+    });
+    window.addEventListener("resize", measureHeader);
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      if (submitted) return;
+      const missing = firstMissing();
+      if (missing) {
+        alert("请完成所有题目后再交卷。\nPlease complete every question before submitting.");
+        const card = document.getElementById("q" + missing);
+        if (card) {
+          card.classList.add("locate-flash");
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+      if (!confirm("确定交卷吗？提交后不能再修改。\nAre you sure you want to submit?")) return;
+      gradeAndSend();
+    });
+
+    function gradeAndSend() {
+      quizInProgress = false;
+      submitted = true;
+      let score = 0;
+      for (let i = Q_FROM; i <= Q_TO; i++) if (answers[i] === ANSWER[i]) score++;
+      document.querySelectorAll(".option").forEach(btn => {
+        btn.disabled = true;
+        const correct = ANSWER[btn.dataset.q];
+        if (btn.dataset.choice === correct) btn.classList.add("mark-correct");
+        else if (btn.classList.contains("chosen")) btn.classList.add("mark-wrong");
+      });
+      document.querySelectorAll("textarea[data-q]").forEach(area => { area.readOnly = true; });
+      let wrongCount = 0;
+      let firstWrong = null;
+      document.querySelectorAll(".question-card").forEach(card => {
+        card.classList.add("graded");
+        const n = card.dataset.question;
+        if (answers[n] === ANSWER[n]) return;
+        wrongCount++;
+        card.classList.add("needs-review");
+        setAnalysis(card, true);
+        if (!firstWrong) firstWrong = card;
+      });
+      document.getElementById("show-all").hidden = false;
+      document.getElementById("hide-all").hidden = false;
+      const banner = document.getElementById("score-banner");
+      banner.hidden = false;
+      document.getElementById("scoreLine").textContent = score + " / " + Q_COUNT;
+      document.getElementById("switchLine").textContent = "切换页面次数 (Page switch count): " + navigationAwayCount;
+      document.getElementById("writeLine").textContent = wrongCount
+        ? "做错 " + wrongCount + " 题，解析已经展开。做对的题可以点「显示答案与解析」。右上角 Export 可下载 PDF。"
+        : "全部正确。每题仍可点「显示答案与解析」查看。右上角 Export 可下载 PDF。";
+      examSubmittedAt = Date.now();
+      document.getElementById("progressText").textContent = "得分 " + score + "/" + Q_COUNT;
+      (firstWrong || banner).scrollIntoView({ behavior: "smooth", block: "center" });
+      localStorage.removeItem(storageKey);
+      sendScore(score);
+    }
+    function sendScore(score) {
+      const status = document.getElementById("submitStatus");
+      const formData = new FormData();
+      formData.append("studentName", studentName);
+      formData.append("studentClass", studentClass);
+      formData.append("score", String(score));
+      formData.append("total", String(Q_COUNT));
+      formData.append("switchCount", String(navigationAwayCount));
+      fetch(SCRIPT_URL, { method: "POST", body: formData })
+        .then(response => {
+          if (!response.ok) throw new Error(response.statusText);
+          return response.json();
+        })
+        .then(data => {
+          if (data.result === "success") {
+            status.textContent = "成绩提交成功！";
+            status.className = "ok";
+          } else throw new Error(data.message || "Backend error");
+        })
+        .catch(() => {
+          status.textContent = "成绩提交失败，请联系老师。";
+          status.className = "bad";
+        });
+    }
+
+    function currentScore() {
+      let score = 0;
+      for (let i = Q_FROM; i <= Q_TO; i++) if (answers[i] === ANSWER[i]) score++;
+      return score;
+    }
+    function formatDuration(ms) {
+      const total = Math.max(0, Math.round(ms / 1000));
+      const hours = Math.floor(total / 3600);
+      const minutes = Math.floor((total % 3600) / 60);
+      const seconds = total % 60;
+      if (hours) return hours + "小时" + minutes + "分";
+      if (minutes) return minutes + "分" + seconds + "秒";
+      return seconds + "秒";
+    }
+    function examTimeBits() {
+      const end = new Date(examSubmittedAt || Date.now());
+      const week = "日一二三四五六"[end.getDay()];
+      const pad = n => String(n).padStart(2, "0");
+      const dateLine = end.getFullYear() + "年" + (end.getMonth() + 1) + "月" + end.getDate() + "日  星期" + week;
+      const endClock = pad(end.getHours()) + ":" + pad(end.getMinutes());
+      let clock = endClock;
+      if (examStartedAt) {
+        const start = new Date(examStartedAt);
+        const startClock = pad(start.getHours()) + ":" + pad(start.getMinutes());
+        if (start.toDateString() === end.toDateString()) clock = startClock === endClock ? endClock : startClock + " – " + endClock;
+        else clock = (start.getMonth() + 1) + "月" + start.getDate() + "日 " + startClock + " – " + (end.getMonth() + 1) + "月" + end.getDate() + "日 " + endClock;
+      }
+      return { dateLine: dateLine, clock: clock };
+    }
+    function readingItem(n) {
+      let group;
+      let row;
+      for (let i = 0; i < DATA.matches.length; i++) {
+        group = DATA.matches[i];
+        for (let j = 0; j < group.qs.length; j++) {
+          if (group.qs[j][0] !== n) continue;
+          row = group.qs[j];
+          const source = ["要搭配的句子：", row[2]];
+          if (group.example) source.push("", "例如：", group.example);
+          return {
+            section: "阅读一  ·  句子搭配",
+            prompt: row[2],
+            options: group.choices.map(item => item[0] + "    " + item[1]),
+            source: source.join("\n")
+          };
+        }
+      }
+      for (let i = 0; i < DATA.banks.length; i++) {
+        group = DATA.banks[i];
+        for (let j = 0; j < group.qs.length; j++) {
+          if (group.qs[j][0] !== n) continue;
+          const own = group.lines.filter(text => text.indexOf("{" + n + "}") !== -1);
+          const prompt = (own.length ? own : ["选择最合适的一项。"]).map(text => text.replace(/\{\d+\}/g, "（ ）")).join("\n");
+          const sourceLines = group.lines.map(text => text.replace(/\{(\d+)\}/g, (all, num) => num === String(n) ? "（" + num + "）" : "（ ）"));
+          return {
+            section: "阅读二  ·  选词填空",
+            prompt: prompt,
+            options: group.words.map(item => item[0] + "    " + item[1]),
+            source: sourceLines.join("\n") + (group.example ? "\n\n例如：\n" + group.example : "")
+          };
+        }
+      }
+      for (let i = 0; i < DATA.short.length; i++) {
+        row = DATA.short[i];
+        if (row.n !== n) continue;
+        return {
+          section: "阅读三  ·  短文",
+          prompt: row.stem,
+          options: row.options.map(item => item[0] + "    " + item[1]),
+          source: row.passage
+        };
+      }
+      return { section: "阅读", prompt: "", options: [], source: "" };
+    }
+    function choiceText(n, key) {
+      if (!key) return "（未作答）";
+      const options = readingItem(n).options;
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].indexOf(key + "    ") === 0) return options[i];
+      }
+      return key;
+    }
+    function pdfFilename(score) {
+      const when = new Date(examSubmittedAt || Date.now());
+      const pad = n => String(n).padStart(2, "0");
+      const stamp = when.getFullYear() + pad(when.getMonth() + 1) + pad(when.getDate()) + "-" + pad(when.getHours()) + pad(when.getMinutes());
+      const who = String(studentName || "学生").replace(/[\\/:*?"<>|\u0000-\u001f]/g, "").trim() || "学生";
+      return who + "-" + stamp + "-H31008阅读-" + score + "分.pdf";
+    }
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+    }
+    function buildPdf(images, pixelW, pixelH) {
+      const encoder = new TextEncoder();
+      const parts = [];
+      const offsets = [0];
+      let pos = 0;
+      function add(data) {
+        const bytes = typeof data === "string" ? encoder.encode(data) : data;
+        parts.push(bytes);
+        pos += bytes.length;
+      }
+      function concat(list) {
+        let total = 0;
+        list.forEach(item => { total += item.length; });
+        const out = new Uint8Array(total);
+        let offset = 0;
+        list.forEach(item => {
+          out.set(item, offset);
+          offset += item.length;
+        });
+        return out;
+      }
+      function addObj(id, body) {
+        offsets[id] = pos;
+        add(id + " 0 obj\n");
+        add(body);
+        add("\nendobj\n");
+      }
+      add("%PDF-1.4\n");
+      const pageCount = images.length;
+      const pagePtW = 595.28;
+      const pagePtH = 841.89;
+      const kids = [];
+      for (let i = 0; i < pageCount; i++) kids.push((3 + i * 3) + " 0 R");
+      addObj(1, encoder.encode("<< /Type /Catalog /Pages 2 0 R >>"));
+      addObj(2, encoder.encode("<< /Type /Pages /Count " + pageCount + " /Kids [" + kids.join(" ") + "] >>"));
+      images.forEach((img, index) => {
+        const pageId = 3 + index * 3;
+        const contentId = pageId + 1;
+        const imageId = pageId + 2;
+        const content = encoder.encode("q " + pagePtW + " 0 0 " + pagePtH + " 0 0 cm /Im0 Do Q\n");
+        addObj(pageId, encoder.encode("<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + pagePtW + " " + pagePtH + "] /Contents " + contentId + " 0 R /Resources << /XObject << /Im0 " + imageId + " 0 R >> >> >>"));
+        addObj(contentId, concat([
+          encoder.encode("<< /Length " + content.length + " >>\nstream\n"),
+          content,
+          encoder.encode("endstream")
+        ]));
+        addObj(imageId, concat([
+          encoder.encode("<< /Type /XObject /Subtype /Image /Width " + pixelW + " /Height " + pixelH + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Interpolate true /Filter /DCTDecode /Length " + img.length + " >>\nstream\n"),
+          img,
+          encoder.encode("\nendstream")
+        ]));
+      });
+      const xrefAt = pos;
+      let xref = "xref\n0 " + offsets.length + "\n0000000000 65535 f \n";
+      for (let i = 1; i < offsets.length; i++) xref += String(offsets[i]).padStart(10, "0") + " 00000 n \n";
+      xref += "trailer\n<< /Size " + offsets.length + " /Root 1 0 R >>\nstartxref\n" + xrefAt + "\n%%EOF";
+      add(xref);
+      return new Blob(parts, { type: "application/pdf" });
+    }
+    async function buildScorePdf() {
+      await document.fonts.ready;
+      const score = currentScore();
+      const UI = '"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif';
+      const BODY = 'SimSun,"Songti SC","Noto Serif SC",serif';
+      const pageW = 794;
+      const pageH = 1123;
+      const scale = 2;
+      const padX = 52;
+      const padBottom = 50;
+      const maxW = pageW - padX * 2;
+      const imgW = Math.round(pageW * scale);
+      const imgH = Math.round(pageH * scale);
+      const jpegTasks = [];
+      let canvas = null;
+      let ctx = null;
+      let y = 0;
+      let pageNo = 0;
+
+      function startPage() {
+        if (canvas) jpegTasks.push(sealPage(canvas, ctx, pageNo));
+        pageNo += 1;
+        canvas = document.createElement("canvas");
+        canvas.width = imgW;
+        canvas.height = imgH;
+        ctx = canvas.getContext("2d");
+        ctx.setTransform(scale, 0, 0, scale, 0, 0);
+        ctx.fillStyle = "#fbfaf5";
+        ctx.fillRect(0, 0, pageW, pageH);
+        ctx.fillStyle = "#415e46";
+        ctx.fillRect(0, 0, pageW, 8);
+        y = 24;
+        if (pageNo > 1) {
+          ctx.fillStyle = "#6c7068";
+          ctx.font = "12px " + UI;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          ctx.fillText("HSK（三级）H31008  ·  阅读成绩单  ·  " + (studentName || ""), padX, 16);
+          y = 42;
+        }
+      }
+      function sealPage(pageCanvas, pageCtx, num) {
+        drawFooter(pageCtx, num);
+        return new Promise((resolve, reject) => {
+          pageCanvas.toBlob(blob => {
+            if (!blob) {
+              reject(new Error("页面导出失败"));
+              return;
+            }
+            blob.arrayBuffer().then(buffer => {
+              pageCanvas.width = 1;
+              pageCanvas.height = 1;
+              resolve(new Uint8Array(buffer));
+            }, reject);
+          }, "image/jpeg", 0.92);
+        });
+      }
+      function drawFooter(pageCtx, num) {
+        pageCtx.save();
+        pageCtx.setTransform(scale, 0, 0, scale, 0, 0);
+        pageCtx.fillStyle = "#fbfaf5";
+        pageCtx.fillRect(0, pageH - 36, pageW, 36);
+        pageCtx.fillStyle = "#ddd7c8";
+        pageCtx.fillRect(padX, pageH - 36, maxW, 1);
+        pageCtx.fillStyle = "#6c7068";
+        pageCtx.font = "11px " + UI;
+        pageCtx.textAlign = "left";
+        pageCtx.textBaseline = "middle";
+        const label = "第 " + num + " 页";
+        const labelW = pageCtx.measureText(label).width;
+        let leftText = "H31008  ·  阅读  ·  " + (studentName || "") + "  ·  " + (studentClass || "");
+        const limit = maxW - labelW - 16;
+        if (pageCtx.measureText(leftText).width > limit) {
+          while (leftText.length > 8 && pageCtx.measureText(leftText + "…").width > limit) leftText = leftText.slice(0, -1);
+          leftText += "…";
+        }
+        pageCtx.fillText(leftText, padX, pageH - 18);
+        pageCtx.fillText(label, pageW - padX - labelW, pageH - 18);
+        pageCtx.restore();
+      }
+      function fillRoundRect(x, top, w, h, r, fill, stroke) {
+        const radius = Math.max(0, Math.min(r, w / 2, h / 2));
+        ctx.beginPath();
+        ctx.moveTo(x + radius, top);
+        ctx.arcTo(x + w, top, x + w, top + h, radius);
+        ctx.arcTo(x + w, top + h, x, top + h, radius);
+        ctx.arcTo(x, top + h, x, top, radius);
+        ctx.arcTo(x, top, x + w, top, radius);
+        ctx.closePath();
+        if (fill) {
+          ctx.fillStyle = fill;
+          ctx.fill();
+        }
+        if (stroke) {
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = stroke;
+          ctx.stroke();
+        }
+      }
+      function clipRound(x, top, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, top);
+        ctx.arcTo(x + w, top, x + w, top + h, r);
+        ctx.arcTo(x + w, top + h, x, top + h, r);
+        ctx.arcTo(x, top + h, x, top, r);
+        ctx.arcTo(x, top, x + w, top, r);
+        ctx.closePath();
+        ctx.clip();
+      }
+      function lastSoftBreak(line) {
+        const at = Math.max(line.lastIndexOf(" "), line.lastIndexOf("　"));
+        if (at > 0 && at >= line.length - 24) return at;
+        return -1;
+      }
+      function hardWrap(text, maxWidth) {
+        const parts = [];
+        let line = "";
+        Array.from(text).forEach(ch => {
+          if (!line && (ch === " " || ch === "　")) return;
+          if (ctx.measureText(line + ch).width <= maxWidth) line += ch;
+          else {
+            if (line) parts.push(line);
+            line = (ch === " " || ch === "　") ? "" : ch;
+          }
+        });
+        if (line) parts.push(line);
+        return parts.length ? parts : [""];
+      }
+      function wrapLines(text, maxWidth) {
+        const out = [];
+        String(text).replace(/\r\n/g, "\n").split("\n").forEach(para => {
+          if (para === "") {
+            out.push("");
+            return;
+          }
+          const paraStart = out.length;
+          let line = "";
+          Array.from(para).forEach(ch => {
+            if (ctx.measureText(line + ch).width <= maxWidth) {
+              line += ch;
+              return;
+            }
+            if (!line) {
+              out.push(ch);
+              return;
+            }
+            const breakAt = lastSoftBreak(line);
+            if (breakAt > 0) {
+              out.push(line.slice(0, breakAt).trimEnd());
+              line = (line.slice(breakAt + 1) + ch).replace(/^\s+/, "");
+              if (ctx.measureText(line).width > maxWidth) {
+                const parts = hardWrap(line, maxWidth);
+                for (let i = 0; i < parts.length - 1; i++) out.push(parts[i]);
+                line = parts[parts.length - 1] || "";
+              }
+              return;
+            }
+            out.push(line.trimEnd());
+            line = (ch === " " || ch === "　") ? "" : ch;
+          });
+          if (line.trim()) out.push(line.trimEnd());
+          const noLead = "，。、；：！？）」』】》.,!?;:";
+          for (let i = out.length - 1; i > paraStart; i--) {
+            if (!out[i] || noLead.indexOf(out[i][0]) === -1 || !out[i - 1]) continue;
+            const moved = out[i - 1] + out[i][0];
+            if (ctx.measureText(moved).width <= maxWidth + 12) {
+              out[i - 1] = moved;
+              out[i] = out[i].slice(1).replace(/^\s+/, "");
+              if (!out[i]) out.splice(i, 1);
+            }
+          }
+        });
+        return out;
+      }
+      function gap(n) { y += n; }
+      function drawWrapped(text, opt) {
+        opt = opt || {};
+        if (text == null || text === "") return;
+        const size = opt.size || 15;
+        const weight = opt.weight || 400;
+        const color = opt.color || "#252723";
+        const family = opt.family || BODY;
+        const lh = opt.lh || Math.round(size * 1.75);
+        const indent = opt.indent || 0;
+        const width = (opt.width || maxW) - indent;
+        ctx.font = weight + " " + size + "px " + family;
+        const lines = wrapLines(String(text), width);
+        lines.forEach(line => {
+          if (y + lh > pageH - padBottom) startPage();
+          ctx.font = weight + " " + size + "px " + family;
+          ctx.fillStyle = color;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          if (line) ctx.fillText(line, padX + indent, y + Math.round((lh - size) / 2));
+          y += lh;
+        });
+      }
+      function drawHeader() {
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#6f5947";
+        ctx.font = "700 12px " + UI;
+        ctx.fillText("印尼万隆基督教三一学校", padX, y);
+        y += 20;
+        ctx.fillStyle = "#415e46";
+        ctx.font = "700 12px " + UI;
+        ctx.fillText("HSK 2.0    ·    三级    ·    试卷 H31008", padX, y);
+        y += 22;
+        ctx.fillStyle = "#2c4130";
+        ctx.font = "700 28px " + UI;
+        ctx.fillText("阅读成绩单", padX, y);
+        y += 36;
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "13px " + UI;
+        ctx.fillText("新汉语水平考试 HSK（三级）  ·  阅读第 41–70 题", padX, y);
+        y += 24;
+        const timeBits = examTimeBits();
+        const bits = [];
+        if (studentName) bits.push(studentName);
+        if (studentClass) bits.push(studentClass);
+        if (examStartedAt && examSubmittedAt > examStartedAt) bits.push("用时 " + formatDuration(examSubmittedAt - examStartedAt));
+        bits.push("切屏 " + navigationAwayCount + " 次");
+        ctx.font = "14px " + BODY;
+        const metaLines = wrapLines(bits.join("    ·    "), maxW - 52);
+        const boxH = 112 + metaLines.length * 22;
+        if (y + boxH > pageH - padBottom) startPage();
+        const top = y;
+        fillRoundRect(padX, top, maxW, boxH, 12, "#f4efe3", "#ddd7c8");
+        ctx.save();
+        clipRound(padX, top, maxW, boxH, 12);
+        ctx.fillStyle = "#78917a";
+        ctx.fillRect(padX, top, 6, boxH);
+        ctx.restore();
+        const left = padX + 22;
+        const rightCol = padX + Math.round(maxW * 0.62);
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText("考试时间", left, top + 14);
+        ctx.fillText("成绩", rightCol, top + 14);
+        let dateSize = 16;
+        ctx.font = "700 " + dateSize + "px " + BODY;
+        while (dateSize > 12 && ctx.measureText(timeBits.dateLine).width > rightCol - left - 16) {
+          dateSize -= 1;
+          ctx.font = "700 " + dateSize + "px " + BODY;
+        }
+        ctx.fillStyle = "#252723";
+        ctx.fillText(timeBits.dateLine, left, top + 34);
+        ctx.font = "15px " + BODY;
+        ctx.fillText(timeBits.clock, left, top + 58);
+        ctx.fillStyle = "#415e46";
+        ctx.font = "700 28px " + UI;
+        ctx.fillText(score + " / " + Q_COUNT, rightCol, top + 32);
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText("正确率 " + Math.round(score / Q_COUNT * 100) + "%", rightCol, top + 66);
+        ctx.strokeStyle = "#ddd7c8";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(left, top + 90.5);
+        ctx.lineTo(padX + maxW - 18, top + 90.5);
+        ctx.stroke();
+        ctx.fillStyle = "#6f5947";
+        ctx.font = "14px " + BODY;
+        metaLines.forEach((line, index) => ctx.fillText(line, left, top + 102 + index * 22));
+        y = top + boxH + 16;
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText("下面按题号排列。每题依次是：题目、解析、阅读原文。", padX, y);
+        y += 22;
+      }
+      function drawKeyline() {
+        if (y + 18 > pageH - padBottom) {
+          startPage();
+          return;
+        }
+        y += 4;
+        ctx.strokeStyle = "#e3dccb";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padX, y + 0.5);
+        ctx.lineTo(padX + maxW, y + 0.5);
+        ctx.stroke();
+        y += 12;
+      }
+      function drawLabel(text) {
+        const need = text === "阅读原文" ? 88 : 64;
+        if (y + need > pageH - padBottom) startPage();
+        ctx.font = "700 13px " + UI;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        const textW = ctx.measureText(text).width;
+        fillRoundRect(padX, y, Math.ceil(textW + 18), 22, 8, "#eef2e9", null);
+        ctx.fillStyle = "#415e46";
+        ctx.font = "700 13px " + UI;
+        ctx.fillText(text, padX + 9, y + 3);
+        y += 28;
+      }
+      function drawMini(text) {
+        if (y + 42 > pageH - padBottom) startPage();
+        y += 4;
+        ctx.fillStyle = "#6f5947";
+        ctx.font = "700 12px " + UI;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText(text, padX, y);
+        y += 18;
+      }
+      function drawResultLine(label, value, color) {
+        const lh = 24;
+        if (y + lh > pageH - padBottom) startPage();
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.font = "700 13px " + UI;
+        ctx.fillStyle = "#6c7068";
+        ctx.fillText(label, padX, y + 2);
+        ctx.font = "700 14px " + BODY;
+        const lines = wrapLines(value, maxW - 96);
+        lines.forEach((line, index) => {
+          if (index > 0 && y + lh > pageH - padBottom) startPage();
+          ctx.font = "700 14px " + BODY;
+          ctx.fillStyle = color;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "top";
+          ctx.fillText(line, padX + 88, y + 2);
+          y += lh;
+        });
+        if (!lines.length) y += lh;
+      }
+      function drawQuestionTitle(n, correct, section) {
+        if (y + 32 > pageH - padBottom) startPage();
+        const badge = 24;
+        fillRoundRect(padX, y, badge, badge, 7, correct ? "#415e46" : "#b96732", null);
+        ctx.save();
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "700 12px " + UI;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(String(n), padX + badge / 2, y + badge / 2 + 0.5);
+        ctx.restore();
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "#252723";
+        ctx.font = "700 16px " + UI;
+        const title = "第 " + n + " 题";
+        ctx.fillText(title, padX + 32, y + 3);
+        const titleW = ctx.measureText(title).width;
+        ctx.fillStyle = "#6c7068";
+        ctx.font = "12px " + UI;
+        ctx.fillText(section, padX + 44 + titleW, y + 6);
+        const result = correct ? "正确" : "错误";
+        ctx.font = "700 13px " + UI;
+        ctx.fillStyle = correct ? "#415e46" : "#b96732";
+        const resultW = ctx.measureText(result).width;
+        ctx.fillText(result, padX + maxW - resultW, y + 4);
+        y += 32;
+      }
+      function drawSource(text) {
+        const body = text || "（没有阅读原文）";
+        const lh = 26;
+        ctx.font = "400 14px " + BODY;
+        const lines = wrapLines(body, maxW - 24);
+        lines.forEach(line => {
+          if (y + lh > pageH - padBottom) startPage();
+          ctx.fillStyle = "#f4efe3";
+          ctx.fillRect(padX, y, maxW, lh + 1);
+          ctx.fillStyle = "#78917a";
+          ctx.fillRect(padX, y, 3, lh + 1);
+          if (line) {
+            ctx.fillStyle = "#252723";
+            ctx.font = "400 14px " + BODY;
+            ctx.textAlign = "left";
+            ctx.textBaseline = "top";
+            ctx.fillText(line, padX + 12, y + 5);
+          }
+          y += lh;
+        });
+      }
+      function drawQuestion(n) {
+        const note = NOTES[String(n)] || {};
+        const item = readingItem(n);
+        const correct = answers[n] === ANSWER[n];
+        if (y + 280 > pageH - padBottom) startPage();
+        drawKeyline();
+        drawQuestionTitle(n, correct, item.section);
+        drawLabel("题目");
+        drawWrapped(item.prompt, { size: 16, weight: 700, lh: 28 });
+        gap(3);
+        item.options.forEach(line => drawWrapped(line, { size: 15, lh: 26 }));
+        gap(4);
+        drawResultLine("我的选择", choiceText(n, answers[n]), correct ? "#415e46" : "#b96732");
+        drawResultLine("正确答案", choiceText(n, ANSWER[n]), "#415e46");
+        gap(6);
+        drawLabel("解析");
+        if (note.gloss) {
+          drawMini("答案");
+          drawWrapped(note.gloss, { size: 15, lh: 26 });
+        }
+        if (note.type) {
+          drawMini("题型");
+          drawWrapped(note.type, { size: 15, lh: 26, color: "#6c7068" });
+        }
+        if (note.explain) {
+          drawMini("讲解");
+          drawWrapped(note.explain, { size: 15, lh: 26 });
+        }
+        if (note.wrong) {
+          drawMini("其他选项");
+          drawWrapped(note.wrong, { size: 15, lh: 26 });
+        }
+        if (note.trap) {
+          drawMini("易错点");
+          drawWrapped(note.trap, { size: 15, lh: 26 });
+        }
+        gap(6);
+        drawLabel("阅读原文");
+        drawSource(item.source);
+        gap(8);
+      }
+
+      startPage();
+      drawHeader();
+      for (let n = Q_FROM; n <= Q_TO; n++) drawQuestion(n);
+      if (canvas) jpegTasks.push(sealPage(canvas, ctx, pageNo));
+      canvas = null;
+      ctx = null;
+      const images = await Promise.all(jpegTasks);
+      return buildPdf(images, imgW, imgH);
+    }
+    document.getElementById("export-pdf").addEventListener("click", async () => {
+      const button = document.getElementById("export-pdf");
+      if (button.disabled) return;
+      if (!submitted) {
+        alert("请先交卷。交卷后才能导出题目、解析和阅读原文。");
+        return;
+      }
+      button.disabled = true;
+      button.textContent = "Saving";
+      try {
+        const score = currentScore();
+        const blob = await buildScorePdf();
+        const filename = pdfFilename(score);
+        const touch = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+        const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || touch;
+        if (ios && navigator.canShare) {
+          try {
+            const file = new File([blob], filename, { type: "application/pdf" });
+            if (navigator.canShare({ files: [file] })) {
+              await navigator.share({ files: [file], title: filename });
+              return;
+            }
+          } catch (error) {
+            if (error && error.name === "AbortError") return;
+          }
+        }
+        downloadBlob(blob, filename);
+      } catch (error) {
+        console.error(error);
+        alert("PDF 生成失败，请再试一次。");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Export";
+      }
+    });
+
+    function fitOneLine(node, max, min) {
+      if (!node) return;
+      node.style.fontSize = max + "px";
+      let size = max;
+      while (node.scrollWidth > node.clientWidth && size > min) {
+        size -= 0.5;
+        node.style.fontSize = size + "px";
+      }
+    }
+    window.addEventListener("load", () => {
+      const school = document.getElementById("schoolNameID");
+      fitOneLine(school, window.matchMedia("(max-width: 600px)").matches ? 24 : 28, 12);
+      markNav();
+    });
+  </script>
+</body>
+</html>

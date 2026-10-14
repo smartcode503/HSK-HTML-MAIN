@@ -15,7 +15,7 @@ user-invocable: true
 
 One HSK 2.0 paper, level 3, 4, 5, or 6. Produce the three outputs below, in this order. The last output is the HTML: one listening page and one reading page. The HTML is last because the reading page does not write its own explanation: after 交卷, 解析 says why the keyed choice fits and why each other choice does not, and those sentences are copied from `{code}-阅读解析.docx`.
 
-Every file this run writes for one paper goes in one folder named exactly `{code}`, such as `H41001` or `H51008`. When the user names an output directory, that folder is `{output}/{code}/`. Create it if it is missing. Do not leave this paper's files loose in `{output}/`, and do not put them in another paper's folder. When the user does not name an output directory, the folder is `{code}/` beside the source PDF. The folder holds the reading-notes docx, the answer PDF, the listening-script PDF, the recording when one is on disk, and both HTML pages. When a same-named file already exists in that folder, stop and ask before replacing it. This skill's files, including the notes builder, stay in `/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN`.
+Every file this run writes for one paper goes in one folder named exactly `{code}`, such as `H41001` or `H51008`. When the user names an output directory, that folder is `{output}/{code}/`. Create it if it is missing. Do not leave this paper's files loose in `{output}/`, and do not put them in another paper's folder. When the user does not name an output directory, the folder is `{code}/` beside the source PDF. The folder holds the reading-notes docx, the answer PDF, the listening-script PDF, the recording when one is on disk, and both HTML pages. When a same-named file already exists in that folder, stop and ask before replacing it. This skill's files, including the notes builder, stay in `/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013`.
 
 ## Spans
 
@@ -29,11 +29,11 @@ The builder's blocks have no border and no page header. English is Calibri. Chin
 
 1. Read the reading section of the paper PDF. Use `pdftotext -layout` when the PDF has a text layer. When that text is empty, read the pages as images and transcribe the reading section before writing notes. Copy every reading answer from the key. The `key_source` string names that file, for example `the printed answer page: H41009卷答案.pdf`. Stop and ask when there is no key. Done when the reading questions and the key answers are both written down.
 2. Split the reading with [references/paper-map.md](references/paper-map.md). One unit is one task that shares a passage, a word bank, or a sentence bank. A single 病句 item or a single short passage is its own unit. Done when every reading question number sits in exactly one unit, in order, and the groups match the passages printed on this paper.
-3. Look up 2012 levels with this skill's script. `--segment` longest-matches a unit's Chinese. Bare words look up one entry. A word's level is the number the script prints. Keep the first time a word appears. The workbook is `HSK-2012官方原表.xlsx`; the script already points at it.
+3. Look up 2012 levels with this skill's script. `--segment` longest-matches a unit's Chinese. Bare words look up one entry. A word's level is the number the script prints. Keep the first time a word appears. The workbook is `HSK-2012官方原表.xlsx` in this skill's folder. The script resolves that file from its own location.
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" --segment "这段原文"
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" 空调 例如 相约
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/hsk_vocab.py" --segment "这段原文"
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/hsk_vocab.py" 空调 例如 相约
 ```
 
 Done when every word that will go in a table has been looked up in this run.
@@ -41,7 +41,7 @@ Done when every word that will go in a table has been looked up in this run.
 5. Save the JSON under `/tmp` and build into `{output}/{code}/`:
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/build_notes.py" /tmp/H41009-notes.json -o "/path/to/paper/H41009-阅读解析.docx"
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/build_notes.py" /tmp/H41009-notes.json -o "/path/to/paper/H41009-阅读解析.docx"
 ```
 
 The script checks the full question span, the level of every listed word, and the two-order rule. A non-zero exit means the JSON is wrong; fix the JSON and run it again. The output name is `{output}/{code}/{code}-阅读解析.docx`. When that file already exists, stop and ask before replacing it. Done when the script prints `wrote …` and the file is inside the `{code}` folder.
@@ -72,13 +72,15 @@ Two Trimulia pages, both inside `{output}/{code}/`:
 - `{code}-听力-带有答案解析-可输出 PDF-三一-{YYYYMMDD}.html`
 - `{code}-阅读-带有答案解析-可输出 PDF-三一-{YYYYMMDD}.html`
 
-Shells that already include 输出:
+Shells that already include 输出 are in this skill's `shells/` directory. Copy the shell of the same level and the same section:
 
-- HSK 3 listening and reading: the H31008 pages in `H31008（NO.1）` whose names contain `可输出 PDF`
-- HSK 4 listening: `H41008(NO.2)/H41008-听力-带有答案解析-可输出 PDF-三一-20261008.html`
-- HSK 5 listening and reading: the H51008 三一 pages in `H51008(NO.3)` dated 20261006
+- HSK 3 listening: `shells/H31008-听力-带有答案解析-可输出 PDF-三一-20261001.html`
+- HSK 3 reading: `shells/H31008-阅读-带有答案解析-可输出 PDF-三一-20261001.html`
+- HSK 4 listening: `shells/H41008-听力-带有答案解析-可输出 PDF-三一-20261008.html`
+- HSK 5 listening: `shells/H51008-听力-带有答案解析-三一-20261006.html`
+- HSK 5 reading: `shells/H51008-阅读-带有答案解析-三一-20261006.html`
 
-Those five paths are under `/Users/yinshijin/Desktop/HSK2.0词汇-三级至六级/`. Copy the shell of the same level and the same section. HSK 4 has no reading shell with 输出 yet: copy an HSK 4 Trimulia reading page and add 输出 from [references/pdf-export.md](references/pdf-export.md). There is no HSK 6 HTML yet. The first HSK 6 page is copied from the H51008 page of the same section, then the item bank, the span, and the PDF identity strings are replaced. Do not create an HSK 6 page until a paper is in hand.
+HSK 4 has no reading shell here yet: copy an HSK 4 Trimulia reading page and add 输出 from [references/pdf-export.md](references/pdf-export.md). There is no HSK 6 HTML yet. The first HSK 6 page is copied from this skill's H51008 shell of the same section, then the item bank, the span, and the PDF identity strings are replaced. Do not create an HSK 6 page until a paper is in hand.
 
 Replace the item bank from the paper, the key, and the listening script. Keep the Trimulia login (SEKOLAH KRISTEN TRIMULIA / 印尼万隆基督教三一学校, red `#b71c1c`) and the Trimulia Apps Script. A new page gets a new QUIZ_ID. Leave every 荣星 file untouched.
 
