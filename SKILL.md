@@ -1,5 +1,5 @@
 ---
-name: hsk-exam-pack
+name: HSK-HTML-MAIN
 description: >
   Build an HSK 2.0 level 3, 4, 5, or 6 paper into reading notes, the answer
   PDF, the listening-script PDF, the listening audio, and Trimulia practice
@@ -7,15 +7,15 @@ description: >
   of the right choice and the wrong choices is taken from the reading-notes
   file, the page shows the score, and 输出 downloads a score PDF. Use when
   the user supplies an HSK 真题 and asks for 阅读解析, 听力 HTML, 阅读 HTML,
-  or 交卷后输出 PDF. Use when the user runs /hsk-exam-pack.
+  or 交卷后输出 PDF. Use when the user runs /HSK-HTML-MAIN.
 user-invocable: true
 ---
 
-# HSK exam pack
+# HSK-HTML-MAIN
 
 One HSK 2.0 paper, level 3, 4, 5, or 6. Produce the three outputs below, in this order. The last output is the HTML: one listening page and one reading page. The HTML is last because the reading page does not write its own explanation: after 交卷, 解析 says why the keyed choice fits and why each other choice does not, and those sentences are copied from `{code}-阅读解析.docx`.
 
-Paper deliverables go in the paper's own folder. This skill's files, including the notes builder, stay in `/Users/yinshijin/Desktop/我的 skill/HSK-HTML-20261013`.
+Paper deliverables go in the paper's own folder. This skill's files, including the notes builder, stay in `/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN`.
 
 ## Spans
 
@@ -32,8 +32,8 @@ The builder's blocks have no border and no page header. English is Calibri. Chin
 3. Look up 2012 levels with this skill's script. `--segment` longest-matches a unit's Chinese. Bare words look up one entry. A word's level is the number the script prints. Keep the first time a word appears. The workbook is `HSK-2012官方原表.xlsx`; the script already points at it.
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-20261013/scripts/hsk_vocab.py" --segment "这段原文"
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-20261013/scripts/hsk_vocab.py" 空调 例如 相约
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" --segment "这段原文"
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" 空调 例如 相约
 ```
 
 Done when every word that will go in a table has been looked up in this run.
@@ -41,7 +41,7 @@ Done when every word that will go in a table has been looked up in this run.
 5. Save the JSON under `/tmp` and build into the paper folder:
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-20261013/scripts/build_notes.py" /tmp/H41009-notes.json -o "/path/to/paper/H41009-阅读解析.docx"
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/build_notes.py" /tmp/H41009-notes.json -o "/path/to/paper/H41009-阅读解析.docx"
 ```
 
 The script checks the full question span, the level of every listed word, and the two-order rule. A non-zero exit means the JSON is wrong; fix the JSON and run it again. The output name is `{code}-阅读解析.docx` beside the PDF. When that file already exists, stop and ask before replacing it. Done when the script prints `wrote …` and the path is the paper folder.

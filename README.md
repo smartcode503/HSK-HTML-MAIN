@@ -38,12 +38,12 @@
 把试卷路径和输出目录一起说清楚，例如：
 
 ```text
-用 /Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013
+用 /Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN
 试卷：/路径/H41006.pdf
 输出到：/路径/测试输出结果
 ```
 
-也可以在对话里运行 `/hsk-exam-pack`，后面跟上试卷路径和输出目录。
+也可以在对话里运行 `/HSK-HTML-MAIN`，后面跟上试卷路径和输出目录。
 
 只要阅读讲义时，说清楚「只要阅读解析」。助手写完 Word 就停，不继续做网页。
 
@@ -76,7 +76,7 @@
 ## 这个文件夹里有什么
 
 ```text
-HSK-HTML-MAIN-20261013/
+HSK-HTML-MAIN/
 ├── README.md                 给老师看的说明（本文件）
 ├── SKILL.md                  给助手看的操作顺序
 ├── references/
@@ -88,8 +88,6 @@ HSK-HTML-MAIN-20261013/
     └── build_notes.py        把 notes.json 写成阅读解析 Word
 ```
 
-`SKILL.md` 里有的命令还写着旧目录名 `HSK-HTML-20261013`。脚本以本文件夹为准。
-
 助手先按 `references/unit.md` 写成 `notes.json`，再交给 `build_notes.py`。Word 的标题、色块和表格由脚本排版。脚本写完后不要再手改这份 docx。脚本会检查题号是否到齐、词的等级是否和官方表一致、四级排序题是不是正好两个错序。检查不通过就改 JSON，再跑一次。
 
 网页上的阅读解析从这份 Word 抄来：为什么选它，以及每个错项为什么不行。听力解析根据听力原文和答案另写，不放进阅读 Word。
@@ -99,14 +97,14 @@ HSK-HTML-MAIN-20261013/
 查词：
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/hsk_vocab.py" 空调 例如
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/hsk_vocab.py" --segment "这段原文"
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" 空调 例如
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/hsk_vocab.py" --segment "这段原文"
 ```
 
 生成 Word：
 
 ```bash
-python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN-20261013/scripts/build_notes.py" \
+python3 "/Users/yinshijin/Desktop/我的 skill/HSK-HTML-MAIN/scripts/build_notes.py" \
   /tmp/H41006-notes.json \
   -o "/输出目录/H41006-阅读解析.docx"
 ```
