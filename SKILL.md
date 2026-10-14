@@ -2,8 +2,8 @@
 name: HSK-HTML-MAIN
 description: >
   Build an HSK 2.0 level 3, 4, 5, or 6 paper into reading notes, the answer
-  PDF, the listening-script PDF, the listening audio, and Trimulia practice
-  HTML. The HTML is last: after the student submits, each reading explanation
+  PDF, the listening-script PDF, and Trimulia practice HTML. A missing
+  listening recording does not stop the pack. The HTML is last: after the student submits, each reading explanation
   of the right choice and the wrong choices is taken from the reading-notes
   file, the page shows the score, and 输出 downloads a score PDF. Use when
   the user supplies an HSK 真题 and asks for 阅读解析, 听力 HTML, 阅读 HTML,
@@ -49,25 +49,23 @@ The script checks the full question span, the level of every listed word, and th
 
 Stop after this step when the user asked only for the notes.
 
-## 2. Answer PDF, listening script, audio
+## 2. Answer PDF and listening script
 
-Identify three sources before any HTML is written:
+Download the answer-key PDF and the listening-script PDF into the output folder before any HTML is written. The listening page is written from these two files. A missing recording does not matter and does not delay this step.
 
-- the answer-key PDF
-- the listening-script PDF
-- the listening audio
+Look beside the paper first. When the only source is one booklet, split the printed answer pages into `{code}答案.pdf` and the printed listening-script pages into `{code}听力材料.pdf`. Leave the question pages as `{code}.pdf`. When the two files are not on disk, download them and save them under the names already used in that folder: `{code}卷答案.pdf`, `{code}卷听力材料.pdf`, `{code}答案.pdf`, or `{code}听力材料.pdf`.
 
-Keep the filenames already in the paper folder. Names already in use include `{code}卷答案.pdf`, `{code}卷听力材料.pdf`, `{code}答案.pdf`, `{code}听力材料.pdf`, and audio as `.mp3` or `.m4a`.
+Stop and ask only when the answer key or the listening script still cannot be obtained. Done when both files are in the output folder and the reading letters in the key match the docx.
 
-When the only source is one booklet, split the printed answer pages into `{code}答案.pdf` and the printed listening-script pages into `{code}听力材料.pdf`. Leave the question pages as `{code}.pdf`.
-
-The audio is a file the user supplies. Keep an mp3 as mp3 and an m4a as m4a.
-
-Done when all three are identified and the reading letters in the key match the docx. Stop and ask when any of the three is missing.
+Do not download the listening recording. Do not open YouTube or any other site to fetch it, and do not retry a failed audio download. If an mp3 or m4a is already on disk, next to the paper, in the output folder, or at a path the user gives, keep that file and its format. If it is not, leave the audio for later and continue.
 
 ## 3. HTML
 
-Write the HTML only after the docx from step 1 exists and the three sources from step 2 are identified.
+Write the HTML only after the docx from step 1 exists and the answer key and the listening script from step 2 are in the output folder. Write the listening page from the script and the key even when no recording is available.
+
+When a recording is already on disk, embed that file. When it is not, embed a short silent placeholder, about one second, generated locally. The login line, the section line, and the player label say `占位音频，没有考试内容`. Do not synthesize speech, and do not present the placeholder as the exam recording. Say in the final reply that the player is a placeholder.
+
+When the user later supplies the recording, put that file into the listening HTML that already exists. Replace only the embedded audio. Keep an mp3 as mp3 and an m4a as m4a, and match the player MIME to that format. Remove the placeholder wording. Do not change the questions, the notes, or the QUIZ_ID, and do not rebuild the page.
 
 Two Trimulia pages, in the paper folder:
 
